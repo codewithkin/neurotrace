@@ -1,0 +1,171 @@
+{
+  "common": {
+    "continue": "Continue",
+    "back": "Back",
+    "save": "Save",
+    "cancel": "Cancel",
+    "done": "Done",
+    "next": "Next",
+    "start": "Start"
+  },
+  "app_name": "NeuroTrace",
+  "onboarding": {
+    "steps_indicator": "Step {{current}} of {{total}}",
+    "language": {
+      "title": "Choose your language",
+      "subtitle": "You can change this anytime in settings."
+    },
+    "intent": {
+      "title": "What brings you here?",
+      "subtitle": "We'll tailor your experience.",
+      "option_doctor_visit": "Preparing for a doctor visit",
+      "option_focus_struggles": "Struggling with focus",
+      "option_organization": "Organization feels overwhelming",
+      "option_curious": "Just curious about my traits",
+      "option_support_someone": "Supporting someone else"
+    },
+    "value": {
+      "title": "A doctor-ready summary, instantly",
+      "subtitle": "Answer 18 quick questions and get a structured PDF report you can hand to your doctor or therapist — free.",
+      "pdf_preview_title": "Doctor's Summary Report",
+      "pdf_preview_subtitle": "WHO ASRS v1.1 Self-Report",
+      "pdf_preview_row_score": "Part A Score",
+      "pdf_preview_row_inattention": "Inattention Subscale",
+      "pdf_preview_row_hyperactivity": "Hyperactivity Subscale"
+    },
+    "pace": {
+      "title": "How do you like to answer?",
+      "fast_pace": "Fast Pace",
+      "fast_pace_desc": "One question at a time, auto-advance. Recommended for focus.",
+      "full_list": "Full List",
+      "full_list_desc": "Scroll through all questions on one screen."
+    },
+    "legal": {
+      "checkbox": "I understand this is an educational self-report tool based on WHO ASRS v1.1 and not a clinical medical diagnosis.",
+      "cta": "Get Started"
+    }
+  },
+  "assessment": {
+    "part_a_header": "Core Screening",
+    "part_b_header": "Severity & Frequency",
+    "progress": "Question {{current}} of {{total}}",
+    "part_a_intro": "Over the last 6 months, how often have you experienced the following?",
+    "milestone_badge": "Core Screening Complete!",
+    "part_b_transition": "Just 12 quick traits left — you're doing great!",
+    "calculate_cta": "Calculate My Focus Profile",
+    "calculating": "Analyzing your responses…",
+    "answers_saved": "Answers saved automatically",
+    "resume_cta": "Resume Assessment"
+  },
+  "scale": {
+    "never": "Never",
+    "rarely": "Rarely",
+    "sometimes": "Sometimes",
+    "often": "Often",
+    "very_often": "Very Often"
+  },
+  "results": {
+    "title": "Your Focus Profile",
+    "classification": {
+      "high_consistency": "Significant Trait Consistency Detected",
+      "low_consistency": "Low Trait Consistency Detected"
+    },
+    "disclaimer": "This is an educational self-screening result based on the WHO ASRS v1.1. It is not a medical diagnosis.",
+    "inattention_label": "Inattention Subscale",
+    "hyperactivity_label": "Hyperactivity Subscale",
+    "part_a_label": "Part A Core Score",
+    "unlock_cta": "Watch 30s Ad to Unlock Doctor's Report",
+    "unlocked_cta": "View Your Doctor's Report",
+    "retake_cta": "Retake Assessment",
+    "trait_breakdown_title": "Trait Breakdown"
+  },
+  "report": {
+    "title": "Doctor's Summary",
+    "save_cta": "Save to Files",
+    "share_cta": "Share via WhatsApp / Email",
+    "print_cta": "Print",
+    "generating": "Generating report…",
+    "reminder_toggle": "Enable 30-Day Re-Assessment Reminder",
+    "reminder_desc": "We'll send a local notification in 30 days suggesting a re-assessment.",
+    "reminder_scheduled": "Re-assessment reminder scheduled",
+    "reminder_cancelled": "Reminder disabled",
+    "locked_banner": "Unlock with a short ad to generate your PDF report."
+  },
+  "tracker": {
+    "title": "Daily Check-In",
+    "streak": "{{count}}-Day Focus Streak",
+    "focus_level": "Focus Level",
+    "brain_fog": "Brain Fog",
+    "executive_friction": "Executive Friction",
+    "mood": "Mood",
+    "medication_taken": "Medication Taken Today",
+    "save_entry": "Save Entry",
+    "entry_saved": "Entry saved. See you tomorrow!",
+    "already_logged": "Already logged today",
+    "logged_toast": "Today's check-in complete!"
+  },
+  "history": {
+    "title": "History & Trends",
+    "assessment_trends": "Assessment Score Trends",
+    "stable": "Stable",
+    "improving": "Improving",
+    "elevated": "Elevated",
+    "no_data": "Complete an assessment to start tracking trends.",
+    "monthly_reassessment_cta": "Start Monthly Re-Assessment",
+    "daily_entries": "Daily Entries",
+    "legend_inattention": "Inattention",
+    "legend_hyperactivity": "Hyperactivity"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "retake_assessment": "Retake Assessment",
+    "remove_ads": "Remove Ads & Support Development",
+    "remove_ads_desc": "$1.99/month — keeps NeuroTrace serverless.",
+    "privacy": "Privacy",
+    "privacy_note": "All data is stored locally on this device only. Nothing is uploaded.",
+    "about": "About",
+    "version": "Version",
+    "clear_data": "Clear All Data",
+    "clear_data_confirm": "Delete all local assessment and tracking data? This cannot be undone."
+  },
+  "cross_promo": {
+    "banner": "Overwhelmed by internal noise right now?",
+    "cta": "Open Brown Noise for Focus"
+  },
+  "pdf": {
+    "document_title": "Doctor's Summary Report",
+    "generated_by": "Generated by NeuroTrace — ADHD Symptom Log",
+    "patient_alias": "Prepared for",
+    "date": "Date",
+    "instrument": "Instrument: WHO Adult ADHD Self-Report Scale (ASRS v1.1)",
+    "part_a_summary": "Part A Core Screening",
+    "part_a_positive": "{{score}} of 6 items met the screening threshold (4+ indicates high trait consistency).",
+    "subscale_summary": "Subscale Breakdown",
+    "response_matrix": "Response Matrix (0 = Never … 4 = Very Often)",
+    "question": "#",
+    "symptom": "Symptom Area",
+    "response": "Response",
+    "footer_citation": "Source: World Health Organization Adult ADHD Self-Report Scale (ASRS v1.1) Symptom Checklist. This document is an educational self-report summary and does not constitute a clinical diagnosis.",
+    "symptoms": {
+      "careless_mistakes": "Careless mistakes / inattention to detail",
+      "restless_hands": "Restless hands or feet",
+      "difficulty_concentrating": "Difficulty concentrating",
+      "finishing_tasks": "Difficulty finishing tasks",
+      "disorganization": "Disorganization",
+      "avoiding_sustained_effort": "Avoiding sustained mental effort",
+      "losing_things": "Losing things",
+      "easily_distracted": "Easily distracted",
+      "forgetfulness": "Forgetfulness",
+      "fidgeting": "Fidgeting",
+      "leaving_seat": "Leaving seat",
+      "feeling_restless": "Feeling restless",
+      "difficulty_relaxing": "Difficulty relaxing",
+      "talks_excessively": "Talking excessively",
+      "interrupting": "Interrupting others",
+      "impatience": "Impatience",
+      "intruding_on_others": "Intruding on others",
+      "acting_without_thinking": "Acting without thinking"
+    }
+  }
+}
