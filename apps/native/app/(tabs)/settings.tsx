@@ -9,10 +9,6 @@ import { Container } from "@/components/container";
 import { applyLayoutDirection } from "@/lib/i18n/layout-direction";
 import { SUPPORTED_LANGUAGES } from "@/lib/i18n/languages";
 import {
-  purchaseRemoveAds,
-  restorePurchases,
-} from "@/lib/purchases/remove-ads";
-import {
   clearAllData,
   getAdsRemoved,
   getLanguageCode,
@@ -38,17 +34,6 @@ export default function SettingsTab() {
     setLanguageCodeState(code);
     i18n.changeLanguage(code);
     applyLayoutDirection(code); // reloads the app if the RTL direction flips
-  }
-
-  async function handlePurchaseRemoveAds() {
-    const result = await purchaseRemoveAds();
-    if (result.success) {
-      setAdsRemovedState(true);
-    } else if (!result.cancelled) {
-      // Purchase failed — offer restore as a fallback path.
-      const restored = await restorePurchases();
-      setAdsRemovedState(restored);
-    }
   }
 
   function confirmClearData() {
@@ -100,12 +85,8 @@ export default function SettingsTab() {
           <Switch
             isSelected={adsRemoved}
             onSelectedChange={(v) => {
-              if (v) {
-                handlePurchaseRemoveAds();
-              } else {
-                setAdsRemovedState(false);
-                setAdsRemoved(false);
-              }
+              setAdsRemovedState(v);
+              setAdsRemoved(v);
             }}
           />
         </View>

@@ -12,7 +12,6 @@ import {
   getLanguageCode,
   setLanguageCode,
 } from "@/lib/storage/app-storage";
-import { syncRemoveAdsState } from "@/lib/purchases/remove-ads";
 import { checkForOtaUpdate } from "@/lib/updates/ota";
 import { HeroUINativeProvider, Spinner } from "heroui-native";
 import { View } from "react-native";
@@ -31,7 +30,6 @@ function BootstrapGate({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     checkForOtaUpdate();
-    syncRemoveAdsState();
     initI18n(resolveInitialLanguage())
       .then(() => setReady(true))
       .catch(() => setReady(true));
