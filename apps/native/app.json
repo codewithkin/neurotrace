@@ -1,5 +1,5 @@
 {
-    "expo": {
+  "expo": {
     "name": "NeuroTrace: ADHD Symptom Log",
     "slug": "neurotrace",
     "version": "1.0.0",
@@ -53,7 +53,8 @@
         {
           "color": "#7c3aed"
         }
-      ]
+      ],
+      "expo-localization"
     ],
     "experiments": {
       "typedRoutes": true,
