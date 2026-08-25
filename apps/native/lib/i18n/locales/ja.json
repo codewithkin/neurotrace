@@ -156,7 +156,7 @@
   },
   "pdf": {
     "document_title": "医師向けサマリーレポート",
-    "generated_by": "NeuroTrace — ADHD Symptom Log による生成",
+    "generated_by": "NeuroTrace による生成",
     "patient_alias": "対象者",
     "date": "日付",
     "instrument": "評価尺度：WHO成人ADHD自己報告尺度（ASRS v1.1）",
