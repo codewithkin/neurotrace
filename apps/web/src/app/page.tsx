@@ -37,16 +37,16 @@ export default function Home() {
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
-            href="/health"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-11 items-center rounded-lg px-6 text-sm font-medium transition-colors"
+            href="/app"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-12 items-center rounded-xl px-8 text-sm font-semibold transition-colors"
           >
-            Read the Health Statement
+            Give me my score
           </Link>
           <Link
-            href="/privacy"
+            href="/health"
             className="border-input hover:bg-accent inline-flex h-11 items-center rounded-lg border px-6 text-sm font-medium transition-colors"
           >
-            Privacy Policy
+            Read the Health Statement
           </Link>
         </div>
         <p className="text-muted-foreground mt-6 font-mono text-xs uppercase tracking-widest">

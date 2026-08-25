@@ -7,6 +7,7 @@ import { ModeToggle } from "./mode-toggle";
 
 const LINKS = [
   { to: "/", label: "Home" },
+  { to: "/app", label: "Screener" },
   { to: "/health", label: "Health" },
   { to: "/privacy", label: "Privacy" },
   { to: "/terms", label: "Terms" },
