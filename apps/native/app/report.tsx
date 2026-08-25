@@ -10,16 +10,16 @@ import { WebView } from "react-native-webview";
 
 import { Container } from "@/components/container";
 import { buildReportHtml } from "@/lib/pdf/report-template";
-import { ensureNotificationPermission } from "@/lib/notifications/permissions";
+import {
+  cancelReassessmentReminder,
+  scheduleReassessmentReminder,
+} from "@/lib/notifications/reminders";
 import {
   getLatestResult,
   getReminderEnabled,
   isReportUnlocked,
   setReminderEnabled,
 } from "@/lib/storage/app-storage";
-
-const REMINDER_NOTIFICATION_ID = "reassessment-30d";
-const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -78,28 +78,20 @@ export default function Report() {
   }
 
   async function toggleReminder(value: boolean) {
-    const permitted = await ensureNotificationPermission();
-    if (!permitted) return;
-
     setReminderOn(value);
     setReminderEnabled(value);
-    await Notifications.cancelScheduledNotificationAsync(
-      REMINDER_NOTIFICATION_ID,
-    ).catch(() => {});
 
     if (value) {
-      await Notifications.scheduleNotificationAsync({
-        identifier: REMINDER_NOTIFICATION_ID,
-        content: {
-          title: t("report.title"),
-          body: t("report.reminder_desc"),
-          sound: false,
-        },
-        trigger: {
-          type: Notifications.SchedulableTriggerInputTypes.DATE,
-          date: new Date(Date.now() + THIRTY_DAYS_MS),
-        },
-      });
+      const ok = await scheduleReassessmentReminder(
+        t("report.title"),
+        t("report.reminder_desc"),
+      );
+      if (!ok) {
+        setReminderOn(false);
+        setReminderEnabled(false);
+      }
+    } else {
+      await cancelReassessmentReminder();
     }
   }
 
