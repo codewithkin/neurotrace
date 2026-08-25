@@ -66,6 +66,13 @@
       "url": "https://u.expo.dev/placeholder-project-id",
       "checkAutomatically": "ON_LOAD",
       "fallbackToCacheTimeout": 0
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "498bc086-2e4b-4c24-915a-79d61b427d34"
+      }
+    },
+    "owner": "codewithkin"
   }
 }
