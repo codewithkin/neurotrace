@@ -47,6 +47,12 @@
           "iosAppId": "ca-app-pub-3940256099942544~1458002511",
           "userTrackingUsageDescription": "Your data is used to show ads that support the free version of this app."
         }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#7c3aed"
+        }
       ]
     ],
     "experiments": {
