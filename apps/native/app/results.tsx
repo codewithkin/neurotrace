@@ -1,4 +1,5 @@
 import { Container } from "@/components/container";
+import { CrossPromoCard } from "@/components/cross-promo/cross-promo-card";
 import { useRouter } from "expo-router";
 import * as Haptics from "expo-haptics";
 import { Button, Chip, Surface } from "heroui-native";
@@ -111,8 +112,11 @@ export default function Results() {
         </View>
       </Surface>
 
+      {/* Internal funnel to companion app */}
+      <CrossPromoCard className="mb-4" />
+
       {/* CTAs */}
-      <View className="mt-6 gap-3 pb-8">
+      <View className="gap-3 pb-8">
         <Button size="lg" onPress={handleUnlockCta}>
           {unlocked ? t("results.unlocked_cta") : t("results.unlock_cta")}
         </Button>
