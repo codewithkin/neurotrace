@@ -6,16 +6,13 @@ import { Button, Separator, Surface, Switch } from "heroui-native";
 import { useState } from "react";
 
 import { Container } from "@/components/container";
-import {
-  SUPPORTED_LANGUAGES,
-  isRTL,
-} from "@/lib/i18n/languages";
+import { applyLayoutDirection } from "@/lib/i18n/layout-direction";
+import { SUPPORTED_LANGUAGES } from "@/lib/i18n/languages";
 import {
   clearAllData,
   getLanguageCode,
   setAdsRemoved,
 } from "@/lib/storage/app-storage";
-import { I18nManager } from "react-native";
 
 function SectionLabel({ label }: { label: string }) {
   return (
@@ -35,12 +32,7 @@ export default function SettingsTab() {
   function changeLanguage(code: string) {
     setLanguageCodeState(code);
     i18n.changeLanguage(code);
-    const shouldForceRTL = isRTL(code);
-    if (I18nManager.isRTL !== shouldForceRTL) {
-      // Takes full effect after app restart.
-      I18nManager.allowRTL(shouldForceRTL);
-      I18nManager.forceRTL(shouldForceRTL);
-    }
+    applyLayoutDirection(code); // reloads the app if the RTL direction flips
   }
 
   function confirmClearData() {

@@ -3,13 +3,15 @@ import { useRouter } from "expo-router";
 import { Button, Checkbox, Separator, Surface } from "heroui-native";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { I18nManager, Pressable, Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 
 import { Container } from "@/components/container";
 import {
+  applyLayoutDirection,
+} from "@/lib/i18n/layout-direction";
+import {
   DEFAULT_LANGUAGE,
   SUPPORTED_LANGUAGES,
-  isRTL,
 } from "@/lib/i18n/languages";
 import {
   AssessmentPace,
@@ -88,12 +90,7 @@ export default function Onboarding() {
     setLanguage(code);
     i18n.changeLanguage(code);
     setLanguageCode(code);
-    const shouldForceRTL = isRTL(code);
-    if (I18nManager.isRTL !== shouldForceRTL) {
-      // Takes full effect after the app restarts.
-      I18nManager.allowRTL(shouldForceRTL);
-      I18nManager.forceRTL(shouldForceRTL);
-    }
+    applyLayoutDirection(code); // reloads the app if the RTL direction flips
     Haptics.selectionAsync();
     setTimeout(() => setStep(1), 220);
   }
