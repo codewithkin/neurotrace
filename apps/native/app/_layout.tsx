@@ -8,6 +8,7 @@ import { KeyboardProvider } from "react-native-keyboard-controller";
 import { AppThemeProvider } from "@/contexts/app-theme-context";
 import { initI18n } from "@/lib/i18n";
 import { getLanguageCode } from "@/lib/storage/app-storage";
+import { checkForOtaUpdate } from "@/lib/updates/ota";
 import { HeroUINativeProvider, Spinner } from "heroui-native";
 import { View } from "react-native";
 
@@ -15,6 +16,7 @@ function BootstrapGate({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    checkForOtaUpdate();
     initI18n(getLanguageCode())
       .then(() => setReady(true))
       .catch(() => setReady(true));

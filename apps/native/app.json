@@ -54,11 +54,22 @@
           "color": "#7c3aed"
         }
       ],
+      "expo-localization",
+      "expo-updates"
+    ],
       "expo-localization"
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/placeholder-project-id",
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 0
     }
   }
 }
