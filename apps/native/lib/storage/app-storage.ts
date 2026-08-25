@@ -1,4 +1,5 @@
 import { ASRSResponse, ASRSScore } from "@/lib/asrs/scoring";
+import { getDeviceLanguage } from "@/lib/i18n/device-locale";
 
 import { mmkv } from "./mmkv";
 
@@ -64,7 +65,7 @@ export function setOnboardingCompleted(value: boolean) {
 // --- Language & pace ---
 
 export function getLanguageCode(): string {
-  return getString(KEYS.language) ?? "en";
+  return getString(KEYS.language) ?? "";
 }
 
 export function setLanguageCode(code: string) {
