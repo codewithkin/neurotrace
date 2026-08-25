@@ -16,8 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "neurotrace",
-  description: "neurotrace",
+  title: "NeuroTrace — Private ADHD Self-Screener & Symptom Log",
+  description:
+    "Private ADHD self-screener & daily focus log. Generate doctor-ready PDF reports. 100% local, no account.",
 };
 
 export default function RootLayout({
@@ -29,9 +30,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers>
-          <div className="grid grid-rows-[auto_1fr] h-svh">
+          <div className="flex min-h-svh flex-col">
             <Header />
-            {children}
+            <div className="flex-1">{children}</div>
           </div>
         </Providers>
       </body>
