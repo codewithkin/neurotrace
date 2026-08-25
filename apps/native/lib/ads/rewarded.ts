@@ -7,6 +7,7 @@ import {
 
 import { getRewardedAdUnit, REQUEST_NON_PERSONALIZED, ADS_ENABLED } from "./config";
 import { ensureAdsConsent } from "./consent";
+import { getAdsRemoved } from "@/lib/storage/app-storage";
 
 let sdkInitialized = false;
 
@@ -31,6 +32,8 @@ export async function showRewardedAd(
 ): Promise<boolean> {
   // V1.0: ads are disabled — treat every gated action as instantly unlocked.
   if (!ADS_ENABLED) return true;
+  // Paying supporters bypass ads entirely.
+  if (getAdsRemoved()) return true;
 
   await ensureSdkInitialized();
 
