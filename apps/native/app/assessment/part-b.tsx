@@ -47,6 +47,7 @@ export default function AssessmentPartB() {
       ...score,
       id: `asrs-${Date.now()}`,
       completedAt: new Date().toISOString(),
+      responses,
     };
     storeResult(result);
     clearResponses();

@@ -7,6 +7,8 @@ export type AssessmentPace = "fast" | "list";
 export interface StoredAssessmentResult extends ASRSScore {
   id: string;
   completedAt: string; // ISO date
+  /** Full 18-item response matrix, kept for the PDF export. */
+  responses: ASRSResponse[];
 }
 
 export interface DailyEntry {
