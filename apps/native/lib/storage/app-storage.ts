@@ -32,6 +32,7 @@ const KEYS = {
   dailyEntries: "tracker.entries",
   reminderEnabled: "settings.reminderEnabled",
   adsRemoved: "settings.adsRemoved",
+  userAlias: "profile.userAlias",
 } as const;
 
 function getString(key: string): string | undefined {
@@ -152,6 +153,16 @@ export function getAdsRemoved(): boolean {
 
 export function setAdsRemoved(value: boolean) {
   mmkv.set(KEYS.adsRemoved, value);
+}
+
+// --- User alias (local PDF customization only, never transmitted) ---
+
+export function getUserAlias(): string {
+  return getString(KEYS.userAlias) ?? "";
+}
+
+export function setUserAlias(alias: string) {
+  mmkv.set(KEYS.userAlias, alias.trim());
 }
 
 // --- Danger zone ---

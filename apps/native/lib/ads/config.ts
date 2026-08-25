@@ -1,4 +1,14 @@
 /**
+ * Master switch for the ads monetization layer.
+ *
+ * V1.0 ships WITHOUT live ads (Play Store submission happens before AdMob
+ * account approval). All rewarded-ad entry points short-circuit to a free
+ * unlock while this is `false`. Flip to `true` in v1.1 once production
+ * AdMob IDs are configured.
+ */
+export const ADS_ENABLED = false;
+
+/**
  * AdMob identifiers.
  *
  * Defaults are Google's official TEST IDs so the app is safe to run during

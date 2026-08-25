@@ -1,6 +1,6 @@
 import { ASRS_QUESTIONS, ASRS_SYMPTOM_KEYS } from "@/lib/asrs/questions";
 import { RESPONSE_SCALE } from "@/lib/asrs/scoring";
-import { StoredAssessmentResult } from "@/lib/storage/app-storage";
+import { StoredAssessmentResult, getUserAlias } from "@/lib/storage/app-storage";
 import i18n from "@/lib/i18n";
 import { isRTL } from "@/lib/i18n/languages";
 
@@ -60,6 +60,11 @@ export function buildReportHtml(result: StoredAssessmentResult): string {
     (o) => `${o.value} = ${esc(t(`scale.${o.key}`))}`,
   ).join(" | ");
 
+  const alias = getUserAlias();
+  const aliasLine = alias
+    ? `<span><strong>${esc(t("pdf.patient_alias"))}:</strong> ${esc(alias)}</span>`
+    : "";
+
   return `<!DOCTYPE html>
 <html dir="${dir}" lang="${i18n.language}">
 <head>
@@ -104,6 +109,7 @@ export function buildReportHtml(result: StoredAssessmentResult): string {
     <div class="subtitle">${esc(t("app_name"))}</div>
     <h1>${esc(t("pdf.document_title"))}</h1>
     <div class="meta">
+      ${aliasLine}
       <span><strong>${esc(t("pdf.date"))}:</strong> ${esc(dateLabel)}</span>
       <span>${esc(t("pdf.generated_by"))}</span>
     </div>
