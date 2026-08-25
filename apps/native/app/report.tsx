@@ -10,6 +10,7 @@ import { WebView } from "react-native-webview";
 
 import { Container } from "@/components/container";
 import { buildReportHtml } from "@/lib/pdf/report-template";
+import { ensureNotificationPermission } from "@/lib/notifications/permissions";
 import {
   getLatestResult,
   getReminderEnabled,
@@ -77,7 +78,11 @@ export default function Report() {
   }
 
   async function toggleReminder(value: boolean) {
+    const permitted = await ensureNotificationPermission();
+    if (!permitted) return;
+
     setReminderOn(value);
+    setReminderEnabled(value);
     await Notifications.cancelScheduledNotificationAsync(
       REMINDER_NOTIFICATION_ID,
     ).catch(() => {});
