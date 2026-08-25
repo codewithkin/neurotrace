@@ -12,6 +12,7 @@ import {
   isReportUnlocked,
   unlockReport,
 } from "@/lib/storage/app-storage";
+import { ADS_ENABLED } from "@/lib/ads/config";
 
 function ScoreBar({
   label,
@@ -58,17 +59,19 @@ export default function Results() {
   const unlocked = isReportUnlocked(result.id);
 
   async function handleUnlockCta() {
-    if (unlocked) {
+    if (!result || unlocked) {
       router.push("/report");
       return;
     }
-    // Rewarded-ad flow is wired in the ads service.
-    const { showPdfUnlockAd } = await import("@/lib/ads/rewarded");
-    const rewarded = await showPdfUnlockAd();
-    if (rewarded && result) {
-      unlockReport(result.id);
-      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    if (ADS_ENABLED) {
+      // Rewarded-ad flow is wired in the ads service.
+      const { showPdfUnlockAd } = await import("@/lib/ads/rewarded");
+      const rewarded = await showPdfUnlockAd();
+      if (!rewarded) return;
     }
+    // V1.0 (ads disabled): the reveal button unlocks the report directly.
+    unlockReport(result.id);
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
   }
 
   return (
@@ -118,7 +121,11 @@ export default function Results() {
       {/* CTAs */}
       <View className="gap-3 pb-8">
         <Button size="lg" onPress={handleUnlockCta}>
-          {unlocked ? t("results.unlocked_cta") : t("results.unlock_cta")}
+          {unlocked
+            ? t("results.unlocked_cta")
+            : ADS_ENABLED
+              ? t("results.unlock_cta")
+              : t("results.reveal_cta")}
         </Button>
         <Button
           variant="ghost"

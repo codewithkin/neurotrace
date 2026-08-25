@@ -5,7 +5,7 @@ import {
   RewardedAdEventType,
 } from "react-native-google-mobile-ads";
 
-import { getRewardedAdUnit, REQUEST_NON_PERSONALIZED } from "./config";
+import { getRewardedAdUnit, REQUEST_NON_PERSONALIZED, ADS_ENABLED } from "./config";
 import { ensureAdsConsent } from "./consent";
 
 let sdkInitialized = false;
@@ -29,6 +29,9 @@ async function ensureSdkInitialized() {
 export async function showRewardedAd(
   purpose: "pdfUnlock" | "trendExport",
 ): Promise<boolean> {
+  // V1.0: ads are disabled — treat every gated action as instantly unlocked.
+  if (!ADS_ENABLED) return true;
+
   await ensureSdkInitialized();
 
   let rewarded = false;
