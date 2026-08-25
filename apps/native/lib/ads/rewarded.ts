@@ -6,12 +6,14 @@ import {
 } from "react-native-google-mobile-ads";
 
 import { getRewardedAdUnit, REQUEST_NON_PERSONALIZED } from "./config";
+import { ensureAdsConsent } from "./consent";
 
 let sdkInitialized = false;
 
 async function ensureSdkInitialized() {
   if (sdkInitialized) return;
   try {
+    await ensureAdsConsent();
     await MobileAds().initialize();
   } catch {
     // SDK may fail on unsupported platforms (e.g. Expo Go); ads simply won't show.
