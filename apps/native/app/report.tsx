@@ -9,6 +9,7 @@ import { Text, View } from "react-native";
 import { WebView } from "react-native-webview";
 
 import { Container } from "@/components/container";
+import { savePdfToFiles } from "@/lib/pdf/save-pdf";
 import { buildReportHtml } from "@/lib/pdf/report-template";
 import {
   cancelReassessmentReminder,
@@ -72,6 +73,11 @@ export default function Report() {
     });
   }
 
+  async function handleSave() {
+    if (!pdfUri) return;
+    await savePdfToFiles(pdfUri, "neurotrace-report.pdf");
+  }
+
   async function handlePrint() {
     if (!result) return;
     await Print.printAsync({ html: buildReportHtml(result) });
@@ -121,12 +127,17 @@ export default function Report() {
             variant="secondary"
             className="flex-1"
             isDisabled={!pdfUri}
+            onPress={handleSave}
+          >
+            {t("report.save_cta")}
+          </Button>
+          <Button
+            variant="secondary"
+            className="flex-1"
+            isDisabled={!pdfUri}
             onPress={handleShare}
           >
             {t("report.share_cta")}
-          </Button>
-          <Button variant="secondary" className="flex-1" onPress={handlePrint}>
-            {t("report.print_cta")}
           </Button>
         </View>
 
