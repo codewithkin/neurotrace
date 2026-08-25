@@ -1,0 +1,191 @@
+{
+  "common": {
+    "continue": "Continua",
+    "back": "Indietro",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "done": "Fatto",
+    "next": "Avanti",
+    "start": "Inizia"
+  },
+  "app_name": "NeuroTrace",
+  "onboarding": {
+    "steps_indicator": "Passo {{current}} di {{total}}",
+    "language": {
+      "title": "Scegli la tua lingua",
+      "subtitle": "Puoi cambiarla in qualsiasi momento nelle impostazioni."
+    },
+    "intent": {
+      "title": "Cosa ti porta qui?",
+      "subtitle": "Adatteremo la tua esperienza.",
+      "option_doctor_visit": "Prepararsi per una visita medica",
+      "option_focus_struggles": "Difficoltà di concentrazione",
+      "option_organization": "L'organizzazione mi travolge",
+      "option_curious": "Semplicemente curioso dei miei tratti",
+      "option_support_someone": "Supportare qualcuno"
+    },
+    "value": {
+      "title": "Un report pronto per il medico, all'istante",
+      "subtitle": "Rispondi a 18 domande rapide e ottieni un report PDF strutturato da consegnare al tuo medico o terapeuta — gratis.",
+      "pdf_preview_title": "Report Riepilogativo Medico",
+      "pdf_preview_subtitle": "Autovalutazione WHO ASRS v1.1",
+      "pdf_preview_row_score": "Punteggio Parte A",
+      "pdf_preview_row_inattention": "Sottoscala Disattenzione",
+      "pdf_preview_row_hyperactivity": "Sottoscala Iperattività"
+    },
+    "pace": {
+      "title": "Come preferisci rispondere?",
+      "fast_pace": "Ritmo veloce",
+      "fast_pace_desc": "Una domanda alla volta, avanzamento automatico. Consigliato.",
+      "full_list": "Elenco completo",
+      "full_list_desc": "Scorri tutte le domande su un'unica schermata."
+    },
+    "legal": {
+      "checkbox": "Comprendo che questo è uno strumento educativo di autovalutazione basato sul WHO ASRS v1.1 e non una diagnosi clinica.",
+      "cta": "Inizia"
+    }
+  },
+  "assessment": {
+    "part_a_header": "Screening Principale",
+    "part_b_header": "Gravità e Frequenza",
+    "progress": "Domanda {{current}} di {{total}}",
+    "part_a_intro": "Negli ultimi 6 mesi, con quale frequenza hai sperimentato quanto segue?",
+    "milestone_badge": "Screening principale completato!",
+    "part_b_transition": "Solo altri 12 tratti veloci — stai andando alla grande!",
+    "calculate_cta": "Calcola il Mio Profilo di Concentrazione",
+    "calculating": "Analisi delle risposte…",
+    "answers_saved": "Risposte salvate automaticamente",
+    "resume_cta": "Riprendi Valutazione",
+    "questions": {
+      "q1": "Con quale frequenza fai fatica a completare gli ultimi dettagli di un progetto, dopo che le parti difficili sono state fatte?",
+      "q2": "Con quale frequenza fai difficoltà a mettere in ordine le cose quando devi fare un compito che richiede organizzazione?",
+      "q3": "Con quale frequenza hai problemi a ricordarti appuntamenti o impegni?",
+      "q4": "Quando un compito richiede molta riflessione, con quale frequenza lo eviti o rimandi l'inizio?",
+      "q5": "Con quale frequenza muovi o agiti mani o piedi quando devi stare seduto a lungo?",
+      "q6": "Con quale frequenza ti senti eccessivamente attivo e spinto a fare cose, come se fossi spinto da un motore?",
+      "q7": "Con quale frequenza commetti errori di distrazione quando lavori su qualcosa di noioso o impegnativo?",
+      "q8": "Con quale frequenza fai difficoltà a mantenere l'attenzione su un lavoro noioso o ripetitivo?",
+      "q9": "Con quale frequenza fai difficoltà a concentrarti su ciò che le persone ti dicono, anche quando ti parlano direttamente?",
+      "q10": "Con quale frequenza smarisci oggetti o fai fatica a trovarli a casa o al lavoro?",
+      "q11": "Con quale frequenza vieni distratto dall'attività o dal rumore intorno a te?",
+      "q12": "Con quale frequenza lasci il posto in riunioni o altre situazioni in cui è previsto restare seduti?",
+      "q13": "Con quale frequenza ti senti irrequieto o agitato?",
+      "q14": "Con quale frequenza fai difficoltà a rilassarti quando hai tempo per te?",
+      "q15": "Con quale frequenza ti sorprendi a parlare troppo in situazioni sociali?",
+      "q16": "In una conversazione, con quale frequenza completi le frasi del tuo interlocutore prima che possa finirle da solo?",
+      "q17": "Con quale frequenza fai fatica ad aspettare il tuo turno quando serve rispettare i turni?",
+      "q18": "Con quale frequenza interrompi gli altri quando sono impegnati?"
+    }
+  },
+  "scale": {
+    "never": "Mai",
+    "rarely": "Raramente",
+    "sometimes": "A volte",
+    "often": "Spesso",
+    "very_often": "Molto spesso"
+  },
+  "results": {
+    "title": "Il Tuo Profilo di Concentrazione",
+    "classification": {
+      "high_consistency": "Significativa Coerenza dei Tratti Rilevata",
+      "low_consistency": "Bassa Coerenza dei Tratti Rilevata"
+    },
+    "disclaimer": "Questo è un risultato educativo di autovalutazione basato sul WHO ASRS v1.1. Non è una diagnosi medica.",
+    "inattention_label": "Sottoscala Disattenzione",
+    "hyperactivity_label": "Sottoscala Iperattività",
+    "part_a_label": "Punteggio Principale Parte A",
+    "unlock_cta": "Guarda 30s di Pubblicità per Sbloccare il Report Medico",
+    "unlocked_cta": "Vedi Il Tuo Report Medico",
+    "retake_cta": "Rifai la Valutazione",
+    "trait_breakdown_title": "Dettaglio dei Tratti"
+  },
+  "report": {
+    "title": "Riepilogo Medico",
+    "save_cta": "Salva in File",
+    "share_cta": "Condividi via WhatsApp / Email",
+    "print_cta": "Stampa",
+    "generating": "Generazione report…",
+    "reminder_toggle": "Attiva Promemoria di Rivalutazione a 30 Giorni",
+    "reminder_desc": "Ti invieremo una notifica locale tra 30 giorni suggerendo una rivalutazione.",
+    "reminder_scheduled": "Promemoria programmato",
+    "reminder_cancelled": "Promemoria disattivato",
+    "locked_banner": "Sblocca con una breve pubblicità per generare il tuo PDF."
+  },
+  "tracker": {
+    "title": "Check-in Giornaliero",
+    "streak": "Serie di {{count}} giorni",
+    "focus_level": "Livello di Concentrazione",
+    "brain_fog": "Nebbia Mentale",
+    "executive_friction": "Attrito Esecutivo",
+    "mood": "Umore",
+    "medication_taken": "Farmaco preso oggi",
+    "save_entry": "Salva Voce",
+    "entry_saved": "Salvato! A domani.",
+    "already_logged": "Già registrato oggi",
+    "logged_toast": "Check-in di oggi completato!"
+  },
+  "history": {
+    "title": "Storico e Tendenze",
+    "assessment_trends": "Tendenze dei Punteggi",
+    "stable": "Stabile",
+    "improving": "In miglioramento",
+    "elevated": "Elevato",
+    "no_data": "Completa una valutazione per iniziare a monitorare le tendenze.",
+    "monthly_reassessment_cta": "Avvia Rivalutazione Mensile",
+    "daily_entries": "Voci giornaliere",
+    "legend_inattention": "Disattenzione",
+    "legend_hyperactivity": "Iperattività"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "language": "Lingua",
+    "retake_assessment": "Rifai la Valutazione",
+    "remove_ads": "Rimuovi pubblicità e supporta lo sviluppo",
+    "remove_ads_desc": "1,99 €/mese — mantiene NeuroTrace senza server.",
+    "privacy": "Privacy",
+    "privacy_note": "Tutti i dati sono salvati solo localmente su questo dispositivo. Nulla viene caricato online.",
+    "about": "Info",
+    "version": "Versione",
+    "clear_data": "Cancella tutti i dati",
+    "clear_data_confirm": "Eliminare tutti i dati locali di valutazione e monitoraggio? L'operazione non è reversibile."
+  },
+  "cross_promo": {
+    "banner": "Travolto dal rumore interiore in questo momento?",
+    "cta": "Apri Brown Noise for Focus"
+  },
+  "pdf": {
+    "document_title": "Report Riepilogativo Medico",
+    "generated_by": "Generato da NeuroTrace — ADHD Symptom Log",
+    "patient_alias": "Preparato per",
+    "date": "Data",
+    "instrument": "Strumento: WHO Adult ADHD Self-Report Scale (ASRS v1.1)",
+    "part_a_summary": "Riepilogo Parte A",
+    "part_a_positive": "{{score}} item su 6 hanno superato la soglia di screening (4+ indica alta coerenza dei tratti).",
+    "subscale_summary": "Dettaglio delle Sottoscale",
+    "response_matrix": "Matrice delle Risposte (0 = Mai … 4 = Molto spesso)",
+    "question": "#",
+    "symptom": "Area del Sintomo",
+    "response": "Risposta",
+    "footer_citation": "Fonte: World Health Organization Adult ADHD Self-Report Scale (ASRS v1.1) Symptom Checklist. Questo documento è un riepilogo educativo di autovalutazione e non costituisce una diagnosi clinica.",
+    "symptoms": {
+      "careless_mistakes": "Errori di distrazione / scarsa attenzione ai dettagli",
+      "restless_hands": "Mani o piedi irrequieti",
+      "difficulty_concentrating": "Difficoltà di concentrazione",
+      "finishing_tasks": "Difficoltà a finire i compiti",
+      "disorganization": "Disorganizzazione",
+      "avoiding_sustained_effort": "Evitare lo sforzo mentale prolungato",
+      "losing_things": "Perdere oggetti",
+      "easily_distracted": "Facilmente distraibile",
+      "forgetfulness": "Dimenticanze",
+      "fidgeting": "Agitazione motoria",
+      "leaving_seat": "Alzarsi dal posto",
+      "feeling_restless": "Sensazione di irrequietezza",
+      "difficulty_relaxing": "Difficoltà a rilassarsi",
+      "talks_excessively": "Parlare eccessivamente",
+      "interrupting": "Interrompere gli altri",
+      "impatience": "Impazienza",
+      "intruding_on_others": "Immischiarsi negli affari altrui",
+      "acting_without_thinking": "Agire senza pensare"
+    }
+  }
+}

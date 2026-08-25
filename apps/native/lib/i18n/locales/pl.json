@@ -1,0 +1,191 @@
+{
+  "common": {
+    "continue": "Kontynuuj",
+    "back": "Wstecz",
+    "save": "Zapisz",
+    "cancel": "Anuluj",
+    "done": "Gotowe",
+    "next": "Dalej",
+    "start": "Rozpocznij"
+  },
+  "app_name": "NeuroTrace",
+  "onboarding": {
+    "steps_indicator": "Krok {{current}} z {{total}}",
+    "language": {
+      "title": "Wybierz swój język",
+      "subtitle": "Możesz to zmienić w każdej chwili w ustawieniach."
+    },
+    "intent": {
+      "title": "Co Cię tu sprowadza?",
+      "subtitle": "Dopasujemy Twoje doświadczenie.",
+      "option_doctor_visit": "Przygotowuję się do wizyty u lekarza",
+      "option_focus_struggles": "Mam trudności z koncentracją",
+      "option_organization": "Organizacja mnie przytłacza",
+      "option_curious": "Po prostu jestem ciekaw/a swoich cech",
+      "option_support_someone": "Wspieram kogoś innego"
+    },
+    "value": {
+      "title": "Raport gotowy dla lekarza, natychmiast",
+      "subtitle": "Odpowiedz na 18 szybkich pytań i otrzymaj uporządkowany raport PDF do przekazania lekarzowi lub terapeucie — bezpłatnie.",
+      "pdf_preview_title": "Raport Podsumowujący dla Lekarza",
+      "pdf_preview_subtitle": "Samoopis WHO ASRS v1.1",
+      "pdf_preview_row_score": "Wynik Części A",
+      "pdf_preview_row_inattention": "Podskala nieuwagi",
+      "pdf_preview_row_hyperactivity": "Podskala nadaktywności"
+    },
+    "pace": {
+      "title": "Jak wolisz odpowiadać?",
+      "fast_pace": "Szybkie tempo",
+      "fast_pace_desc": "Jedno pytanie naraz, automatyczne przejście. Zalecane.",
+      "full_list": "Pełna lista",
+      "full_list_desc": "Przewijaj wszystkie pytania na jednym ekranie."
+    },
+    "legal": {
+      "checkbox": "Rozumiem, że to edukacyjne narzędzie samoopisu oparte na WHO ASRS v1.1, a nie kliniczna diagnoza medyczna.",
+      "cta": "Zaczynamy"
+    }
+  },
+  "assessment": {
+    "part_a_header": "Badanie Główne",
+    "part_b_header": "Nasilenie i Częstotliwość",
+    "progress": "Pytanie {{current}} z {{total}}",
+    "part_a_intro": "W ciągu ostatnich 6 miesięcy jak często doświadczałeś/aś następujących rzeczy?",
+    "milestone_badge": "Badanie główne ukończone!",
+    "part_b_transition": "Zostało tylko 12 szybkich cech — świetnie Ci idzie!",
+    "calculate_cta": "Oblicz Mój Profil Koncentracji",
+    "calculating": "Analiza odpowiedzi…",
+    "answers_saved": "Odpowiedzi zapisują się automatycznie",
+    "resume_cta": "Wróć do Oceny",
+    "questions": {
+      "q1": "Jak często masz kłopoty z dopięciem ostatnich szczegółów projektu, gdy trudniejsze części są już zrobione?",
+      "q2": "Jak często masz trudność z uporządkowaniem rzeczy, gdy zadanie wymaga organizacji?",
+      "q3": "Jak często masz problemy z pamiętaniem o spotkaniach lub zobowiązaniach?",
+      "q4": "Gdy zadanie wymaga dużo myślenia, jak często unikasz rozpoczęcia lub odkładasz je?",
+      "q5": "Jak often poruszasz lub kręcisz rękami albo stopami, gdy musisz siedzieć długo?",
+      "q6": "Jak often czujesz się nadmiernie aktywny/na i zmuszany do działania, jakby napędzał Cię silnik?",
+      "q7": "Jak often popełniasz błędy przez nieuwagę przy pracy nudnej lub wymagającej?",
+      "q8": "Jak often trudno Ci utrzymać uwagę przy pracy nudnej lub powtarzalnej?",
+      "q9": "Jak often trudno Ci skoncentrować się na tym, co mówią ludzie, nawet gdy mówią do Ciebie wprost?",
+      "q10": "Jak often gubisz rzeczy lub trudno Ci je znaleźć w domu lub w pracy?",
+      "q11": "Jak often rozpraszają Cię aktywność lub hałas wokół Ciebie?",
+      "q12": "Jak often opuszczasz miejsce na spotkaniach lub w innych sytuacjach, gdy trzeba siedzieć?",
+      "q13": "Jak often czujesz niepokój lub wewnętrzne rozedrganie?",
+      "q14": "Jak often trudno Ci się rozluźnić i odpocząć, gdy masz czas dla siebie?",
+      "q15": "Jak often zauważasz, że za dużo mówisz w sytuacjach towarzyskich?",
+      "q16": "W rozmowie jak często kończysz zdania rozmówcy, zanim on/on dokończy je sam/sama?",
+      "q17": "Jak often trudno Ci czekać na swoją kolej, gdy trzeba się zmieniać?",
+      "q18": "Jak often przerywasz innym, gdy są zajęci?"
+    }
+  },
+  "scale": {
+    "never": "Nigdy",
+    "rarely": "Rzadko",
+    "sometimes": "Czasami",
+    "often": "Często",
+    "very_often": "Bardzo często"
+  },
+  "results": {
+    "title": "Twój Profil Koncentracji",
+    "classification": {
+      "high_consistency": "Wykryto znaczną spójność cech",
+      "low_consistency": "Wykryto niską spójność cech"
+    },
+    "disclaimer": "To edukacyjny wynik samooceny oparty na WHO ASRS v1.1. Nie jest to diagnoza medyczna.",
+    "inattention_label": "Podskala nieuwagi",
+    "hyperactivity_label": "Podskala nadaktywności",
+    "part_a_label": "Główny wynik części A",
+    "unlock_cta": "Obejrzyj 30s reklamy, aby odblokować raport dla lekarza",
+    "unlocked_cta": "Zobacz Swój Raport dla Lekarza",
+    "retake_cta": "Powtórz ocenę",
+    "trait_breakdown_title": "Szczegóły cech"
+  },
+  "report": {
+    "title": "Podsumowanie dla Lekarza",
+    "save_cta": "Zapisz do Plików",
+    "share_cta": "Udostępnij przez WhatsApp / E-mail",
+    "print_cta": "Drukuj",
+    "generating": "Generowanie raportu…",
+    "reminder_toggle": "Włącz przypomnienie o ponownej ocenie po 30 dniach",
+    "reminder_desc": "Wyślemy lokalne powiadomienie za 30 dni z sugestią ponownej oceny.",
+    "reminder_scheduled": "Przypomnienie zaplanowane",
+    "reminder_cancelled": "Przypomnienie wyłączone",
+    "locked_banner": "Odblokuj krótką reklamą, aby wygenerować PDF."
+  },
+  "tracker": {
+    "title": "Codzienny Check-in",
+    "streak": "Seria {{count}} dni",
+    "focus_level": "Poziom koncentracji",
+    "brain_fog": "Mgła mózgowa",
+    "executive_friction": "Tarcie wykonawcze",
+    "mood": "Nastrój",
+    "medication_taken": "Lek przyjęty dzisiaj",
+    "save_entry": "Zapisz wpis",
+    "entry_saved": "Zapisano! Do zobaczenia jutro.",
+    "already_logged": "Już zapisano dziś",
+    "logged_toast": "Dzisiejszy check-in ukończony!"
+  },
+  "history": {
+    "title": "Historia i trendy",
+    "assessment_trends": "Trendy wyników",
+    "stable": "Stabilnie",
+    "improving": "Poprawa",
+    "elevated": "Podwyższone",
+    "no_data": "Ukończ ocenę, aby zacząć śledzić trendy.",
+    "monthly_reassessment_cta": "Rozpocznij comiesięczną ponowną ocenę",
+    "daily_entries": "Wpisy dzienne",
+    "legend_inattention": "Nieuwaga",
+    "legend_hyperactivity": "Nadaktywność"
+  },
+  "settings": {
+    "title": "Ustawienia",
+    "language": "Język",
+    "retake_assessment": "Powtórz ocenę",
+    "remove_ads": "Usuń reklamy i wesprzyj rozwój",
+    "remove_ads_desc": "$1,99/mies. — utrzymuje NeuroTrace bez serwerów.",
+    "privacy": "Prywatność",
+    "privacy_note": "Wszystkie dane są przechowywane lokalnie na tym urządzeniu. Nic nie jest wysyłane.",
+    "about": "Informacje",
+    "version": "Wersja",
+    "clear_data": "Usuń wszystkie dane",
+    "clear_data_confirm": "Usunąć wszystkie lokalne dane ocen i śledzenia? Tej operacji nie można cofnąć."
+  },
+  "cross_promo": {
+    "banner": "Przytłoczony/a wewnętrznym hałasem?",
+    "cta": "Otwórz Brown Noise for Focus"
+  },
+  "pdf": {
+    "document_title": "Raport Podsumowujący dla Lekarza",
+    "generated_by": "Wygenerowany przez NeuroTrace — ADHD Symptom Log",
+    "patient_alias": "Przygotowano dla",
+    "date": "Data",
+    "instrument": "Narzędzie: WHO Adult ADHD Self-Report Scale (ASRS v1.1)",
+    "part_a_summary": "Podsumowanie części A",
+    "part_a_positive": "{{score}} z 6 pozycji osiągnęło próg przesiewowy (4+ wskazuje na wysoką spójność cech).",
+    "subscale_summary": "Szczegóły podskal",
+    "response_matrix": "Macierz odpowiedzi (0 = Nigdy … 4 = Bardzo często)",
+    "question": "#",
+    "symptom": "Obszar objawu",
+    "response": "Odpowiedź",
+    "footer_citation": "Źródło: World Health Organization Adult ADHD Self-Report Scale (ASRS v1.1) Symptom Checklist. Ten dokument to edukacyjne podsumowanie samoopisu i nie stanowi diagnozy klinicznej.",
+    "symptoms": {
+      "careless_mistakes": "Błędy przez nieuwagę / brak dbałości o szczegóły",
+      "restless_hands": "Niespokojne ręce lub stopy",
+      "difficulty_concentrating": "Trudności z koncentracją",
+      "finishing_tasks": "Trudności z kończeniem zadań",
+      "disorganization": "Brak organizacji",
+      "avoiding_sustained_effort": "Unikanie długotrwałego wysiłku umysłowego",
+      "losing_things": "Gubienie rzeczy",
+      "easily_distracted": "Łatwo się rozprasza",
+      "forgetfulness": "Zapominanie",
+      "fidgeting": "Wiercenie się",
+      "leaving_seat": "Wstawanie z miejsca",
+      "feeling_restless": "Poczucie niepokoju",
+      "difficulty_relaxing": "Trudności z relaksacją",
+      "talks_excessively": "Mówienie zbyt dużo",
+      "interrupting": "Przerywanie innym",
+      "impatience": "Niecierpliwość",
+      "intruding_on_others": "Wtrącanie się w sprawy innych",
+      "acting_without_thinking": "Działanie bez zastanowienia"
+    }
+  }
+}

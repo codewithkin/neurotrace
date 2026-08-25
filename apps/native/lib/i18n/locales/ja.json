@@ -1,0 +1,191 @@
+{
+  "common": {
+    "continue": "続ける",
+    "back": "戻る",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "done": "完了",
+    "next": "次へ",
+    "start": "開始"
+  },
+  "app_name": "NeuroTrace",
+  "onboarding": {
+    "steps_indicator": "ステップ {{current}} / {{total}}",
+    "language": {
+      "title": "言語を選択してください",
+      "subtitle": "設定でいつでも変更できます。"
+    },
+    "intent": {
+      "title": "目的を教えてください",
+      "subtitle": "体験を調整します。",
+      "option_doctor_visit": "医師の診察に向けて準備中",
+      "option_focus_struggles": "集中に悩んでいる",
+      "option_organization": "整理整頓に圧倒されている",
+      "option_curious": "自分の特性に興味がある",
+      "option_support_someone": "誰かをサポートするため"
+    },
+    "value": {
+      "title": "すぐに使える医師向けレポート",
+      "subtitle": "18の簡単な質問に答えるだけで、医師やセラピストに渡せる構造化されたPDFレポートを無料で作成できます。",
+      "pdf_preview_title": "医師向けサマリーレポート",
+      "pdf_preview_subtitle": "WHO ASRS v1.1 自己報告",
+      "pdf_preview_row_score": "パートAスコア",
+      "pdf_preview_row_inattention": "不注意サブスケール",
+      "pdf_preview_row_hyperactivity": "多動性サブスケール"
+    },
+    "pace": {
+      "title": "回答方法はどちらがいいですか？",
+      "fast_pace": "高速ペース",
+      "fast_pace_desc": "1問ずつ自動的に進みます。おすすめです。",
+      "full_list": "全リスト表示",
+      "full_list_desc": "すべての質問を1画面でスクロールします。"
+    },
+    "legal": {
+      "checkbox": "これがWHO ASRS v1.1に基づく教育目的の自己報告ツールであり、臨床的な医学的診断ではないことを理解しています。",
+      "cta": "はじめる"
+    }
+  },
+  "assessment": {
+    "part_a_header": "コアスクリーニング",
+    "part_b_header": "程度と頻度",
+    "progress": "質問 {{current}} / {{total}}",
+    "part_a_intro": "過去6ヶ月間、以下をどのくらいの頻度で経験しましたか？",
+    "milestone_badge": "コアスクリーニング完了！",
+    "part_b_transition": "あと12項目です — その調子です！",
+    "calculate_cta": "フォーカスプロファイルを計算",
+    "calculating": "回答を分析中…",
+    "answers_saved": "回答は自動保存されます",
+    "resume_cta": "評価を再開",
+    "questions": {
+      "q1": "難しい部分が終わった後、プロジェクトの最後の細部を仕上げるのに苦労することはどのくらいの頻度ですか？",
+      "q2": "整理が必要な作業をするとき、物事を順序立てるのが難しいことはどのくらいの頻度ですか？",
+      "q3": "予定や義務を思い出すのに問題があることはどのくらいの頻度ですか？",
+      "q4": "多くの思考を必要とする作業があるとき、始めるのを避けたり遅らせたりすることはどのくらいの頻度ですか？",
+      "q5": "長時間座っていなければならないとき、手足をそわそわと動かすことはどのくらいの頻度ですか？",
+      "q6": "過度に活動的で、モーターに駆り立てられるように何かをせずにはいられないと感じることはどのくらいの頻度ですか？",
+      "q7": "退屈または困難な作業をするとき、うっかりミスをすることはどのくらいの頻度ですか？",
+      "q8": "退屈または繰り返しの作業中、注意を維持するのが難しいことはどのくらいの頻度ですか？",
+      "q9": "相手が直接話していても、内容に集中するのが難しいことはどのくらいの頻度ですか？",
+      "q10": "家や職場で物をなくしたり、見つけるのに苦労することはどのくらいの頻度ですか？",
+      "q11": "周囲の動きや騒音に気を取られることはどのくらいの頻度ですか？",
+      "q12": "会議など着席が求められる場面で席を立つことはどのくらいの頻度ですか？",
+      "q13": "落ち着きがないそわそわした気分になることはどのくらいの頻度ですか？",
+      "q14": "自分の時間があるときでも、リラックスしてくつろぐのが難しいことはどのくらいの頻度ですか？",
+      "q15": "社交の場で話しすぎていることに気づくことはどのくらいの頻度ですか？",
+      "q16": "会話中、相手が言い終わる前に相手の文を完成させてしまうことはどのくらいの頻度ですか？",
+      "q17": "順番を待つ必要がある場面で、自分の番を待つのが難しいことはどのくらいの頻度ですか？",
+      "q18": "他の人が忙しいときに邪魔をすることはどのくらいの頻度ですか？"
+    }
+  },
+  "scale": {
+    "never": "全くない",
+    "rarely": "めったにない",
+    "sometimes": "ときどき",
+    "often": "しばしば",
+    "very_often": "非常に多い"
+  },
+  "results": {
+    "title": "あなたのフォーカスプロファイル",
+    "classification": {
+      "high_consistency": "顕著な特性の一貫性が検出されました",
+      "low_consistency": "特性の一貫性は低めです"
+    },
+    "disclaimer": "これはWHO ASRS v1.1に基づく教育目的の自己評価結果であり、医学的診断ではありません。",
+    "inattention_label": "不注意サブスケール",
+    "hyperactivity_label": "多動性サブスケール",
+    "part_a_label": "パートAコアスコア",
+    "unlock_cta": "30秒の広告を見て医師向けレポートを解除",
+    "unlocked_cta": "医師向けレポートを見る",
+    "retake_cta": "評価をやり直す",
+    "trait_breakdown_title": "特性の内訳"
+  },
+  "report": {
+    "title": "医師向けサマリー",
+    "save_cta": "ファイルに保存",
+    "share_cta": "WhatsApp / メールで共有",
+    "print_cta": "印刷",
+    "generating": "レポートを生成中…",
+    "reminder_toggle": "30日後の再評価リマインダーを有効にする",
+    "reminder_desc": "30日後に再評価をおすすめするローカル通知をお送りします。",
+    "reminder_scheduled": "リマインダーを設定しました",
+    "reminder_cancelled": "リマインダーを無効にしました",
+    "locked_banner": "短い広告を見るとPDFレポートを作成できます。"
+  },
+  "tracker": {
+    "title": "デイリーチェックイン",
+    "streak": "{{count}}日連続達成",
+    "focus_level": "集中レベル",
+    "brain_fog": "脳の霧",
+    "executive_friction": "実行機能の摩擦",
+    "mood": "気分",
+    "medication_taken": "今日、服薬済み",
+    "save_entry": "記録を保存",
+    "entry_saved": "保存しました！また明日。",
+    "already_logged": "本日は記録済み",
+    "logged_toast": "今日のチェックイン完了！"
+  },
+  "history": {
+    "title": "履歴と傾向",
+    "assessment_trends": "スコアの推移",
+    "stable": "安定",
+    "improving": "改善傾向",
+    "elevated": "上昇傾向",
+    "no_data": "評価を完了すると傾向の追跡が始まります。",
+    "monthly_reassessment_cta": "月次再評価を開始",
+    "daily_entries": "日々の記録",
+    "legend_inattention": "不注意",
+    "legend_hyperactivity": "多動性"
+  },
+  "settings": {
+    "title": "設定",
+    "language": "言語",
+    "retake_assessment": "評価をやり直す",
+    "remove_ads": "広告を削除して開発を支援",
+    "remove_ads_desc": "月額$1.99 — NeuroTraceのサーバーレス運営を支えます。",
+    "privacy": "プライバシー",
+    "privacy_note": "すべてのデータはこの端末内にのみ保存されます。外部に送信されることはありません。",
+    "about": "情報",
+    "version": "バージョン",
+    "clear_data": "すべてのデータを消去",
+    "clear_data_confirm": "ローカルの評価・記録データをすべて削除しますか？この操作は取り消せません。"
+  },
+  "cross_promo": {
+    "banner": "今、頭の中のノイズに圧倒されていませんか？",
+    "cta": "Brown Noise for Focus を開く"
+  },
+  "pdf": {
+    "document_title": "医師向けサマリーレポート",
+    "generated_by": "NeuroTrace — ADHD Symptom Log による生成",
+    "patient_alias": "対象者",
+    "date": "日付",
+    "instrument": "評価尺度：WHO成人ADHD自己報告尺度（ASRS v1.1）",
+    "part_a_summary": "パートAコアスクリーニング",
+    "part_a_positive": "6項目中{{score}}項目がスクリーニング閾値を満たしました（4以上で高い一貫性を示します）。",
+    "subscale_summary": "サブスケールの内訳",
+    "response_matrix": "回答マトリクス（0 = 全くない … 4 = 非常に多い）",
+    "question": "#",
+    "symptom": "症状領域",
+    "response": "回答",
+    "footer_citation": "出典：世界保健機関（WHO）成人ADHD自己報告尺度（ASRS v1.1）症状チェックリスト。本文書は教育目的の自己報告サマリーであり、臨床診断ではありません。",
+    "symptoms": {
+      "careless_mistakes": "うっかりミス／細部への注意欠如",
+      "restless_hands": "手足がそわそわする",
+      "difficulty_concentrating": "集中の困難",
+      "finishing_tasks": "作業を仕上げることの困難",
+      "disorganization": "整理整頓の苦手さ",
+      "avoiding_sustained_effort": "持続的な精神的努力の回避",
+      "losing_things": "物をなくす",
+      "easily_distracted": "気が散りやすい",
+      "forgetfulness": "忘れっぽさ",
+      "fidgeting": "そわそわと動く",
+      "leaving_seat": "席を立つ",
+      "feeling_restless": "落ち着きのなさ",
+      "difficulty_relaxing": "リラックスの困難",
+      "talks_excessively": "話しすぎる",
+      "interrupting": "他人の妨害",
+      "impatience": "焦り・短気",
+      "intruding_on_others": "他人の領域への介入",
+      "acting_without_thinking": "考えずに行動する"
+    }
+  }
+}
