@@ -104,8 +104,9 @@ literally (`rounded-[16px]`, `rounded-[6px]`, `rounded-[24px]`).
 Without it a finished screener cannot be retaken, because the answers now
 persist.
 
-**Guessed, please confirm:** "Continue in the app" deep-links
-`neurotrace://` and falls back after 900ms to
-`play.google.com/store/apps/details?id=com.anonymous.neurotrace`. That
-package id comes from `app.json`; if the Play listing differs, fix
-`STORE_URL` in `results-view.tsx`.
+**Please confirm:** "Continue in the app" deep-links `neurotrace://` and
+falls back after 900ms to
+`play.google.com/store/apps/details?id=com.codewithkin.neurotrace`. That
+package id is the one `app.json` carries in the working tree — it is being
+renamed from `com.anonymous.neurotrace` in an **uncommitted** change, so
+whichever id ships must match `STORE_URL` in `results-view.tsx`.

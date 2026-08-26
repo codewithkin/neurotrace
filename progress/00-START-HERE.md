@@ -131,9 +131,13 @@ Windows checkout:
 4. **`plans/01` T04 — intent options.** The design shows four with
    different wording; we ship five. Adopting it drops "Supporting someone
    else". Product call, still blocked on you.
-5. **`STORE_URL`** in `apps/web/src/components/app/results-view.tsx` is
-   built from the `com.anonymous.neurotrace` package id in `app.json`. If
-   the Play listing differs, fix it.
+5. **The bundle id is mid-rename.** `app.json` has an uncommitted change
+   from `com.anonymous.neurotrace` to `com.codewithkin.neurotrace` for
+   both platforms. `STORE_URL` in
+   `apps/web/src/components/app/results-view.tsx` follows the new id;
+   whichever one ships, the two must agree. Renaming the Android package
+   also means a **new Play listing** — the existing one cannot be updated
+   under a different applicationId.
 6. **"The science"** nav link still points at `/health` — a guess.
 
 ## How to work here

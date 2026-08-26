@@ -29,7 +29,7 @@ const DARK = {
 /** Deep link first, store listing if nothing handles the scheme. */
 const APP_SCHEME = "neurotrace://";
 const STORE_URL =
-  "https://play.google.com/store/apps/details?id=com.anonymous.neurotrace";
+  "https://play.google.com/store/apps/details?id=com.codewithkin.neurotrace";
 
 const BARS = [
   { key: "inattention", gradient: "linear-gradient(90deg,#6d42e8,#a855f7)" },
