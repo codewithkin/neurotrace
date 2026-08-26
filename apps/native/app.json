@@ -9,7 +9,7 @@
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.neurotrace"
+      "bundleIdentifier": "com.codewithkin.neurotrace"
     },
     "android": {
       "adaptiveIcon": {
@@ -17,7 +17,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "com.anonymous.neurotrace"
+      "package": "com.codewithkin.neurotrace"
     },
     "web": {
       "bundler": "metro",
