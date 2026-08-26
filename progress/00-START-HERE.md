@@ -8,39 +8,28 @@ check-in and trends. Expo monorepo: `apps/native` (Expo 57 + heroui-native
 > Read `AGENT-WORKFLOW.md` first — that is *how* work is done here.
 > This file is *what* to build next.
 
-Last updated: end of session 3 (26 Aug 2026).
+Last updated: end of session 4 (26 Aug 2026).
 
-## The rule that comes before everything else
+## The state of things
 
-**Open the design file for the screen you are building. Every time.**
-`designs/NeuroTrace Screens.dc.html` — find your screen via
-`data-screen-label="Light 06 Part A question"` (also `Dark NN …`, `Web N …`).
-Designs outrank prose for appearance; `systems/09-decisions.md` outranks
-them for behaviour. Distilled tokens/type/motion live in
-`systems/03-design-system.md` but the HTML wins on specifics.
+**Every screen in the design file is now implemented.** Plans 01-04 are
+built and typecheck. Plan 05 T02 (token parity) is done.
 
-Light and dark variants differ **only** in the CSS custom properties on the
-screen's outer div — the markup is byte-identical. Build once against
-tokens and both themes follow.
-
-Two proofs this matters, both from real defects:
-heroui-native has no `primary` colour, so `bg-primary` rendered without
-violet until `global.css` aliased it to accent; and `packages/ui` remaps
-shadcn's radius scale, so on web `rounded-xl` is **16px, not 12px**.
-Unknown *and* misremembered utility classes both fail silently.
+**Almost none of it has been looked at.** The three web screens have been
+rendered, measured and screenshotted. **All fifteen native screens have
+only ever been typechecked.** That is the single biggest risk in the
+project right now, and it is your first job.
 
 ## Your task
 
-1. **Look at what session 3 built.** Native onboarding (5 steps) and the
-   web landing page are written and typecheck, and the web page has been
-   screenshotted against the design — but **no native screen has ever been
-   rendered on a device.** Run `pnpm dev --filter native`, walk the five
-   onboarding steps in both themes against `Light/Dark 01`–`05`, and record
-   what is wrong in `plans/01-native-onboarding.md` before building more.
-2. **`plans/01` T03** (two-sessions pace adds a break state after Part A).
-3. Then `plans/02` (assessment flow), `plans/03` (tabs), `plans/04` T02–T03
-   (web screener + result), `plans/05` (audit).
-4. **`plans/01` T04 is blocked on the owner** — see Open questions below.
+1. **Run the app and look at it.** `pnpm dev --filter native`, walk every
+   screen in both themes against its design anchor, and write what is
+   wrong into `plans/05-audit.md` T01 before building anything new. The
+   order that matters most: onboarding 01-05, then the assessment flow
+   06-11, then the tabs 12-15.
+2. **Check the four judgement calls** in "Open questions" below.
+3. Then plan 05 T01 proper, and `eas build --platform android -p
+   production` to confirm the Play build is still green after all this.
 
 Commands (from the repo root, on Windows):
 
@@ -48,93 +37,104 @@ Commands (from the repo root, on Windows):
 pnpm run check-types --filter native
 pnpm run check-types --filter web
 pnpm run build --filter web                       # catches CSS/class errors
-pnpm run prebuild -- --clean --platform android   # config validation only
+node scripts/check-design-tokens.cjs              # palette parity, 84 assertions
 git add -A && git commit -m "feat(design): ..."   # one todo per commit
 ```
 
-## What NeuroTrace is, in five rules
+## The rule that comes before everything else
 
-1. Local-first privacy: health data never leaves the device (MMKV only).
-2. Compliance framing: screener/self-report language only; never
-   diagnosis/detector/test claims; disclaimer on every results surface.
-3. WHO ASRS v1.1 scoring lives only in `lib/asrs/scoring.ts`
-   (web twin: `apps/web/src/lib/asrs.ts`) — thresholds in
-   `progress/01-project.md`.
-4. All user-facing strings through i18next in **all 10 locales**
-   (en es de fr pt-BR ja it nl pl ar; ar = RTL).
-5. One todo, one commit, ticked with its SHA in the plan file.
+**Open the design file for the screen you are building. Every time.**
+`designs/NeuroTrace Screens.dc.html` — find your screen via
+`data-screen-label="Light 06 Part A question"` (also `Dark NN …`, `Web N …`).
+Designs outrank prose for appearance; `systems/09-decisions.md` outranks
+them for behaviour. Distilled tokens live in
+`systems/03-design-system.md` but the HTML wins on specifics.
+
+Light and dark differ **only** in the token block on the screen's outer
+div — with exactly three exceptions, all found in session 4: the Assess
+tab's resume-bar track (`#ffffff` vs `rgba(255,255,255,.14)`, now
+`--nt-tint-track`) and heroui's own Switch knob on two screens.
+
+**The design is not always self-consistent.** Its progress-bar widths
+disagree across screens 06/07/08; its report lists a flagged Part B item
+its own spec says cannot exist. Where it contradicts itself, pick the
+reading that is monotonic or reproducible, and write down why.
 
 ## What is already built
 
-- Full V1 feature set native (onboarding→results→report→tracker→history→
-  settings, ads scaffolding disabled) — `progress/04-changelog.md` session 1.
-  Play production build was passing at versionCode 11+.
-- Design foundation: palette tokens light/dark (`global.css`), motion
-  primitives, atoms, buttons/dots, `lib/theme.ts` (446e6e9, a3264b3).
-- **Session 3:** all five native onboarding steps rebuilt against the design
-  (`app/onboarding.tsx` rewritten wholesale); web landing + header rebuilt
-  against `Web 1 Landing`; **all 10 locale files repaired** — 767 strings
-  were double-encoded mojibake.
-- Web screener + result exist from an earlier pass, styled generically —
-  restyle per `plans/04-web.md` T02/T03.
+- Full V1 feature set, then rebuilt against the design across sessions
+  2-4: onboarding (5), assessment flow (6), tabs (4), web (3).
+- Palette + motion primitives, shared atoms, buttons, `PressableScale`
+  (with `contentStyle`), `AnimatedBar` (with `radius` / `trackColor`),
+  `AssessmentProgressHeader`, `ResponsePills`, `MetricSlider`, `ScoreChart`.
+- All 10 locales: 251 keys each, repaired and verified.
+- `scripts/check-design-tokens.cjs` — 84 assertions across the three
+  places the palette lives; proven to fail when tampered with.
 
-"Built" = written + typechecked. Only the **web landing page** has also been
-seen rendered.
+"Built" = written + typechecked. Only the **three web screens** have also
+been seen rendered.
 
 ## Read this before you write a line
 
-- **Never let PowerShell touch a locale file** (D-012). Every non-ASCII
-  string in all ten was double-encoded before session 3. Write them with
-  Python or Node only; canonical form is UTF-8 no BOM, LF, 2-space indent.
-  The guard: no locale file may contain `Ã`, `Â`, `â€` or bytes
-  0x81/0x8D/0x9D.
-- On web, `rounded-xl` is 16px and `rounded-lg` is 12px — `packages/ui`
-  offsets the whole shadcn radius scale. Use `rounded-[Npx]` for design
-  values.
-- `PressableScale` takes a `contentStyle` prop for values the class layer
-  cannot express exactly (1.5px borders, 17px CTA padding). Prefer it over
-  arbitrary classes on native.
-- The design's `padding-bottom:34px` on CTA blocks **is** the home-indicator
-  inset. `Container` already pads by `insets.bottom`, so subtract it
-  (`Math.max(0, 34 - insets.bottom)`) instead of adding 34 on top.
+- **Radius scales lie.** `rounded-2xl` is **16px on native** (heroui:
+  `--radius` 0.5rem x2) and **20px on web** (`packages/ui`: `--radius`
+  0.75rem +8px). Neither matches the other. This has caused two real
+  defects. Write design radii literally on web: `rounded-[16px]` (D-016).
+- **Never let PowerShell touch a locale file** (D-012). All ten were
+  double-encoded before session 3. Python or Node only; UTF-8 no BOM, LF,
+  2-space indent. Guard: no `Ã`, `Â`, `â€`, or bytes 0x81/0x8D/0x9D.
+- **Unknown utility classes fail silently.** If a value has to be exact
+  and you are not certain the class exists, use `contentStyle` /
+  `style={{...}}` instead of an arbitrary class, and let the token check
+  cover the colours.
+- The design's `padding-bottom:34px` on CTA blocks **is** the home
+  indicator. `Container` already pads by `insets.bottom`, so subtract it:
+  `Math.max(0, 34 - insets.bottom)`.
+- `ASRS_SYMPTOM_KEYS` was realigned in session 4 — it used to label every
+  question with a different item's symptom. If you touch the question
+  bank, re-check that map.
 - EAS build logs are brotli — decode with node `zlib.brotliDecompressSync`.
 - Kotlin pin plugin (`plugins/with-kotlin-version.js`) is load-bearing for
-  the Play build — don't remove.
-- `Surface variant="secondary"` is a neutral mid-tone; violet tint is
-  tertiary (`bg-nt-tint`). Progress fills must use primary/accent.
-- `eas.json` sets `requireCommit: true`, so **the working tree must be clean
-  before `eas build`** — uncommitted work never reaches the builder.
+  the Play build — don't remove it.
+- `eas.json` sets `requireCommit: true`, so **the working tree must be
+  clean before `eas build`** — uncommitted work never reaches the builder.
 
 ## If you are working over the Windows bridge (agent sessions)
 
-Establish limits by trying, not assuming. As of session 3, from the Linux
-VM that mounts the Windows checkout:
+Established by trying, sessions 3 and 4. From the Linux VM that mounts the
+Windows checkout:
 
-- `git` works — including `commit` — but **cannot unlink**. It recovers by
-  renaming and leaves `.git/objects/**/tmp_obj_*` and an empty
-  `.git/index.lock` behind. Harmless; clean up from Windows with `git gc`.
+- `git` works, **including commit**, but cannot unlink. It recovers by
+  renaming and leaves `.git/objects/**/tmp_obj_*` and stale `*.lock`
+  files behind. Clear locks by `mv`-ing them aside before each git call;
+  clean up from Windows with `git gc`.
 - `rm` fails with "Operation not permitted" anywhere under the mount.
-  `mv` works, including out of the way.
+  `mv` works.
 - `pnpm` is not installed there, and **background processes are reaped
-  between commands**, so anything longer than ~45s cannot finish. `tsc`
-  over the bridge takes minutes and will never complete.
-- What worked: stage the source into a cloud sandbox, `pnpm install
-  --frozen-lockfile`, and run `tsc`, `next build` and Playwright
-  screenshots there. That is how session 3 verified the web page.
+  between commands**, so nothing longer than ~45s can finish. `tsc` over
+  the bridge takes minutes and will never complete.
+- What works: stage the source into a cloud sandbox, `pnpm install
+  --frozen-lockfile`, and run `tsc`, `next build` and Playwright there.
+  That is how sessions 3 and 4 verified everything.
 
 ## Open questions for the owner
 
 1. **iOS onboarding has no way back.** The design has no Back control on
-   any of the five steps, so the implementation has none (D-011). Android
-   hardware back works. Accept, or add an off-design back affordance?
-2. **The legal checkbox copy got shorter.** It now reads the design's
-   "I understand this is a screening tool and not a medical diagnosis",
-   replacing the longer WHO-ASRS-citing sentence. The WHO framing is still
-   on the same screen in the subtitle and bullets. Confirm or revert.
-3. **`plans/01` T04 — intent options.** The design shows four options with
-   different wording; we ship five. Adopting the design drops "Supporting
-   someone else". Product call, blocked on you.
-4. **"The science" nav link** currently points at `/health`. Right target?
+   any of the five steps (D-011); Android hardware back works, iOS has
+   nothing. Accept, or add an off-design affordance?
+2. **Compliance copy changed twice.** The legal checkbox got shorter
+   (session 3), and the result classification now reads "Symptoms
+   consistent with ADHD" / "Symptoms below the screening threshold"
+   (session 4). Both are the design's words. Confirm or revert.
+3. **The symptom map realignment** changes what the PDF prints next to
+   every flagged item. Worth one clinical read-through.
+4. **`plans/01` T04 — intent options.** The design shows four with
+   different wording; we ship five. Adopting it drops "Supporting someone
+   else". Product call, still blocked on you.
+5. **`STORE_URL`** in `apps/web/src/components/app/results-view.tsx` is
+   built from the `com.anonymous.neurotrace` package id in `app.json`. If
+   the Play listing differs, fix it.
+6. **"The science"** nav link still points at `/health` — a guess.
 
 ## How to work here
 
@@ -151,6 +151,7 @@ START-HERE rewritten every session · decisions logged D-XXX in
 | `plans/*.md` | todos w/ SHAs | yes |
 | `systems/*.md` | architecture/data/design-system/decisions | yes |
 | `progress/*.md` | START-HERE, project, changelog, process | yes |
+| `scripts/*.cjs` | parity checks | yes |
 | `store-listings/*` | Play Store translations + verify.cjs | yes |
 | `designs/*.dc.html` | design source (never edit) | yes |
 | `designs/extracted/` | optional per-screen extracts | no |

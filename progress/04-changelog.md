@@ -1,5 +1,111 @@
 # Changelog
 
+## Session 4 (26 Aug 2026) — every remaining screen, both platforms
+
+**Plans 02, 03 and 04 built end to end: the whole assessment flow, all
+four tabs, the browser screener and the dark result page. Plus the token
+parity check (plan 05 T02) and a clinician-facing bug that had been
+shipping wrong labels since session 1.**
+
+### The bug worth reading first
+
+`ASRS_SYMPTOM_KEYS` — the map from question number to the short symptom
+label that appears on the **doctor's report and in the exported PDF** —
+was misaligned with the question bank. Item 1, "trouble wrapping up the
+final details of a project", was labelled *"Careless mistakes"*. Item 4,
+"avoid or delay a task that requires a lot of thought", was labelled
+*"Difficulty finishing tasks"*. The shift ran the whole way down: every
+one of the eighteen labels described a different item than the one it sat
+next to. A clinician reading the PDF would have been reading nonsense.
+
+Realigned against the ASRS v1.1 item texts. Item 9 ("difficulty
+concentrating on what people say to you") had no matching key, so
+`pdf.symptoms.listening_difficulty` is new in all ten locales;
+`acting_without_thinking` is now unused and left in place.
+
+### Native — plans 02 and 03, eleven screens
+
+Part A, milestone, Part B, calculating, results, doctor's report, and the
+four tabs, all against `Light/Dark 06`-`15`. New shared pieces:
+`AssessmentProgressHeader`, a rebuilt `ResponsePills`, `MetricSlider`,
+a redrawn `ScoreChart` on the design's own 320x172 viewBox, and status
+tokens (`--nt-amber-*`, `--nt-green-*`, `--nt-danger-*`, `--nt-ring`,
+`--nt-tint-track`) that Tailwind's amber-100/800 were a shade away from.
+
+Judgement calls, all in the plan files as Notes:
+
+1. **The design's progress widths contradict each other** — 17% at
+   "Question 1 of 6", 33% at "6 of 6", 50% at "Question 9 of 18". Only
+   n/18 is monotonic and it matches two of the three, so that is the bar.
+2. **No Calculate button** (D-015): the instrument auto-advances.
+3. **Flagged responses span both parts** (D-014), because `Light 11` shows
+   a Q9 that a Part-A-only rule cannot produce.
+4. **The check-in slider is hand-rolled** on PanResponder. heroui's Slider
+   cannot be reshaped to the design's 6px/20px geometry through class
+   names, and a wrong class fails silently here.
+5. **The report preview is native**, not a WebView — themeable and
+   instant; the HTML template still generates the actual PDF.
+6. **Cross-promo card kept** though the design omits it, per plan 02 T05.
+
+### Web — plan 04 T02 and T03
+
+Screener per `Web 2`, dark result page per `Web 3`, both verified in a
+browser rather than by reading the classes.
+
+The screener **now actually persists**. The plan believed it already used
+localStorage; it did not, and its own footer copy said the opposite of the
+design's ("refresh to start over" versus "Progress is kept in this browser
+only"). Answers and position go to `neurotrace.screener.v1`, guarded for
+private mode.
+
+The radius trap from session 3 bit again in a new place: the frequency
+pills rendered at 20px instead of the design's 16px, because
+`packages/ui` offsets shadcn's whole scale. Only a measured build caught
+it. Logged as D-016, and design radii on web are now literal.
+
+### i18n
+
+71 keys written across all ten locales — 550 new strings, 142 updated.
+Written by Python, never PowerShell (D-012). Verified afterwards: all ten
+files carry an identical 251-key tree, no BOM, LF, no mojibake residue.
+
+### Verification
+
+The Windows bridge still cannot run any of this (no pnpm; background
+processes reaped between commands), so everything ran in the cloud
+sandbox again:
+
+- `tsc --noEmit` clean for **native** and **web**;
+- `next build` clean;
+- the built site driven through all eighteen questions with Playwright and
+  screenshotted at 1280px;
+- the print stylesheet checked under `emulateMedia({media:'print'})` — it
+  renders as a plain white document, which is plan 04 T03's "done when";
+- `scripts/check-design-tokens.cjs` green at 84 assertions, and **made to
+  fail once on purpose** (Pillar 6) by flipping one hex in `theme.ts`.
+
+Two type errors surfaced and were fixed: a `Set<1|2|3|4|5|6>` that could
+not accept a plain `number`, and an `NTColors` type whose literal light
+values made the dark palette unassignable.
+
+**Still not verified: every native screen.** No simulator here. Eleven
+screens have now been written and typechecked without anyone looking at
+them, which is the largest outstanding risk in the project.
+
+### Judgement calls needing the owner
+
+1. The classification labels now read "Symptoms consistent with ADHD" /
+   "Symptoms below the screening threshold", replacing "Significant Trait
+   Consistency Detected". Design copy, compliance surface.
+2. The symptom-map realignment changes what the PDF says next to every
+   flagged item. Worth one read-through by someone clinical.
+3. "Continue in the app" falls back to a Play URL built from the
+   `com.anonymous.neurotrace` package id in `app.json`. If the real
+   listing differs, fix `STORE_URL`.
+4. Session 3's open questions (iOS has no back control; the shortened
+   legal checkbox; the intent options in plan 01 T04) are still open.
+
+
 ## Session 3 (26 Aug 2026) — onboarding shipped both platforms; the locale files were corrupt
 
 **Native onboarding (all five steps) and the web landing page built against

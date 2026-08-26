@@ -49,7 +49,7 @@ especially that every utility class actually resolved (unknown classes fail
 silently — the `bg-primary` lesson from session 1).
 
 ## T02 — Screener page restyle
-- [ ] `pending-T02`
+- [x] `cc27002`
 - **Commit:** `feat(web): screener restyled per design with selected pill ring`
 - **Spec:** compact header row: wordmark left, right mono caps
   "QUESTION {n} OF 18 · CORE SCREENING/PART B"; thin progress bar; eyebrow
@@ -61,7 +61,7 @@ silently — the `bg-primary` lesson from session 1).
 - **Done when:** matches Web 2; answers persist across reload.
 
 ## T03 — Result page rebuild (dark, print)
-- [ ] `pending-T03`
+- [x] `cc27002`
 - **Commit:** `feat(web): dark result page with gradient bars and print summary`
 - **Spec:** permanently dark (#0b0a0f) regardless of theme (D-009): badge
   chip amber "Symptoms consistent with ADHD"/green low variant + disclaimer;
@@ -73,3 +73,39 @@ silently — the `bg-primary` lesson from session 1).
   neurotrace:// or store fallback). Footer instrument citation line.
   Print stylesheet: white doc, ink text, no nav/badge colors.
 - **Done when:** matches Web 3; print preview is plain white document.
+
+
+## Notes (session 4) — T02 and T03
+
+Both built and **verified in a browser**: production build, served, driven
+through all eighteen questions with Playwright, screenshotted at 1280px,
+and the print stylesheet checked under `emulateMedia({media:'print'})` —
+it renders as a plain white document, which is T03's "done when".
+
+**The screener now persists.** The plan said it already used localStorage;
+it did not, and its own copy said the opposite ("refresh to start over")
+while the design's footer promises "Progress is kept in this browser
+only". Answers and position now go to `neurotrace.screener.v1`, guarded so
+private mode or blocked storage degrades to in-memory.
+
+**No intro screen.** The design does not show one and the landing CTA says
+"Give me my score", so `/app` opens on question one.
+
+**The site header steps aside under `/app`.** `Web 2` and `Web 3` carry
+their own compact headers, so `Header` returns null there and exports a
+shared `Wordmark`.
+
+**Radius trap, again.** `rounded-2xl` is 20px in this repo, not 16px —
+`packages/ui` offsets the whole shadcn scale. The pills were drawn at 20px
+until a measured build caught it. Design radii on web are now written
+literally (`rounded-[16px]`, `rounded-[6px]`, `rounded-[24px]`).
+
+**Added, not in the design:** a "Start over" ghost under the result CTAs.
+Without it a finished screener cannot be retaken, because the answers now
+persist.
+
+**Guessed, please confirm:** "Continue in the app" deep-links
+`neurotrace://` and falls back after 900ms to
+`play.google.com/store/apps/details?id=com.anonymous.neurotrace`. That
+package id comes from `app.json`; if the Play listing differs, fix
+`STORE_URL` in `results-view.tsx`.

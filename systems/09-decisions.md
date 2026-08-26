@@ -59,3 +59,21 @@ file may contain the sequences `Ã`, `Â`, `â€` or the C1 bytes 0x81/0x8D/0x9
 **D-013** — The web marketing site is forced to light (`forcedTheme="light"`,
 no mode toggle in the header) because all three web designs are light-only.
 The one dark surface, `/app/result`, paints its own ground per D-009.
+
+**D-014** — The doctor's report lists flagged responses from **both**
+parts: Part A items at or above their ASRS threshold (items 1-3 from
+"Sometimes", 4-6 from "Often"), plus Part B items answered "Often" or
+"Very often". Part A alone could not produce the Q9 row the design shows,
+and Part B has no shaded boxes on the paper instrument to inherit.
+
+**D-015** — Part B has no explicit Calculate button. Every other item in
+the instrument auto-advances and no design shows such a control, so
+answering item 18 goes straight to the calculating interstitial. Plan 02
+T03 asked for one; this supersedes it.
+
+**D-016** — Radius scales differ per app and neither matches Tailwind's
+defaults: `heroui-native` sets `--radius: 0.5rem` with multiplier steps
+(`rounded-2xl` = 16px), while `packages/ui` sets `--radius: 0.75rem` with
+`+4/+8/+12` offsets (`rounded-2xl` = 20px). Design radii are therefore
+written literally on web (`rounded-[16px]`) and only used as named steps
+on native where the step happens to equal the design value.

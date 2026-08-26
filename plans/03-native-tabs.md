@@ -5,7 +5,7 @@ Anchors: `Light/Dark 12 Daily check-in`, `13 Assess tab`, `14 History tab`,
 stats + report link targets).
 
 ## T01 — Assess tab build-out
-- [ ] `pending-T01`
+- [x] `4984eea`
 - **Commit:** `feat(design): assess tab hub with resume card and last-result stats`
 - **Touches:** `app/(tabs)/assess.tsx`
 - **Spec (three states):**
@@ -23,7 +23,7 @@ stats + report link targets).
 - **Done when:** all three states render per design; navigation correct.
 
 ## T02 — Daily check-in restyle
-- [ ] `pending-T02`
+- [x] `4984eea`
 - **Commit:** `feat(design): check-in screen with icon sliders and mono values`
 - **Touches:** `app/(tabs)/index.tsx`
 - **Spec:** keep streak chip (🔥 N-day) + h1; slider card radius 20 p-20:
@@ -36,7 +36,7 @@ stats + report link targets).
 - **Done when:** matches Light/Dark 12; saving/streak logic unchanged.
 
 ## T03 — History restyle
-- [ ] `pending-T03`
+- [x] `4984eea`
 - **Commit:** `feat(design): history chart card and sessions list per design`
 - **Touches:** `app/(tabs)/history.tsx`, `components/history/score-chart.tsx`
 - **Spec:** chart card radius 20: SVG viewBox 320×172, dashed gridlines at
@@ -52,7 +52,7 @@ stats + report link targets).
 - **Done when:** matches Light/Dark 14; real data renders.
 
 ## T04 — Settings restyle + daily reminder toggle (D-005)
-- [ ] `pending-T04`
+- [x] `4984eea`
 - **Commit:** `feat(design): settings per design with daily check-in reminder`
 - **Touches:** `app/(tabs)/settings.tsx`, `lib/notifications/reminders.ts`
   (add scheduleDailyCheckInReminder/cancel + storage flag)
@@ -68,7 +68,7 @@ stats + report link targets).
   schedules a real repeating notification.
 
 ## T05 — Tab bar restyle
-- [ ] `pending-T05`
+- [x] `4984eea`
 - **Commit:** `feat(design): tab bar icons and labels per design`
 - **Touches:** `app/(tabs)/_layout.tsx`
 - **Spec:** four tabs Check-in / Assess / History / Settings (i18n keys
@@ -76,3 +76,34 @@ stats + report link targets).
   stats-chart-outline/settings-outline, active solid variant tinted primary
   23px, inactive muted; label 10px w600. Active tint via tabBarActiveTintColor.
 - **Done when:** matches design footer in both themes.
+
+
+## Notes (session 4)
+
+All five todos built; shared commit; typechecks clean; **not yet rendered
+on a device**.
+
+**The check-in slider is hand-rolled** (`components/tracker/metric-slider.tsx`,
+PanResponder + absolute thumb) rather than heroui's Slider. The design's
+geometry is exact — 6px track at 3px radius, 20px thumb on the ground with
+a 2px violet ring — and library internals are not reachable through class
+names, where a wrong guess fails silently rather than loudly.
+
+**Metric names stay ours** (D-002): Focus level / Brain fog / Executive
+friction / Mood, not the designer's Focus / Restlessness / Sleep quality /
+Task follow-through. Icons follow the plan: locate / cloudy / cog / sunny.
+
+**Remove-ads row omitted** (D-004), so the App card has two rows rather
+than the design's three.
+
+**Assess-tab resume track** uses a new `--nt-tint-track` token: the design
+draws it `#ffffff` in light and `rgba(255,255,255,.14)` in dark, one of
+only three places where the dark screens differ by more than the token
+block (the other two are heroui's own Switch knob).
+
+**History series are percentages, not raw scores.** The design's axis is
+0-100 and its session rows quote the same numbers, so raw/36 would have
+plotted against the wrong scale.
+
+**Tab icons**: Ionicons has no `task-01` equivalent; `list-outline` stands
+in (D-007).
