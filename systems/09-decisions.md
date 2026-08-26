@@ -24,8 +24,9 @@ cancelled on toggle-off.
 **D-006** — Language grid ships ALL 10 supported locales even though the
 design mock showed 6. Owner explicitly overrode the designer.
 
-**D-007** — Icons are Ionicons equivalents of the designer's Hugeicons set;
-no new icon dependency (licensing + size).
+**D-007** — Icons are Ionicons equivalents of the designer's Hugeicons set
+on native, and lucide-react equivalents on web; no new icon dependency
+(licensing + size).
 
 **D-008** — Animations use only react-native-reanimated primitives
 (FadeSlideIn stagger, PressableScale, AnimatedBar) on native and plain CSS
@@ -38,3 +39,23 @@ design, regardless of site theme; print output renders white.
 `[System.IO.File]::WriteAllText(path, json, UTF8Encoding($false))`. PS 5.1
 `Out-File -Encoding ascii` corrupts non-ASCII; ConvertTo-Json escapes to
 \uXXXX which is safe.
+
+**D-011** — None of the five onboarding designs carries a visible Back
+control, so the implementation has none. To keep a mistap recoverable the
+screen registers `BackHandler` so Android hardware back steps to the
+previous question. **iOS has no equivalent affordance and therefore no way
+back** — flagged to the owner as a designer gap rather than patched with an
+off-design button.
+
+**D-012** — Supersedes D-010's mechanism. Locale JSON is written only by
+Python or Node, never by PowerShell in any form: as of session 3 all ten
+files had been double-encoded (UTF-8 bytes re-read as sloppy-windows-1252
+and re-encoded), corrupting 767 strings — every umlaut, every Japanese and
+Arabic character. Canonical on-disk form is now UTF-8 without BOM, LF
+endings, 2-space indent, `ensure_ascii=False`. The repair script lives in
+the session log of `progress/04-changelog.md`; the guard is that no locale
+file may contain the sequences `Ã`, `Â`, `â€` or the C1 bytes 0x81/0x8D/0x9D.
+
+**D-013** — The web marketing site is forced to light (`forcedTheme="light"`,
+no mode toggle in the header) because all three web designs are light-only.
+The one dark surface, `/app/result`, paints its own ground per D-009.

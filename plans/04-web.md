@@ -6,7 +6,7 @@ Existing logic to keep: `src/lib/asrs.ts` (scoring), `screener.tsx`
 `progress-bar.tsx`. Restyle, don't rebuild logic.
 
 ## T01 — Theme tokens + landing page
-- [ ] `pending-T01`
+- [x] `4bd419b`
 - **Commit:** `feat(web): landing page per design with brand palette`
 - **Touches:** `app/globals.css` (or tailwind config tokens), `components/header.tsx`, `app/page.tsx`
 - **Spec:** light site; nav = wordmark **Neuro**(violet #6d42e8)**Trace** +
@@ -19,6 +19,34 @@ Existing logic to keep: `src/lib/asrs.ts` (scoring), `screener.tsx`
   1px border). Footer citation strip. Animations: CSS keyframes fade-up
   staggered on load, hover lift on cards/buttons.
 - **Done when:** matches Web 1 at desktop + mobile widths.
+
+**Note (session 3):** built. Details worth knowing before T02/T03:
+
+- Tokens live in `apps/web/src/index.css`, overriding the shadcn neutrals
+  from `packages/ui` *after* the import so the shared package stays
+  generic. Three greys the design uses that shadcn has no slot for
+  (`#5f5b70` hero paragraph, `#8a8698` trust line, `#dcd9e2` outline
+  border) are exposed as `--nt-hero-sub` / `--nt-trust` / `--nt-chrome`.
+- The site is forced to light and the header's mode toggle is gone
+  (D-013). `mode-toggle.tsx` is now unreferenced but left in place.
+- `layout.tsx` no longer loads Geist: the design's type is the platform
+  system stack, now set on `--font-sans`. One fewer font download.
+- The design's nav is three links; they map to `/#how-it-works`,
+  `/health` ("The science") and `/privacy`. **The `/health` mapping is a
+  guess** — if "The science" should be its own page, say so.
+- Below `md` the three nav links collapse and only the violet CTA pill
+  remains; the h1 clamps between 2.25rem and 66px and the feature cards
+  stack. The static 1280px mock cannot express any of that.
+- Entrances are `.nt-rise` CSS keyframes with inline `animation-delay`
+  staggers, hover lift is `.nt-lift`; both are disabled under
+  `prefers-reduced-motion` (D-008).
+
+**Not verified:** no browser has rendered this yet. `next build` was not
+run — the repo lives on a Windows filesystem reached over a slow bridge and
+a full Next build did not fit the session. First job next session is to run
+`pnpm dev --filter web` and compare against `Web 1 Landing` side by side,
+especially that every utility class actually resolved (unknown classes fail
+silently — the `bg-primary` lesson from session 1).
 
 ## T02 — Screener page restyle
 - [ ] `pending-T02`
