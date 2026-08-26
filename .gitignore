@@ -57,8 +57,5 @@ coverage
 tmp
 temp
 
-# Agent workflow working notes
-plans/
-systems/
-progress/
+# Agent workflow working notes (tracked by owner request)
 designs/extracted/
