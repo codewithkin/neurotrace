@@ -38,12 +38,15 @@ export function AnimatedBar({
   opacity = 1,
   height = 10,
   radius = 999,
+  trackColor,
 }: {
   pct: number;
   color: string;
   opacity?: number;
   height?: number;
   radius?: number;
+  /** Overrides the default track for bars drawn on a tinted card. */
+  trackColor?: string;
 }) {
   const width = useSharedValue(0);
 
@@ -58,8 +61,8 @@ export function AnimatedBar({
 
   return (
     <View
-      className="w-full overflow-hidden bg-nt-track"
-      style={{ height, borderRadius: radius }}
+      className={`w-full overflow-hidden ${trackColor ? "" : "bg-nt-track"}`}
+      style={{ height, borderRadius: radius, backgroundColor: trackColor }}
     >
       <Animated.View
         style={[animatedStyle, { backgroundColor: color, height: "100%", borderRadius: radius }]}

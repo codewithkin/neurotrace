@@ -1,106 +1,109 @@
 import React from "react";
-import { View } from "react-native";
 import Svg, { Circle, Line, Polyline, Text as SvgText } from "react-native-svg";
+
+import { MONO_FONT } from "@/lib/theme";
 
 export interface ChartSeries {
   color: string;
-  /** Values normalized to the same scale (e.g. raw subscale scores). */
+  /** Percentages, 0-100 — the design's axis is a percentage scale. */
   values: number[];
 }
 
-/**
- * Minimal dependency-free SVG line chart for score trends.
+/*
+ * Trend chart from designs "Light/Dark 14 History tab". The geometry is
+ * the design's own 320x172 viewBox: dashed gridlines at y 16/60/104/148
+ * for 100/66/33/0, series plotted between x 46 and 306, 2.5px round-joined
+ * polylines and r-3.5 dots, month labels on the 168 baseline.
  */
+const VIEW_W = 320;
+const VIEW_H = 172;
+const X_FIRST = 46;
+const X_LAST = 306;
+const Y_TOP = 16;
+const Y_BOTTOM = 148;
+
+const GRID = [
+  { value: 100, y: 16, labelX: 0, labelY: 20 },
+  { value: 66, y: 60, labelX: 6, labelY: 64 },
+  { value: 33, y: 104, labelX: 6, labelY: 108 },
+  { value: 0, y: 148, labelX: 12, labelY: 152 },
+];
+
 export function ScoreChart({
   series,
-  maxValue,
   labels,
-  width = 320,
-  height = 160,
+  borderColor,
+  mutedColor,
 }: {
   series: ChartSeries[];
-  maxValue: number;
-  labels?: string[];
-  width?: number;
-  height?: number;
+  /** One short month label per point. */
+  labels: string[];
+  borderColor: string;
+  mutedColor: string;
 }) {
-  const padLeft = 28;
-  const padBottom = 22;
-  const padTop = 10;
-  const padRight = 10;
-
   const count = Math.max(...series.map((s) => s.values.length), 1);
-  const innerW = width - padLeft - padRight;
-  const innerH = height - padTop - padBottom;
 
   const xFor = (i: number) =>
-    padLeft + (count === 1 ? innerW / 2 : (i / (count - 1)) * innerW);
-  const yFor = (v: number) =>
-    padTop + innerH - (Math.min(v, maxValue) / maxValue) * innerH;
-
-  const gridValues = [0, maxValue / 2, maxValue];
+    count === 1 ? (X_FIRST + X_LAST) / 2 : X_FIRST + (i / (count - 1)) * (X_LAST - X_FIRST);
+  const yFor = (pct: number) =>
+    Y_BOTTOM - (Math.min(100, Math.max(0, pct)) / 100) * (Y_BOTTOM - Y_TOP);
 
   return (
-    <View>
-      <Svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`}>
-        {gridValues.map((gv) => (
-          <React.Fragment key={gv}>
-            <Line
-              x1={padLeft}
-              x2={width - padRight}
-              y1={yFor(gv)}
-              y2={yFor(gv)}
-              stroke="#8884"
-              strokeWidth={0.5}
+    <Svg width="100%" height={undefined} viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} style={{ aspectRatio: VIEW_W / VIEW_H }}>
+      {GRID.map((line) => (
+        <React.Fragment key={line.value}>
+          <Line
+            x1={30}
+            x2={316}
+            y1={line.y}
+            y2={line.y}
+            stroke={borderColor}
+            strokeWidth={1}
+            strokeDasharray="3 5"
+          />
+          <SvgText
+            x={line.labelX}
+            y={line.labelY}
+            fill={mutedColor}
+            fontSize={9}
+            fontFamily={MONO_FONT}
+          >
+            {line.value}
+          </SvgText>
+        </React.Fragment>
+      ))}
+
+      {series.map((s, si) => (
+        <React.Fragment key={si}>
+          {s.values.length > 1 && (
+            <Polyline
+              points={s.values.map((v, i) => `${xFor(i)},${yFor(v)}`).join(" ")}
+              fill="none"
+              stroke={s.color}
+              strokeWidth={2.5}
+              strokeLinejoin="round"
+              strokeLinecap="round"
             />
-            <SvgText x={2} y={yFor(gv) + 3} fontSize={8} fill="#888">
-              {Math.round(gv)}
-            </SvgText>
-          </React.Fragment>
-        ))}
+          )}
+          {s.values.map((v, i) => (
+            <Circle key={`${si}-${i}`} cx={xFor(i)} cy={yFor(v)} r={3.5} fill={s.color} />
+          ))}
+        </React.Fragment>
+      ))}
 
-        {series.map((s, si) => {
-          const points = s.values
-            .map((v, i) => `${xFor(i)},${yFor(v)}`)
-            .join(" ");
-          return (
-            <React.Fragment key={si}>
-              <Polyline
-                points={points}
-                fill="none"
-                stroke={s.color}
-                strokeWidth={2.5}
-                strokeLinejoin="round"
-                strokeLinecap="round"
-              />
-              {s.values.map((v, i) => (
-                <Circle
-                  key={`${si}-${i}`}
-                  cx={xFor(i)}
-                  cy={yFor(v)}
-                  r={3}
-                  fill={s.color}
-                />
-              ))}
-            </React.Fragment>
-          );
-        })}
-
-        {labels?.map((label, i) =>
-          label ? (
-            <SvgText
-              key={`l-${i}`}
-              x={xFor(i)}
-              y={height - 6}
-              fontSize={7.5}
-              fill="#888"
-              textAnchor="middle"
-            >
-              {label}
-            </SvgText>
-          ) : null,
-        )}
-      </Svg>
-    </View>
+      {labels.map((label, i) => (
+        <SvgText
+          key={`l-${i}`}
+          x={xFor(i)}
+          y={168}
+          textAnchor="middle"
+          fill={mutedColor}
+          fontSize={9}
+          fontFamily={MONO_FONT}
+        >
+          {label}
+        </SvgText>
+      ))}
+    </Svg>
   );
 }

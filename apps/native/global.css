@@ -48,6 +48,17 @@
       --nt-pri-border: #c8b4fa;
       --nt-track: #ecebf3;
       --nt-card: #f8f7fc;
+      /* Selected-pill outer ring (design --ring) */
+      --nt-ring: #15121d;
+      /* Status pairs, verbatim from the design token block */
+      --nt-amber-bg: #fef3c7;
+      --nt-amber-fg: #92500e;
+      --nt-green-bg: #dcfce7;
+      --nt-green-fg: #15803d;
+      --nt-danger-bg: #fef2f2;
+      --nt-danger-fg: #b91c1c;
+      /* Progress track inside the violet tint card (Assess tab) */
+      --nt-tint-track: #ffffff;
     }
 
     @variant dark {
@@ -84,6 +95,14 @@
       --nt-pri-border: #7c4df0;
       --nt-track: #252231;
       --nt-card: #17151f;
+      --nt-ring: #ffffff;
+      --nt-amber-bg: #3a2c0a;
+      --nt-amber-fg: #fbbf24;
+      --nt-green-bg: #0e2a18;
+      --nt-green-fg: #4ade80;
+      --nt-danger-bg: #2a1214;
+      --nt-danger-fg: #f87171;
+      --nt-tint-track: rgba(255, 255, 255, 0.14);
     }
   }
 }
@@ -93,6 +112,14 @@
   --color-nt-pri-border: var(--nt-pri-border);
   --color-nt-track: var(--nt-track);
   --color-nt-card: var(--nt-card);
+  --color-nt-ring: var(--nt-ring);
+  --color-nt-amber-bg: var(--nt-amber-bg);
+  --color-nt-amber-fg: var(--nt-amber-fg);
+  --color-nt-green-bg: var(--nt-green-bg);
+  --color-nt-green-fg: var(--nt-green-fg);
+  --color-nt-danger-bg: var(--nt-danger-bg);
+  --color-nt-danger-fg: var(--nt-danger-fg);
+  --color-nt-tint-track: var(--nt-tint-track);
 
   /* Brand alias: heroui calls it accent; design + app code say primary */
   --color-primary: var(--accent);

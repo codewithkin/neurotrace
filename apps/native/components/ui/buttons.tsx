@@ -17,12 +17,15 @@ export function PrimaryButton({
   onPress,
   disabled,
   icon,
+  iconPosition = "trailing",
   size = "md",
 }: {
   label: string;
   onPress?: () => void;
   disabled?: boolean;
   icon?: ReactNode;
+  /** The design puts the arrow after the label and glyph icons before it. */
+  iconPosition?: "leading" | "trailing";
   size?: "md" | "lg";
 }) {
   const accentForeground = useThemeColor("accent-foreground");
@@ -36,13 +39,14 @@ export function PrimaryButton({
       contentStyle={{ paddingVertical: large ? 17 : 16 }}
       onPress={disabled ? undefined : onPress}
     >
+      {iconPosition === "leading" ? icon : null}
       <Text
         className="font-semibold"
         style={{ color: accentForeground, fontSize: large ? 17 : 16 }}
       >
         {label}
       </Text>
-      {icon}
+      {iconPosition === "trailing" ? icon : null}
     </PressableScale>
   );
 }
@@ -126,7 +130,18 @@ export function StepDots({
   );
 }
 
-export function ArrowRightIcon() {
+/** An Ionicon tinted to sit on the accent surface (white in both themes). */
+export function AccentIcon({
+  name,
+  size = 20,
+}: {
+  name: keyof typeof Ionicons.glyphMap;
+  size?: number;
+}) {
   const accentForeground = useThemeColor("accent-foreground");
-  return <Ionicons name="arrow-forward" size={20} color={accentForeground} />;
+  return <Ionicons name={name} size={size} color={accentForeground} />;
+}
+
+export function ArrowRightIcon() {
+  return <AccentIcon name="arrow-forward" size={20} />;
 }
