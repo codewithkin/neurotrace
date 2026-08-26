@@ -1,3 +1,96 @@
 @import "tailwindcss";
 @import "uniwind";
 @import "heroui-native/styles";
+
+/*
+ * NeuroTrace design tokens (designs/NeuroTrace Screens.dc.html).
+ * Overrides heroui-native's raw variables; same @variant structure as
+ * node_modules/heroui-native/src/styles/variables.css so uniwind picks
+ * the values up for light and dark.
+ */
+@layer theme {
+  :root {
+    @variant light {
+      --background: #ffffff;
+      --foreground: #15121d;
+      --muted: #6d6981;
+      --border: #eae7f2;
+      --separator: #e3dfec;
+
+      /* Cards */
+      --surface: #f8f7fc;
+      --surface-foreground: #15121d;
+      --surface-secondary: #f1eef9;
+      --surface-secondary-foreground: #15121d;
+      /* Tertiary surface doubles as the violet tint (#f2ecfe) */
+      --surface-tertiary: #f2ecfe;
+      --surface-tertiary-foreground: #4c2bb8;
+
+      /* Brand violet */
+      --accent: #6d42e8;
+      --accent-foreground: #ffffff;
+
+      --default: #ecebf3;
+      --default-foreground: #15121d;
+
+      --segment: #ffffff;
+      --segment-foreground: #15121d;
+
+      --success: #15803d;
+      --warning: #92500e;
+      --danger: #b91c1c;
+      --danger-foreground: #ffffff;
+
+      --field-background: #ffffff;
+
+      /* NeuroTrace extras */
+      --nt-tint: #f2ecfe;
+      --nt-pri-border: #c8b4fa;
+      --nt-track: #ecebf3;
+      --nt-card: #f8f7fc;
+    }
+
+    @variant dark {
+      --background: #0b0a0f;
+      --foreground: #f4f2fa;
+      --muted: #9a95ac;
+      --border: #282534;
+      --separator: #221f2d;
+
+      --surface: #17151f;
+      --surface-foreground: #f4f2fa;
+      --surface-secondary: #141220;
+      --surface-secondary-foreground: #f4f2fa;
+      --surface-tertiary: #1d1730;
+      --surface-tertiary-foreground: #e4dcff;
+
+      --accent: #8b5cf6;
+      --accent-foreground: #ffffff;
+
+      --default: #252231;
+      --default-foreground: #f4f2fa;
+
+      --segment: #1d1a26;
+      --segment-foreground: #f4f2fa;
+
+      --success: #4ade80;
+      --warning: #fbbf24;
+      --danger: #f87171;
+      --danger-foreground: #0b0a0f;
+
+      --field-background: #17151f;
+
+      --nt-tint: #1d1730;
+      --nt-pri-border: #7c4df0;
+      --nt-track: #252231;
+      --nt-card: #17151f;
+    }
+  }
+}
+
+@theme inline static {
+  --color-nt-tint: var(--nt-tint);
+  --color-nt-pri-border: var(--nt-pri-border);
+  --color-nt-track: var(--nt-track);
+  --color-nt-card: var(--nt-card);
+}
