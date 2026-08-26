@@ -78,7 +78,7 @@
     "calculate_cta": "Calcular Mi Perfil de Concentración",
     "calculating": "Analizando tus respuestas…",
     "answers_saved": "Respuestas guardadas automáticamente",
-    "resume_cta": "Continuar Evaluación",
+    "resume_cta": "Reanudar",
     "questions": {
       "q1": "¿Con qué frecuencia tienes problemas para terminar los detalles finales de un proyecto, una vez hechas las partes difíciles?",
       "q2": "¿Con qué frecuencia te cuesta poner en orden las cosas cuando tienes que hacer una tarea que requiere organización?",
@@ -98,7 +98,35 @@
       "q16": "En una conversación, ¿con qué frecuencia terminas las frases de los demás antes de que ellos puedan hacerlo?",
       "q17": "¿Con qué frecuencia te cuesta esperar tu turno en situaciones donde se requiere tomar turnos?",
       "q18": "¿Con qué frecuencia interrumpes a otros cuando están ocupados?"
-    }
+    },
+    "timeframe": "En los últimos seis meses",
+    "progress_short": "Pregunta {{current}} de {{total}}",
+    "section_core": "Cribado principal",
+    "section_traits": "Perfil de rasgos",
+    "section_part_a_complete": "Parte A completada",
+    "traits_left": "Quedan {{count}} rasgos rápidos",
+    "milestone": {
+      "title": "Cribado principal completado",
+      "desc": "{{flagged}} de tus seis respuestas cayeron en el rango sombreado. Quedan doce preguntas de rasgos, unos dos minutos.",
+      "flagged_chip": "{{count}} / 6 marcadas",
+      "duration": "{{minutes}} m {{seconds}} s",
+      "continue": "Continuar a la Parte B",
+      "progress_saved": "Progreso guardado",
+      "break_title": "Buen momento para parar",
+      "break_desc": "La Parte A está lista. Las doce preguntas de rasgos pueden esperar: retómalas desde la pestaña Evaluar cuando quieras.",
+      "break_cta": "Continuar más tarde",
+      "continue_now": "Seguir ahora"
+    },
+    "calculating_sub": "18 respuestas · matriz de puntuación de la OMS",
+    "calculating_footnote": "Esto tarda un par de segundos",
+    "tab_disclaimer": "Solo herramienta de cribado. Los resultados no son un diagnóstico.",
+    "instrument_line": "OMS ASRS v1.1 · 18 preguntas",
+    "in_progress_part_a": "Cribado principal en curso",
+    "in_progress_part_b": "Parte B en curso",
+    "last_completed": "Última completada",
+    "view_report": "Ver informe",
+    "start_fresh": "Empezar una evaluación nueva",
+    "start_fresh_confirm": "Se descartarán tus respuestas sin terminar."
   },
   "scale": {
     "never": "Nunca",
@@ -108,48 +136,65 @@
     "very_often": "Muy a menudo"
   },
   "results": {
-    "title": "Tu Perfil de Concentración",
+    "title": "Tu perfil de atención",
     "classification": {
-      "high_consistency": "Consistencia Significativa de Rasgos Detectada",
-      "low_consistency": "Baja Consistencia de Rasgos Detectada"
+      "high_consistency": "Síntomas compatibles con TDAH",
+      "low_consistency": "Síntomas por debajo del umbral de cribado",
+      "high_short": "Compatible con TDAH",
+      "low_short": "Por debajo del umbral"
     },
     "disclaimer": "Este es un resultado educativo de autoevaluación basado en el WHO ASRS v1.1. No es un diagnóstico médico.",
     "inattention_label": "Subescala de Desatención",
     "hyperactivity_label": "Subescala de Hiperactividad",
     "part_a_label": "Puntuación Principal Parte A",
     "unlock_cta": "Ver Anuncio de 30s para Desbloquear Informe Médico",
-    "reveal_cta": "Ver Mi Informe Médico",
+    "reveal_cta": "Ver mi informe para el médico",
     "unlocked_cta": "Ver Tu Informe Médico",
-    "retake_cta": "Repetir Evaluación",
-    "trait_breakdown_title": "Desglose de Rasgos"
+    "retake_cta": "Repetir la evaluación",
+    "trait_breakdown_title": "Desglose de Rasgos",
+    "screen_disclaimer": "Solo un resultado de cribado. Coméntalo con un profesional antes de sacar conclusiones.",
+    "rescreen_hint": "Repite el cribado en 30 días para ver si el patrón se mantiene",
+    "inattention_short": "Inatención",
+    "hyperactivity_short": "Hiperactividad",
+    "part_a_short": "Cribado Parte A",
+    "stat_inatt": "Inat.",
+    "stat_hyper": "Hiper.",
+    "stat_part_a": "Parte A"
   },
   "report": {
-    "title": "Resumen Médico",
+    "title": "Informe para el médico",
     "save_cta": "Guardar en Archivos",
-    "share_cta": "Compartir por WhatsApp / Email",
+    "share_cta": "Compartir",
     "print_cta": "Imprimir",
     "generating": "Generando informe…",
-    "reminder_toggle": "Activar Recordatorio de Reevaluación a 30 Días",
+    "reminder_toggle": "Recuérdame repetir el cribado",
     "reminder_desc": "Te enviaremos una notificación local en 30 días sugiriendo una reevaluación.",
     "reminder_scheduled": "Recordatorio programado",
     "reminder_cancelled": "Recordatorio desactivado",
-    "locked_banner": "Desbloquea con un breve anuncio para generar tu informe PDF."
+    "locked_banner": "Desbloquea con un breve anuncio para generar tu informe PDF.",
+    "ready": "Listo",
+    "doc_title": "Resumen de cribado ASRS v1.1",
+    "doc_caption": "{{date}} · autoadministrado",
+    "flagged_responses": "Respuestas marcadas",
+    "citation": "Instrumento: Escala de Autoinforme de TDAH en Adultos de la OMS (ASRS-v1.1). Kessler RC y cols., 2005. Instrumento de cribado; no es una herramienta diagnóstica.",
+    "back_cta": "Volver a los resultados"
   },
   "tracker": {
-    "title": "Registro Diario",
+    "title": "Registro diario",
     "streak": "Racha de {{count}} días",
     "focus_level": "Nivel de Concentración",
     "brain_fog": "Niebla Mental",
     "executive_friction": "Fricción Ejecutiva",
     "mood": "Ánimo",
-    "medication_taken": "Medicación Tomada Hoy",
-    "save_entry": "Guardar Registro",
+    "medication_taken": "Tomé la medicación hoy",
+    "save_entry": "Guardar el registro de hoy",
     "entry_saved": "¡Registro guardado! Nos vemos mañana.",
     "already_logged": "Ya registrado hoy",
-    "logged_toast": "¡Registro de hoy completado!"
+    "logged_toast": "¡Registro de hoy completado!",
+    "subtitle": "{{date}} · toma diez segundos"
   },
   "history": {
-    "title": "Historial y Tendencias",
+    "title": "Historial",
     "assessment_trends": "Tendencias de Puntuaciones",
     "stable": "Estable",
     "improving": "Mejorando",
@@ -158,20 +203,27 @@
     "monthly_reassessment_cta": "Iniciar Reevaluación Mensual",
     "daily_entries": "Registros Diarios",
     "legend_inattention": "Desatención",
-    "legend_hyperactivity": "Hiperactividad"
+    "legend_hyperactivity": "Hiperactividad",
+    "six_month_trend": "Tendencia de seis meses",
+    "sessions": "Sesiones",
+    "session_sub": "Inatención {{inattention}} · Hiperactividad {{hyperactivity}}",
+    "reassess_now": "Reevaluar ahora"
   },
   "settings": {
     "title": "Configuración",
     "language": "Idioma",
-    "retake_assessment": "Repetir Evaluación",
+    "retake_assessment": "Repetir la evaluación",
     "remove_ads": "Quitar Anuncios y Apoyar el Desarrollo",
     "remove_ads_desc": "$1.99/mes — mantiene NeuroTrace sin servidores.",
     "privacy": "Privacidad",
-    "privacy_note": "Todos los datos se almacenan localmente en este dispositivo. Nada se sube a internet.",
+    "privacy_note": "Las respuestas, puntuaciones y registros se guardan solo en este dispositivo. Sin cuenta, sin analítica.",
     "about": "Acerca de",
     "version": "Versión",
     "clear_data": "Borrar Todos los Datos",
-    "clear_data_confirm": "¿Eliminar todos los datos locales de evaluación y seguimiento? Esto no se puede deshacer."
+    "clear_data_confirm": "¿Eliminar todos los datos locales de evaluación y seguimiento? Esto no se puede deshacer.",
+    "app": "Aplicación",
+    "daily_reminder": "Recordatorio del registro diario",
+    "daily_reminder_body": "Diez segundos sobre foco, niebla, fricción y ánimo."
   },
   "cross_promo": {
     "banner": "¿Abrumado por el ruido interno ahora mismo?",
@@ -209,7 +261,14 @@
       "interrupting": "Interrumpir a otros",
       "impatience": "Impaciencia",
       "intruding_on_others": "Inmiscuirse en asuntos ajenos",
-      "acting_without_thinking": "Actuar sin pensar"
+      "acting_without_thinking": "Actuar sin pensar",
+      "listening_difficulty": "Dificultad para escuchar cuando le hablan"
     }
+  },
+  "tabs": {
+    "checkin": "Registro",
+    "assess": "Evaluar",
+    "history": "Historial",
+    "settings": "Ajustes"
   }
 }

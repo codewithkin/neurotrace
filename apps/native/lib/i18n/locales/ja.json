@@ -78,7 +78,7 @@
     "calculate_cta": "フォーカスプロファイルを計算",
     "calculating": "回答を分析中…",
     "answers_saved": "回答は自動保存されます",
-    "resume_cta": "評価を再開",
+    "resume_cta": "再開する",
     "questions": {
       "q1": "難しい部分が終わった後、プロジェクトの最後の細部を仕上げるのに苦労することはどのくらいの頻度ですか？",
       "q2": "整理が必要な作業をするとき、物事を順序立てるのが難しいことはどのくらいの頻度ですか？",
@@ -98,7 +98,35 @@
       "q16": "会話中、相手が言い終わる前に相手の文を完成させてしまうことはどのくらいの頻度ですか？",
       "q17": "順番を待つ必要がある場面で、自分の番を待つのが難しいことはどのくらいの頻度ですか？",
       "q18": "他の人が忙しいときに邪魔をすることはどのくらいの頻度ですか？"
-    }
+    },
+    "timeframe": "過去6か月間",
+    "progress_short": "質問 {{current}} / {{total}}",
+    "section_core": "コアスクリーニング",
+    "section_traits": "特性プロファイル",
+    "section_part_a_complete": "パートA完了",
+    "traits_left": "残り{{count}}項目",
+    "milestone": {
+      "title": "コアスクリーニング完了",
+      "desc": "6つの回答のうち{{flagged}}つが該当範囲に入りました。特性に関する質問が12問、約2分です。",
+      "flagged_chip": "{{count}} / 6 該当",
+      "duration": "{{minutes}} m {{seconds}} s",
+      "continue": "パートBへ進む",
+      "progress_saved": "進捗を保存しました",
+      "break_title": "ここで一区切り",
+      "break_desc": "パートAは完了です。特性に関する12問は後回しでかまいません。いつでも「評価」タブから再開できます。",
+      "break_cta": "あとで続ける",
+      "continue_now": "このまま続ける"
+    },
+    "calculating_sub": "18件の回答 · WHOスコアリング",
+    "calculating_footnote": "数秒で完了します",
+    "tab_disclaimer": "スクリーニングツールです。結果は診断ではありません。",
+    "instrument_line": "WHO ASRS v1.1 · 全18問",
+    "in_progress_part_a": "コアスクリーニング進行中",
+    "in_progress_part_b": "パートB進行中",
+    "last_completed": "前回の完了",
+    "view_report": "レポートを見る",
+    "start_fresh": "新しく評価を始める",
+    "start_fresh_confirm": "未完了の回答は破棄されます。"
   },
   "scale": {
     "never": "全くない",
@@ -110,8 +138,10 @@
   "results": {
     "title": "あなたのフォーカスプロファイル",
     "classification": {
-      "high_consistency": "顕著な特性の一貫性が検出されました",
-      "low_consistency": "特性の一貫性は低めです"
+      "high_consistency": "ADHDと一致する症状",
+      "low_consistency": "スクリーニング基準値未満の症状",
+      "high_short": "ADHDと一致",
+      "low_short": "基準値未満"
     },
     "disclaimer": "これはWHO ASRS v1.1に基づく教育目的の自己評価結果であり、医学的診断ではありません。",
     "inattention_label": "不注意サブスケール",
@@ -121,35 +151,50 @@
     "reveal_cta": "医師向けレポートを表示",
     "unlocked_cta": "医師向けレポートを見る",
     "retake_cta": "評価をやり直す",
-    "trait_breakdown_title": "特性の内訳"
+    "trait_breakdown_title": "特性の内訳",
+    "screen_disclaimer": "スクリーニング結果です。結論を出す前に医療者に相談してください。",
+    "rescreen_hint": "30日後に再スクリーニングして傾向が続くか確認しましょう",
+    "inattention_short": "不注意",
+    "hyperactivity_short": "多動性",
+    "part_a_short": "パートA スクリーニング",
+    "stat_inatt": "不注意",
+    "stat_hyper": "多動",
+    "stat_part_a": "パートA"
   },
   "report": {
-    "title": "医師向けサマリー",
+    "title": "医師向けレポート",
     "save_cta": "ファイルに保存",
-    "share_cta": "WhatsApp / メールで共有",
+    "share_cta": "共有",
     "print_cta": "印刷",
     "generating": "レポートを生成中…",
-    "reminder_toggle": "30日後の再評価リマインダーを有効にする",
+    "reminder_toggle": "再スクリーニングを通知する",
     "reminder_desc": "30日後に再評価をおすすめするローカル通知をお送りします。",
     "reminder_scheduled": "リマインダーを設定しました",
     "reminder_cancelled": "リマインダーを無効にしました",
-    "locked_banner": "短い広告を見るとPDFレポートを作成できます。"
+    "locked_banner": "短い広告を見るとPDFレポートを作成できます。",
+    "ready": "準備完了",
+    "doc_title": "ASRS v1.1 スクリーニング要約",
+    "doc_caption": "{{date}} · 自己記入",
+    "flagged_responses": "該当した回答",
+    "citation": "使用尺度: WHO 成人ADHD自己記入式症状チェックリスト (ASRS-v1.1)。Kessler RC ほか, 2005年。スクリーニング用であり診断用ではありません。",
+    "back_cta": "結果に戻る"
   },
   "tracker": {
     "title": "デイリーチェックイン",
-    "streak": "{{count}}日連続達成",
+    "streak": "{{count}}日連続",
     "focus_level": "集中レベル",
     "brain_fog": "脳の霧",
     "executive_friction": "実行機能の摩擦",
     "mood": "気分",
-    "medication_taken": "今日、服薬済み",
-    "save_entry": "記録を保存",
+    "medication_taken": "今日は薬を飲んだ",
+    "save_entry": "今日のチェックインを保存",
     "entry_saved": "保存しました！また明日。",
     "already_logged": "本日は記録済み",
-    "logged_toast": "今日のチェックイン完了！"
+    "logged_toast": "今日のチェックイン完了！",
+    "subtitle": "{{date}} · 10秒で完了"
   },
   "history": {
-    "title": "履歴と傾向",
+    "title": "履歴",
     "assessment_trends": "スコアの推移",
     "stable": "安定",
     "improving": "改善傾向",
@@ -158,7 +203,11 @@
     "monthly_reassessment_cta": "月次再評価を開始",
     "daily_entries": "日々の記録",
     "legend_inattention": "不注意",
-    "legend_hyperactivity": "多動性"
+    "legend_hyperactivity": "多動性",
+    "six_month_trend": "6か月の推移",
+    "sessions": "セッション",
+    "session_sub": "不注意 {{inattention}} · 多動性 {{hyperactivity}}",
+    "reassess_now": "今すぐ再評価"
   },
   "settings": {
     "title": "設定",
@@ -167,11 +216,14 @@
     "remove_ads": "広告を削除して開発を支援",
     "remove_ads_desc": "月額$1.99 — NeuroTraceのサーバーレス運営を支えます。",
     "privacy": "プライバシー",
-    "privacy_note": "すべてのデータはこの端末内にのみ保存されます。外部に送信されることはありません。",
+    "privacy_note": "回答・スコア・チェックインはこの端末にのみ保存されます。アカウントも解析もありません。",
     "about": "情報",
     "version": "バージョン",
     "clear_data": "すべてのデータを消去",
-    "clear_data_confirm": "ローカルの評価・記録データをすべて削除しますか？この操作は取り消せません。"
+    "clear_data_confirm": "ローカルの評価・記録データをすべて削除しますか？この操作は取り消せません。",
+    "app": "アプリ",
+    "daily_reminder": "デイリーチェックインの通知",
+    "daily_reminder_body": "集中・もや・摩擦・気分を10秒で。"
   },
   "cross_promo": {
     "banner": "今、頭の中のノイズに圧倒されていませんか？",
@@ -209,7 +261,14 @@
       "interrupting": "他人の妨害",
       "impatience": "焦り・短気",
       "intruding_on_others": "他人の領域への介入",
-      "acting_without_thinking": "考えずに行動する"
+      "acting_without_thinking": "考えずに行動する",
+      "listening_difficulty": "話しかけられても聞き取りにくい"
     }
+  },
+  "tabs": {
+    "checkin": "チェックイン",
+    "assess": "評価",
+    "history": "履歴",
+    "settings": "設定"
   }
 }

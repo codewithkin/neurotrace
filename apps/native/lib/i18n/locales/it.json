@@ -78,7 +78,7 @@
     "calculate_cta": "Calcola il Mio Profilo di Concentrazione",
     "calculating": "Analisi delle risposte…",
     "answers_saved": "Risposte salvate automaticamente",
-    "resume_cta": "Riprendi Valutazione",
+    "resume_cta": "Riprendi",
     "questions": {
       "q1": "Con quale frequenza fai fatica a completare gli ultimi dettagli di un progetto, dopo che le parti difficili sono state fatte?",
       "q2": "Con quale frequenza fai difficoltà a mettere in ordine le cose quando devi fare un compito che richiede organizzazione?",
@@ -98,7 +98,35 @@
       "q16": "In una conversazione, con quale frequenza completi le frasi del tuo interlocutore prima che possa finirle da solo?",
       "q17": "Con quale frequenza fai fatica ad aspettare il tuo turno quando serve rispettare i turni?",
       "q18": "Con quale frequenza interrompi gli altri quando sono impegnati?"
-    }
+    },
+    "timeframe": "Negli ultimi sei mesi",
+    "progress_short": "Domanda {{current}} di {{total}}",
+    "section_core": "Screening principale",
+    "section_traits": "Profilo dei tratti",
+    "section_part_a_complete": "Parte A completata",
+    "traits_left": "Restano {{count}} tratti rapidi",
+    "milestone": {
+      "title": "Screening principale completato",
+      "desc": "{{flagged}} delle tue sei risposte rientrano nell'area evidenziata. Restano dodici domande sui tratti, circa due minuti.",
+      "flagged_chip": "{{count}} / 6 segnalate",
+      "duration": "{{minutes}} m {{seconds}} s",
+      "continue": "Continua alla Parte B",
+      "progress_saved": "Progressi salvati",
+      "break_title": "Buon momento per fermarsi",
+      "break_desc": "La Parte A è completata. Le dodici domande sui tratti possono aspettare: riprendile dalla scheda Valuta quando vuoi.",
+      "break_cta": "Continua più tardi",
+      "continue_now": "Vai avanti"
+    },
+    "calculating_sub": "18 risposte · matrice di punteggio OMS",
+    "calculating_footnote": "Ci vogliono un paio di secondi",
+    "tab_disclaimer": "Solo strumento di screening. I risultati non sono una diagnosi.",
+    "instrument_line": "OMS ASRS v1.1 · 18 domande",
+    "in_progress_part_a": "Screening principale in corso",
+    "in_progress_part_b": "Parte B in corso",
+    "last_completed": "Ultimo completato",
+    "view_report": "Vedi il report",
+    "start_fresh": "Inizia una nuova valutazione",
+    "start_fresh_confirm": "Le risposte non completate verranno eliminate."
   },
   "scale": {
     "never": "Mai",
@@ -108,48 +136,65 @@
     "very_often": "Molto spesso"
   },
   "results": {
-    "title": "Il Tuo Profilo di Concentrazione",
+    "title": "Il tuo profilo di attenzione",
     "classification": {
-      "high_consistency": "Significativa Coerenza dei Tratti Rilevata",
-      "low_consistency": "Bassa Coerenza dei Tratti Rilevata"
+      "high_consistency": "Sintomi compatibili con l'ADHD",
+      "low_consistency": "Sintomi sotto la soglia di screening",
+      "high_short": "Compatibile con l'ADHD",
+      "low_short": "Sotto la soglia"
     },
     "disclaimer": "Questo è un risultato educativo di autovalutazione basato sul WHO ASRS v1.1. Non è una diagnosi medica.",
     "inattention_label": "Sottoscala Disattenzione",
     "hyperactivity_label": "Sottoscala Iperattività",
     "part_a_label": "Punteggio Principale Parte A",
     "unlock_cta": "Guarda 30s di Pubblicità per Sbloccare il Report Medico",
-    "reveal_cta": "Rivela il Mio Report Medico",
+    "reveal_cta": "Mostra il report per il medico",
     "unlocked_cta": "Vedi Il Tuo Report Medico",
-    "retake_cta": "Rifai la Valutazione",
-    "trait_breakdown_title": "Dettaglio dei Tratti"
+    "retake_cta": "Ripeti la valutazione",
+    "trait_breakdown_title": "Dettaglio dei Tratti",
+    "screen_disclaimer": "Solo un risultato di screening. Parlane con un medico prima di trarre conclusioni.",
+    "rescreen_hint": "Ripeti lo screening tra 30 giorni per vedere se il quadro resta",
+    "inattention_short": "Disattenzione",
+    "hyperactivity_short": "Iperattività",
+    "part_a_short": "Screening Parte A",
+    "stat_inatt": "Disatt.",
+    "stat_hyper": "Iper.",
+    "stat_part_a": "Parte A"
   },
   "report": {
-    "title": "Riepilogo Medico",
+    "title": "Report per il medico",
     "save_cta": "Salva in File",
-    "share_cta": "Condividi via WhatsApp / Email",
+    "share_cta": "Condividi",
     "print_cta": "Stampa",
     "generating": "Generazione report…",
-    "reminder_toggle": "Attiva Promemoria di Rivalutazione a 30 Giorni",
+    "reminder_toggle": "Ricordami di ripetere lo screening",
     "reminder_desc": "Ti invieremo una notifica locale tra 30 giorni suggerendo una rivalutazione.",
     "reminder_scheduled": "Promemoria programmato",
     "reminder_cancelled": "Promemoria disattivato",
-    "locked_banner": "Sblocca con una breve pubblicità per generare il tuo PDF."
+    "locked_banner": "Sblocca con una breve pubblicità per generare il tuo PDF.",
+    "ready": "Pronto",
+    "doc_title": "Sintesi di screening ASRS v1.1",
+    "doc_caption": "{{date}} · autosomministrato",
+    "flagged_responses": "Risposte segnalate",
+    "citation": "Strumento: Scala di autovalutazione dell'ADHD nell'adulto dell'OMS (ASRS-v1.1). Kessler RC et al., 2005. Strumento di screening; non diagnostico.",
+    "back_cta": "Torna ai risultati"
   },
   "tracker": {
-    "title": "Check-in Giornaliero",
+    "title": "Check-in quotidiano",
     "streak": "Serie di {{count}} giorni",
     "focus_level": "Livello di Concentrazione",
     "brain_fog": "Nebbia Mentale",
     "executive_friction": "Attrito Esecutivo",
     "mood": "Umore",
     "medication_taken": "Farmaco preso oggi",
-    "save_entry": "Salva Voce",
+    "save_entry": "Salva il check-in di oggi",
     "entry_saved": "Salvato! A domani.",
     "already_logged": "Già registrato oggi",
-    "logged_toast": "Check-in di oggi completato!"
+    "logged_toast": "Check-in di oggi completato!",
+    "subtitle": "{{date}} · dieci secondi"
   },
   "history": {
-    "title": "Storico e Tendenze",
+    "title": "Cronologia",
     "assessment_trends": "Tendenze dei Punteggi",
     "stable": "Stabile",
     "improving": "In miglioramento",
@@ -158,20 +203,27 @@
     "monthly_reassessment_cta": "Avvia Rivalutazione Mensile",
     "daily_entries": "Voci giornaliere",
     "legend_inattention": "Disattenzione",
-    "legend_hyperactivity": "Iperattività"
+    "legend_hyperactivity": "Iperattività",
+    "six_month_trend": "Andamento a sei mesi",
+    "sessions": "Sessioni",
+    "session_sub": "Disattenzione {{inattention}} · Iperattività {{hyperactivity}}",
+    "reassess_now": "Rivaluta ora"
   },
   "settings": {
     "title": "Impostazioni",
     "language": "Lingua",
-    "retake_assessment": "Rifai la Valutazione",
+    "retake_assessment": "Ripeti la valutazione",
     "remove_ads": "Rimuovi pubblicità e supporta lo sviluppo",
     "remove_ads_desc": "1,99 €/mese — mantiene NeuroTrace senza server.",
     "privacy": "Privacy",
-    "privacy_note": "Tutti i dati sono salvati solo localmente su questo dispositivo. Nulla viene caricato online.",
+    "privacy_note": "Risposte, punteggi e check-in restano solo su questo dispositivo. Nessun account, nessuna analisi.",
     "about": "Info",
     "version": "Versione",
     "clear_data": "Cancella tutti i dati",
-    "clear_data_confirm": "Eliminare tutti i dati locali di valutazione e monitoraggio? L'operazione non è reversibile."
+    "clear_data_confirm": "Eliminare tutti i dati locali di valutazione e monitoraggio? L'operazione non è reversibile.",
+    "app": "App",
+    "daily_reminder": "Promemoria del check-in quotidiano",
+    "daily_reminder_body": "Dieci secondi su focus, nebbia, attrito e umore."
   },
   "cross_promo": {
     "banner": "Travolto dal rumore interiore in questo momento?",
@@ -209,7 +261,14 @@
       "interrupting": "Interrompere gli altri",
       "impatience": "Impazienza",
       "intruding_on_others": "Immischiarsi negli affari altrui",
-      "acting_without_thinking": "Agire senza pensare"
+      "acting_without_thinking": "Agire senza pensare",
+      "listening_difficulty": "Difficoltà ad ascoltare quando le si parla"
     }
+  },
+  "tabs": {
+    "checkin": "Check-in",
+    "assess": "Valuta",
+    "history": "Cronologia",
+    "settings": "Impostazioni"
   }
 }

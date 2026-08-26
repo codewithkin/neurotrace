@@ -78,7 +78,7 @@
     "calculate_cta": "Mein Fokus-Profil berechnen",
     "calculating": "Antworten werden analysiert…",
     "answers_saved": "Antworten werden automatisch gespeichert",
-    "resume_cta": "Assessment fortsetzen",
+    "resume_cta": "Fortsetzen",
     "questions": {
       "q1": "Wie oft hast du Schwierigkeiten, die letzten Details eines Projekts abzuschließen, nachdem die anspruchsvollen Teile erledigt sind?",
       "q2": "Wie oft fällt es dir schwer, Dinge zu ordnen, wenn eine Aufgabe Organisation erfordert?",
@@ -98,7 +98,35 @@
       "q16": "Wie oft beendest du in Gesprächen die Sätze deines Gegenübers, bevor er oder sie sie selbst beenden kann?",
       "q17": "Wie oft fällt es dir schwer zu warten, wenn Reihenfolge dran ist?",
       "q18": "Wie oft unterbrichst du andere, wenn sie beschäftigt sind?"
-    }
+    },
+    "timeframe": "In den letzten sechs Monaten",
+    "progress_short": "Frage {{current}} von {{total}}",
+    "section_core": "Kern-Screening",
+    "section_traits": "Merkmalsprofil",
+    "section_part_a_complete": "Teil A abgeschlossen",
+    "traits_left": "Noch {{count}} kurze Merkmale",
+    "milestone": {
+      "title": "Kern-Screening abgeschlossen",
+      "desc": "{{flagged}} deiner sechs Antworten lagen im markierten Bereich. Noch zwölf Merkmalsfragen, etwa zwei Minuten.",
+      "flagged_chip": "{{count}} / 6 markiert",
+      "duration": "{{minutes}} m {{seconds}} s",
+      "continue": "Weiter zu Teil B",
+      "progress_saved": "Fortschritt gespeichert",
+      "break_title": "Guter Moment für eine Pause",
+      "break_desc": "Teil A ist fertig. Die zwölf Merkmalsfragen können warten – nimm sie im Tab „Test“ jederzeit wieder auf.",
+      "break_cta": "Später fortsetzen",
+      "continue_now": "Weitermachen"
+    },
+    "calculating_sub": "18 Antworten · WHO-Auswertungsmatrix",
+    "calculating_footnote": "Das dauert ein paar Sekunden",
+    "tab_disclaimer": "Nur ein Screening-Instrument. Ergebnisse sind keine Diagnose.",
+    "instrument_line": "WHO ASRS v1.1 · 18 Fragen",
+    "in_progress_part_a": "Kern-Screening läuft",
+    "in_progress_part_b": "Teil B läuft",
+    "last_completed": "Zuletzt abgeschlossen",
+    "view_report": "Bericht ansehen",
+    "start_fresh": "Neue Auswertung starten",
+    "start_fresh_confirm": "Deine unfertigen Antworten werden verworfen."
   },
   "scale": {
     "never": "Nie",
@@ -108,10 +136,12 @@
     "very_often": "Sehr oft"
   },
   "results": {
-    "title": "Dein Fokus-Profil",
+    "title": "Dein Fokusprofil",
     "classification": {
-      "high_consistency": "Erhebliche Merkmalskonsistenz festgestellt",
-      "low_consistency": "Geringe Merkmalskonsistenz festgestellt"
+      "high_consistency": "Symptome vereinbar mit ADHS",
+      "low_consistency": "Symptome unter der Screening-Schwelle",
+      "high_short": "Vereinbar mit ADHS",
+      "low_short": "Unter der Schwelle"
     },
     "disclaimer": "Dies ist ein pädagogisches Selbsteinschätzungsergebnis basierend auf dem WHO ASRS v1.1. Es ist keine medizinische Diagnose.",
     "inattention_label": "Aufmerksamkeits-Subskala",
@@ -120,36 +150,51 @@
     "unlock_cta": "30s Werbung ansehen & Arztbericht freischalten",
     "reveal_cta": "Arztbericht anzeigen",
     "unlocked_cta": "Deinen Arztbericht ansehen",
-    "retake_cta": "Assessment wiederholen",
-    "trait_breakdown_title": "Merkmalsübersicht"
+    "retake_cta": "Auswertung wiederholen",
+    "trait_breakdown_title": "Merkmalsübersicht",
+    "screen_disclaimer": "Nur ein Screening-Ergebnis. Besprich es mit einer Ärztin oder einem Arzt, bevor du Schlüsse ziehst.",
+    "rescreen_hint": "In 30 Tagen erneut screenen, um zu sehen, ob das Muster bleibt",
+    "inattention_short": "Unaufmerksamkeit",
+    "hyperactivity_short": "Hyperaktivität",
+    "part_a_short": "Teil-A-Screening",
+    "stat_inatt": "Unaufm.",
+    "stat_hyper": "Hyper.",
+    "stat_part_a": "Teil A"
   },
   "report": {
-    "title": "Ärztliche Zusammenfassung",
+    "title": "Arztbericht",
     "save_cta": "In Dateien speichern",
-    "share_cta": "Über WhatsApp / E-Mail teilen",
+    "share_cta": "Teilen",
     "print_cta": "Drucken",
     "generating": "Bericht wird erstellt…",
-    "reminder_toggle": "30-Tage-Erinnerung aktivieren",
+    "reminder_toggle": "An erneutes Screening erinnern",
     "reminder_desc": "Wir senden dir in 30 Tagen eine lokale Benachrichtigung für eine erneute Einschätzung.",
     "reminder_scheduled": "Erinnerung geplant",
     "reminder_cancelled": "Erinnerung deaktiviert",
-    "locked_banner": "Schalte mit einer kurzen Werbung deinen PDF-Bericht frei."
+    "locked_banner": "Schalte mit einer kurzen Werbung deinen PDF-Bericht frei.",
+    "ready": "Fertig",
+    "doc_title": "ASRS-v1.1-Screening-Zusammenfassung",
+    "doc_caption": "{{date}} · selbst ausgefüllt",
+    "flagged_responses": "Markierte Antworten",
+    "citation": "Instrument: WHO Adult ADHD Self-Report Scale (ASRS-v1.1) Symptom-Checkliste. Kessler RC et al., 2005. Screening-Instrument; kein Diagnosewerkzeug.",
+    "back_cta": "Zurück zu den Ergebnissen"
   },
   "tracker": {
     "title": "Täglicher Check-in",
-    "streak": "{{count}}-Tage-Fokus-Serie",
+    "streak": "{{count}} Tage in Folge",
     "focus_level": "Fokuslevel",
     "brain_fog": "Brain Fog",
     "executive_friction": "Exekutive Reibung",
     "mood": "Stimmung",
-    "medication_taken": "Medikament heute genommen",
-    "save_entry": "Eintrag speichern",
+    "medication_taken": "Heute Medikamente genommen",
+    "save_entry": "Heutigen Check-in speichern",
     "entry_saved": "Gespeichert! Bis morgen.",
     "already_logged": "Heute schon erfasst",
-    "logged_toast": "Täglicher Check-in komplett!"
+    "logged_toast": "Täglicher Check-in komplett!",
+    "subtitle": "{{date}} · dauert zehn Sekunden"
   },
   "history": {
-    "title": "Verlauf & Trends",
+    "title": "Verlauf",
     "assessment_trends": "Wertetrends",
     "stable": "Stabil",
     "improving": "Verbessernd",
@@ -158,20 +203,27 @@
     "monthly_reassessment_cta": "Monatliche Neubewertung starten",
     "daily_entries": "Tageseinträge",
     "legend_inattention": "Aufmerksamkeit",
-    "legend_hyperactivity": "Hyperaktivität"
+    "legend_hyperactivity": "Hyperaktivität",
+    "six_month_trend": "Sechs-Monats-Trend",
+    "sessions": "Sitzungen",
+    "session_sub": "Unaufmerksamkeit {{inattention}} · Hyperaktivität {{hyperactivity}}",
+    "reassess_now": "Jetzt neu bewerten"
   },
   "settings": {
     "title": "Einstellungen",
     "language": "Sprache",
-    "retake_assessment": "Assessment wiederholen",
+    "retake_assessment": "Auswertung wiederholen",
     "remove_ads": "Werbung entfernen & Entwicklung unterstützen",
     "remove_ads_desc": "1,99 €/Monat — hält NeuroTrace serverlos.",
     "privacy": "Datenschutz",
-    "privacy_note": "Alle Daten werden nur lokal auf diesem Gerät gespeichert. Nichts wird hochgeladen.",
+    "privacy_note": "Antworten, Werte und Check-ins bleiben nur auf diesem Gerät. Kein Konto, keine Analyse.",
     "about": "Über",
     "version": "Version",
     "clear_data": "Alle Daten löschen",
-    "clear_data_confirm": "Alle lokalen Assessments und Tracking-Daten löschen? Dies kann nicht rückgängig gemacht werden."
+    "clear_data_confirm": "Alle lokalen Assessments und Tracking-Daten löschen? Dies kann nicht rückgängig gemacht werden.",
+    "app": "App",
+    "daily_reminder": "Erinnerung an den täglichen Check-in",
+    "daily_reminder_body": "Zehn Sekunden zu Fokus, Nebel, Reibung und Stimmung."
   },
   "cross_promo": {
     "banner": "Gerade jetzt vom inneren Lärm überwältigt?",
@@ -209,7 +261,14 @@
       "interrupting": "Andere unterbrechen",
       "impatience": "Ungeduld",
       "intruding_on_others": "Sich einmischen",
-      "acting_without_thinking": "Handeln ohne Nachdenken"
+      "acting_without_thinking": "Handeln ohne Nachdenken",
+      "listening_difficulty": "Schwierigkeiten zuzuhören, wenn man angesprochen wird"
     }
+  },
+  "tabs": {
+    "checkin": "Check-in",
+    "assess": "Test",
+    "history": "Verlauf",
+    "settings": "Einstellungen"
   }
 }

@@ -78,7 +78,7 @@
     "calculate_cta": "Calculate My Focus Profile",
     "calculating": "Analyzing your responses…",
     "answers_saved": "Answers saved automatically",
-    "resume_cta": "Resume Assessment",
+    "resume_cta": "Resume",
     "questions": {
       "q1": "How often do you have trouble wrapping up the final details of a project, once the challenging parts have been done?",
       "q2": "How often do you have difficulty getting things in order when you have to do a task that requires organization?",
@@ -98,7 +98,35 @@
       "q16": "When you're in a conversation, how often do you find yourself finishing the sentences of the people you are talking to before they can finish them themselves?",
       "q17": "How often do you have difficulty waiting your turn in situations when turn taking is required?",
       "q18": "How often do you interrupt others when they are busy?"
-    }
+    },
+    "timeframe": "Over the past six months",
+    "progress_short": "Question {{current}} of {{total}}",
+    "section_core": "Core screening",
+    "section_traits": "Trait profile",
+    "section_part_a_complete": "Part A complete",
+    "traits_left": "{{count}} quick traits left",
+    "milestone": {
+      "title": "Core screening complete",
+      "desc": "{{flagged}} of your six answers fell in the shaded range. Twelve trait questions left, about two minutes.",
+      "flagged_chip": "{{count}} / 6 flagged",
+      "duration": "{{minutes}} m {{seconds}} s",
+      "continue": "Continue to Part B",
+      "progress_saved": "Progress saved",
+      "break_title": "Good place to stop",
+      "break_desc": "Part A is done. The twelve trait questions can wait — pick them up from the Assess tab whenever you like.",
+      "break_cta": "Continue later",
+      "continue_now": "Keep going"
+    },
+    "calculating_sub": "18 answers · WHO scoring matrix",
+    "calculating_footnote": "This takes a couple of seconds",
+    "tab_disclaimer": "Screening tool only. Results are not a diagnosis.",
+    "instrument_line": "WHO ASRS v1.1 · 18 questions",
+    "in_progress_part_a": "Core screening in progress",
+    "in_progress_part_b": "Part B in progress",
+    "last_completed": "Last completed",
+    "view_report": "View report",
+    "start_fresh": "Start a fresh assessment",
+    "start_fresh_confirm": "Your unfinished answers will be discarded."
   },
   "scale": {
     "never": "Never",
@@ -108,48 +136,65 @@
     "very_often": "Very Often"
   },
   "results": {
-    "title": "Your Focus Profile",
+    "title": "Your focus profile",
     "classification": {
-      "high_consistency": "Significant Trait Consistency Detected",
-      "low_consistency": "Low Trait Consistency Detected"
+      "high_consistency": "Symptoms consistent with ADHD",
+      "low_consistency": "Symptoms below the screening threshold",
+      "high_short": "Consistent with ADHD",
+      "low_short": "Below the threshold"
     },
     "disclaimer": "This is an educational self-screening result based on the WHO ASRS v1.1. It is not a medical diagnosis.",
     "inattention_label": "Inattention Subscale",
     "hyperactivity_label": "Hyperactivity Subscale",
     "part_a_label": "Part A Core Score",
     "unlock_cta": "Watch 30s Ad to Unlock Doctor's Report",
-    "reveal_cta": "Reveal My Doctor's Report",
+    "reveal_cta": "Reveal my doctor's report",
     "unlocked_cta": "View Your Doctor's Report",
-    "retake_cta": "Retake Assessment",
-    "trait_breakdown_title": "Trait Breakdown"
+    "retake_cta": "Retake assessment",
+    "trait_breakdown_title": "Trait Breakdown",
+    "screen_disclaimer": "Screening result only. Discuss with a clinician before drawing conclusions.",
+    "rescreen_hint": "Re-screen in 30 days to see whether the pattern holds",
+    "inattention_short": "Inattention",
+    "hyperactivity_short": "Hyperactivity",
+    "part_a_short": "Part A screen",
+    "stat_inatt": "Inatt.",
+    "stat_hyper": "Hyper.",
+    "stat_part_a": "Part A"
   },
   "report": {
-    "title": "Doctor's Summary",
+    "title": "Doctor's report",
     "save_cta": "Save to Files",
-    "share_cta": "Share via WhatsApp / Email",
+    "share_cta": "Share",
     "print_cta": "Print",
     "generating": "Generating report…",
-    "reminder_toggle": "Enable 30-Day Re-Assessment Reminder",
+    "reminder_toggle": "Remind me to re-screen",
     "reminder_desc": "We'll send a local notification in 30 days suggesting a re-assessment.",
     "reminder_scheduled": "Re-assessment reminder scheduled",
     "reminder_cancelled": "Reminder disabled",
-    "locked_banner": "Unlock with a short ad to generate your PDF report."
+    "locked_banner": "Unlock with a short ad to generate your PDF report.",
+    "ready": "Ready",
+    "doc_title": "ASRS v1.1 Screening Summary",
+    "doc_caption": "{{date}} · self-administered",
+    "flagged_responses": "Flagged responses",
+    "citation": "Instrument: WHO Adult ADHD Self-Report Scale (ASRS-v1.1) Symptom Checklist. Kessler RC et al., 2005. Screening instrument; not a diagnostic tool.",
+    "back_cta": "Back to results"
   },
   "tracker": {
-    "title": "Daily Check-In",
-    "streak": "{{count}}-Day Focus Streak",
+    "title": "Daily check-in",
+    "streak": "{{count}}-day streak",
     "focus_level": "Focus Level",
     "brain_fog": "Brain Fog",
     "executive_friction": "Executive Friction",
     "mood": "Mood",
-    "medication_taken": "Medication Taken Today",
-    "save_entry": "Save Entry",
+    "medication_taken": "Took medication today",
+    "save_entry": "Save today's check-in",
     "entry_saved": "Entry saved. See you tomorrow!",
     "already_logged": "Already logged today",
-    "logged_toast": "Today's check-in complete!"
+    "logged_toast": "Today's check-in complete!",
+    "subtitle": "{{date}} · takes ten seconds"
   },
   "history": {
-    "title": "History & Trends",
+    "title": "History",
     "assessment_trends": "Assessment Score Trends",
     "stable": "Stable",
     "improving": "Improving",
@@ -158,20 +203,27 @@
     "monthly_reassessment_cta": "Start Monthly Re-Assessment",
     "daily_entries": "Daily Entries",
     "legend_inattention": "Inattention",
-    "legend_hyperactivity": "Hyperactivity"
+    "legend_hyperactivity": "Hyperactivity",
+    "six_month_trend": "Six-month trend",
+    "sessions": "Sessions",
+    "session_sub": "Inattention {{inattention}} · Hyperactivity {{hyperactivity}}",
+    "reassess_now": "Re-assess now"
   },
   "settings": {
     "title": "Settings",
     "language": "Language",
-    "retake_assessment": "Retake Assessment",
+    "retake_assessment": "Retake assessment",
     "remove_ads": "Remove Ads & Support Development",
     "remove_ads_desc": "$1.99/month — keeps NeuroTrace serverless.",
     "privacy": "Privacy",
-    "privacy_note": "All data is stored locally on this device only. Nothing is uploaded.",
+    "privacy_note": "Answers, scores and check-ins are stored only on this device. No account, no analytics.",
     "about": "About",
     "version": "Version",
     "clear_data": "Clear All Data",
-    "clear_data_confirm": "Delete all local assessment and tracking data? This cannot be undone."
+    "clear_data_confirm": "Delete all local assessment and tracking data? This cannot be undone.",
+    "app": "App",
+    "daily_reminder": "Daily check-in reminder",
+    "daily_reminder_body": "Ten seconds on focus, fog, friction and mood."
   },
   "cross_promo": {
     "banner": "Overwhelmed by internal noise right now?",
@@ -209,7 +261,14 @@
       "interrupting": "Interrupting others",
       "impatience": "Impatience",
       "intruding_on_others": "Intruding on others",
-      "acting_without_thinking": "Acting without thinking"
+      "acting_without_thinking": "Acting without thinking",
+      "listening_difficulty": "Difficulty listening when spoken to"
     }
+  },
+  "tabs": {
+    "checkin": "Check-in",
+    "assess": "Assess",
+    "history": "History",
+    "settings": "Settings"
   }
 }

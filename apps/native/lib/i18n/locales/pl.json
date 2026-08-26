@@ -78,7 +78,7 @@
     "calculate_cta": "Oblicz Mój Profil Koncentracji",
     "calculating": "Analiza odpowiedzi…",
     "answers_saved": "Odpowiedzi zapisują się automatycznie",
-    "resume_cta": "Wróć do Oceny",
+    "resume_cta": "Wznów",
     "questions": {
       "q1": "Jak często masz kłopoty z dopięciem ostatnich szczegółów projektu, gdy trudniejsze części są już zrobione?",
       "q2": "Jak często masz trudność z uporządkowaniem rzeczy, gdy zadanie wymaga organizacji?",
@@ -98,7 +98,35 @@
       "q16": "W rozmowie jak często kończysz zdania rozmówcy, zanim on/on dokończy je sam/sama?",
       "q17": "Jak often trudno Ci czekać na swoją kolej, gdy trzeba się zmieniać?",
       "q18": "Jak often przerywasz innym, gdy są zajęci?"
-    }
+    },
+    "timeframe": "W ciągu ostatnich sześciu miesięcy",
+    "progress_short": "Pytanie {{current}} z {{total}}",
+    "section_core": "Badanie podstawowe",
+    "section_traits": "Profil cech",
+    "section_part_a_complete": "Część A ukończona",
+    "traits_left": "Zostało {{count}} szybkich cech",
+    "milestone": {
+      "title": "Badanie podstawowe ukończone",
+      "desc": "{{flagged}} z sześciu odpowiedzi znalazło się w zaznaczonym zakresie. Zostało dwanaście pytań o cechy, około dwóch minut.",
+      "flagged_chip": "{{count}} / 6 oznaczone",
+      "duration": "{{minutes}} m {{seconds}} s",
+      "continue": "Przejdź do części B",
+      "progress_saved": "Postęp zapisany",
+      "break_title": "Dobry moment na przerwę",
+      "break_desc": "Część A gotowa. Dwanaście pytań o cechy może poczekać — wróć do nich w zakładce Ocena, kiedy zechcesz.",
+      "break_cta": "Kontynuuj później",
+      "continue_now": "Kontynuuj teraz"
+    },
+    "calculating_sub": "18 odpowiedzi · matryca punktacji WHO",
+    "calculating_footnote": "Zajmie to kilka sekund",
+    "tab_disclaimer": "Tylko narzędzie przesiewowe. Wyniki nie są diagnozą.",
+    "instrument_line": "WHO ASRS v1.1 · 18 pytań",
+    "in_progress_part_a": "Badanie podstawowe w toku",
+    "in_progress_part_b": "Część B w toku",
+    "last_completed": "Ostatnio ukończone",
+    "view_report": "Zobacz raport",
+    "start_fresh": "Rozpocznij nową ocenę",
+    "start_fresh_confirm": "Niedokończone odpowiedzi zostaną odrzucone."
   },
   "scale": {
     "never": "Nigdy",
@@ -108,48 +136,65 @@
     "very_often": "Bardzo często"
   },
   "results": {
-    "title": "Twój Profil Koncentracji",
+    "title": "Twój profil uwagi",
     "classification": {
-      "high_consistency": "Wykryto znaczną spójność cech",
-      "low_consistency": "Wykryto niską spójność cech"
+      "high_consistency": "Objawy zgodne z ADHD",
+      "low_consistency": "Objawy poniżej progu przesiewowego",
+      "high_short": "Zgodne z ADHD",
+      "low_short": "Poniżej progu"
     },
     "disclaimer": "To edukacyjny wynik samooceny oparty na WHO ASRS v1.1. Nie jest to diagnoza medyczna.",
     "inattention_label": "Podskala nieuwagi",
     "hyperactivity_label": "Podskala nadaktywności",
     "part_a_label": "Główny wynik części A",
     "unlock_cta": "Obejrzyj 30s reklamy, aby odblokować raport dla lekarza",
-    "reveal_cta": "Pokaż Raport dla Lekarza",
+    "reveal_cta": "Pokaż raport dla lekarza",
     "unlocked_cta": "Zobacz Swój Raport dla Lekarza",
     "retake_cta": "Powtórz ocenę",
-    "trait_breakdown_title": "Szczegóły cech"
+    "trait_breakdown_title": "Szczegóły cech",
+    "screen_disclaimer": "To tylko wynik przesiewowy. Omów go z lekarzem, zanim wyciągniesz wnioski.",
+    "rescreen_hint": "Powtórz badanie za 30 dni, aby sprawdzić, czy wzorzec się utrzymuje",
+    "inattention_short": "Nieuwaga",
+    "hyperactivity_short": "Nadpobudliwość",
+    "part_a_short": "Badanie części A",
+    "stat_inatt": "Nieuw.",
+    "stat_hyper": "Nadpob.",
+    "stat_part_a": "Część A"
   },
   "report": {
-    "title": "Podsumowanie dla Lekarza",
+    "title": "Raport dla lekarza",
     "save_cta": "Zapisz do Plików",
-    "share_cta": "Udostępnij przez WhatsApp / E-mail",
+    "share_cta": "Udostępnij",
     "print_cta": "Drukuj",
     "generating": "Generowanie raportu…",
-    "reminder_toggle": "Włącz przypomnienie o ponownej ocenie po 30 dniach",
+    "reminder_toggle": "Przypomnij o powtórzeniu badania",
     "reminder_desc": "Wyślemy lokalne powiadomienie za 30 dni z sugestią ponownej oceny.",
     "reminder_scheduled": "Przypomnienie zaplanowane",
     "reminder_cancelled": "Przypomnienie wyłączone",
-    "locked_banner": "Odblokuj krótką reklamą, aby wygenerować PDF."
+    "locked_banner": "Odblokuj krótką reklamą, aby wygenerować PDF.",
+    "ready": "Gotowe",
+    "doc_title": "Podsumowanie badania ASRS v1.1",
+    "doc_caption": "{{date}} · wypełnione samodzielnie",
+    "flagged_responses": "Oznaczone odpowiedzi",
+    "citation": "Narzędzie: Skala samooceny ADHD u dorosłych WHO (ASRS-v1.1). Kessler RC i wsp., 2005. Narzędzie przesiewowe, nie diagnostyczne.",
+    "back_cta": "Powrót do wyników"
   },
   "tracker": {
-    "title": "Codzienny Check-in",
-    "streak": "Seria {{count}} dni",
+    "title": "Codzienny wpis",
+    "streak": "Passa {{count}} dni",
     "focus_level": "Poziom koncentracji",
     "brain_fog": "Mgła mózgowa",
     "executive_friction": "Tarcie wykonawcze",
     "mood": "Nastrój",
     "medication_taken": "Lek przyjęty dzisiaj",
-    "save_entry": "Zapisz wpis",
+    "save_entry": "Zapisz dzisiejszy wpis",
     "entry_saved": "Zapisano! Do zobaczenia jutro.",
     "already_logged": "Już zapisano dziś",
-    "logged_toast": "Dzisiejszy check-in ukończony!"
+    "logged_toast": "Dzisiejszy check-in ukończony!",
+    "subtitle": "{{date}} · zajmie dziesięć sekund"
   },
   "history": {
-    "title": "Historia i trendy",
+    "title": "Historia",
     "assessment_trends": "Trendy wyników",
     "stable": "Stabilnie",
     "improving": "Poprawa",
@@ -158,7 +203,11 @@
     "monthly_reassessment_cta": "Rozpocznij comiesięczną ponowną ocenę",
     "daily_entries": "Wpisy dzienne",
     "legend_inattention": "Nieuwaga",
-    "legend_hyperactivity": "Nadaktywność"
+    "legend_hyperactivity": "Nadaktywność",
+    "six_month_trend": "Trend półroczny",
+    "sessions": "Sesje",
+    "session_sub": "Nieuwaga {{inattention}} · Nadpobudliwość {{hyperactivity}}",
+    "reassess_now": "Oceń ponownie"
   },
   "settings": {
     "title": "Ustawienia",
@@ -167,11 +216,14 @@
     "remove_ads": "Usuń reklamy i wesprzyj rozwój",
     "remove_ads_desc": "$1,99/mies. — utrzymuje NeuroTrace bez serwerów.",
     "privacy": "Prywatność",
-    "privacy_note": "Wszystkie dane są przechowywane lokalnie na tym urządzeniu. Nic nie jest wysyłane.",
+    "privacy_note": "Odpowiedzi, wyniki i wpisy są przechowywane tylko na tym urządzeniu. Bez konta, bez analityki.",
     "about": "Informacje",
     "version": "Wersja",
     "clear_data": "Usuń wszystkie dane",
-    "clear_data_confirm": "Usunąć wszystkie lokalne dane ocen i śledzenia? Tej operacji nie można cofnąć."
+    "clear_data_confirm": "Usunąć wszystkie lokalne dane ocen i śledzenia? Tej operacji nie można cofnąć.",
+    "app": "Aplikacja",
+    "daily_reminder": "Przypomnienie o codziennym wpisie",
+    "daily_reminder_body": "Dziesięć sekund o skupieniu, mgle, tarciu i nastroju."
   },
   "cross_promo": {
     "banner": "Przytłoczony/a wewnętrznym hałasem?",
@@ -209,7 +261,14 @@
       "interrupting": "Przerywanie innym",
       "impatience": "Niecierpliwość",
       "intruding_on_others": "Wtrącanie się w sprawy innych",
-      "acting_without_thinking": "Działanie bez zastanowienia"
+      "acting_without_thinking": "Działanie bez zastanowienia",
+      "listening_difficulty": "Trudność ze słuchaniem, gdy ktoś mówi"
     }
+  },
+  "tabs": {
+    "checkin": "Wpis",
+    "assess": "Ocena",
+    "history": "Historia",
+    "settings": "Ustawienia"
   }
 }

@@ -78,7 +78,7 @@
     "calculate_cta": "Calculer Mon Profil de Concentration",
     "calculating": "Analyse de vos réponses…",
     "answers_saved": "Réponses enregistrées automatiquement",
-    "resume_cta": "Reprendre l'évaluation",
+    "resume_cta": "Reprendre",
     "questions": {
       "q1": "À quelle fréquence avez-vous du mal à finaliser les derniers détails d'un projet, une fois les parties difficiles terminées ?",
       "q2": "À quelle fréquence avez-vous du mal à organiser les choses lorsqu'une tâche exige de l'organisation ?",
@@ -98,7 +98,35 @@
       "q16": "En conversation, à quelle fréquence finissez-vous les phrases de vos interlocuteurs avant eux-mêmes ?",
       "q17": "À quelle fréquence avez-vous du mal à attendre votre tour quand il faut prendre son tour ?",
       "q18": "À quelle fréquence interrompez-vous les autres quand ils sont occupés ?"
-    }
+    },
+    "timeframe": "Au cours des six derniers mois",
+    "progress_short": "Question {{current}} sur {{total}}",
+    "section_core": "Dépistage principal",
+    "section_traits": "Profil de traits",
+    "section_part_a_complete": "Partie A terminée",
+    "traits_left": "Encore {{count}} traits rapides",
+    "milestone": {
+      "title": "Dépistage principal terminé",
+      "desc": "{{flagged}} de vos six réponses se situent dans la zone grisée. Il reste douze questions de traits, environ deux minutes.",
+      "flagged_chip": "{{count}} / 6 signalées",
+      "duration": "{{minutes}} m {{seconds}} s",
+      "continue": "Continuer vers la partie B",
+      "progress_saved": "Progression enregistrée",
+      "break_title": "Bon moment pour faire une pause",
+      "break_desc": "La partie A est terminée. Les douze questions de traits peuvent attendre : reprenez-les depuis l'onglet Évaluer quand vous voulez.",
+      "break_cta": "Continuer plus tard",
+      "continue_now": "Continuer maintenant"
+    },
+    "calculating_sub": "18 réponses · matrice de cotation de l'OMS",
+    "calculating_footnote": "Cela prend quelques secondes",
+    "tab_disclaimer": "Outil de dépistage uniquement. Les résultats ne sont pas un diagnostic.",
+    "instrument_line": "OMS ASRS v1.1 · 18 questions",
+    "in_progress_part_a": "Dépistage principal en cours",
+    "in_progress_part_b": "Partie B en cours",
+    "last_completed": "Dernier terminé",
+    "view_report": "Voir le rapport",
+    "start_fresh": "Commencer une nouvelle évaluation",
+    "start_fresh_confirm": "Vos réponses inachevées seront supprimées."
   },
   "scale": {
     "never": "Jamais",
@@ -108,48 +136,65 @@
     "very_often": "Très souvent"
   },
   "results": {
-    "title": "Votre Profil de Concentration",
+    "title": "Votre profil d'attention",
     "classification": {
-      "high_consistency": "Cohérence Significative des Traits Détectée",
-      "low_consistency": "Faible Cohérence des Traits Détectée"
+      "high_consistency": "Symptômes compatibles avec le TDAH",
+      "low_consistency": "Symptômes sous le seuil de dépistage",
+      "high_short": "Compatible avec le TDAH",
+      "low_short": "Sous le seuil"
     },
     "disclaimer": "Ceci est un résultat éducatif d'auto-évaluation basé sur le WHO ASRS v1.1. Ce n'est pas un diagnostic médical.",
     "inattention_label": "Sous-échelle Inattention",
     "hyperactivity_label": "Sous-échelle Hyperactivité",
     "part_a_label": "Score Principal Partie A",
     "unlock_cta": "Voir une Pub de 30s pour Débloquer le Rapport Médical",
-    "reveal_cta": "Révéler Mon Rapport Médical",
+    "reveal_cta": "Afficher mon rapport médical",
     "unlocked_cta": "Voir Votre Rapport Médical",
-    "retake_cta": "Refaire l'Évaluation",
-    "trait_breakdown_title": "Détail des Traits"
+    "retake_cta": "Refaire l'évaluation",
+    "trait_breakdown_title": "Détail des Traits",
+    "screen_disclaimer": "Résultat de dépistage uniquement. Parlez-en à un clinicien avant de tirer des conclusions.",
+    "rescreen_hint": "Refaites le dépistage dans 30 jours pour voir si le schéma persiste",
+    "inattention_short": "Inattention",
+    "hyperactivity_short": "Hyperactivité",
+    "part_a_short": "Dépistage partie A",
+    "stat_inatt": "Inatt.",
+    "stat_hyper": "Hyper.",
+    "stat_part_a": "Partie A"
   },
   "report": {
-    "title": "Synthèse Médicale",
+    "title": "Rapport pour le médecin",
     "save_cta": "Enregistrer dans Fichiers",
-    "share_cta": "Partager via WhatsApp / Email",
+    "share_cta": "Partager",
     "print_cta": "Imprimer",
     "generating": "Génération du rapport…",
-    "reminder_toggle": "Activer le Rappel de Réévaluation à 30 Jours",
+    "reminder_toggle": "Me rappeler de refaire le dépistage",
     "reminder_desc": "Nous vous enverrons une notification locale dans 30 jours suggérant une réévaluation.",
     "reminder_scheduled": "Rappel programmé",
     "reminder_cancelled": "Rappel désactivé",
-    "locked_banner": "Débloquez avec une courte pub pour générer votre rapport PDF."
+    "locked_banner": "Débloquez avec une courte pub pour générer votre rapport PDF.",
+    "ready": "Prêt",
+    "doc_title": "Résumé de dépistage ASRS v1.1",
+    "doc_caption": "{{date}} · auto-administré",
+    "flagged_responses": "Réponses signalées",
+    "citation": "Instrument : échelle d'auto-évaluation du TDAH de l'adulte de l'OMS (ASRS-v1.1). Kessler RC et al., 2005. Instrument de dépistage ; pas un outil de diagnostic.",
+    "back_cta": "Retour aux résultats"
   },
   "tracker": {
-    "title": "Point Quotidien",
+    "title": "Point quotidien",
     "streak": "Série de {{count}} jours",
     "focus_level": "Niveau de Concentration",
     "brain_fog": "Brouillard Mental",
     "executive_friction": "Friction Exécutive",
     "mood": "Humeur",
     "medication_taken": "Médicament pris aujourd'hui",
-    "save_entry": "Enregistrer",
+    "save_entry": "Enregistrer le point du jour",
     "entry_saved": "Enregistré ! À demain.",
     "already_logged": "Déjà enregistré aujourd'hui",
-    "logged_toast": "Point quotidien terminé !"
+    "logged_toast": "Point quotidien terminé !",
+    "subtitle": "{{date}} · dix secondes"
   },
   "history": {
-    "title": "Historique et Tendances",
+    "title": "Historique",
     "assessment_trends": "Tendances des Scores",
     "stable": "Stable",
     "improving": "En amélioration",
@@ -158,20 +203,27 @@
     "monthly_reassessment_cta": "Commencer la Réévaluation Mensuelle",
     "daily_entries": "Entrées quotidiennes",
     "legend_inattention": "Inattention",
-    "legend_hyperactivity": "Hyperactivité"
+    "legend_hyperactivity": "Hyperactivité",
+    "six_month_trend": "Tendance sur six mois",
+    "sessions": "Sessions",
+    "session_sub": "Inattention {{inattention}} · Hyperactivité {{hyperactivity}}",
+    "reassess_now": "Réévaluer maintenant"
   },
   "settings": {
     "title": "Réglages",
     "language": "Langue",
-    "retake_assessment": "Refaire l'Évaluation",
+    "retake_assessment": "Refaire l'évaluation",
     "remove_ads": "Supprimer les pubs et soutenir le développement",
     "remove_ads_desc": "1,99 €/mois — garde NeuroTrace sans serveur.",
     "privacy": "Confidentialité",
-    "privacy_note": "Toutes les données sont stockées localement sur cet appareil. Rien n'est envoyé en ligne.",
+    "privacy_note": "Réponses, scores et points quotidiens restent uniquement sur cet appareil. Pas de compte, pas d'analyse.",
     "about": "À propos",
     "version": "Version",
     "clear_data": "Effacer toutes les données",
-    "clear_data_confirm": "Supprimer toutes les données locales d'évaluation et de suivi ? Cette action est irréversible."
+    "clear_data_confirm": "Supprimer toutes les données locales d'évaluation et de suivi ? Cette action est irréversible.",
+    "app": "Application",
+    "daily_reminder": "Rappel du point quotidien",
+    "daily_reminder_body": "Dix secondes sur la concentration, le brouillard, la friction et l'humeur."
   },
   "cross_promo": {
     "banner": "Submergé par le bruit intérieur en ce moment ?",
@@ -209,7 +261,14 @@
       "interrupting": "Interrompre les autres",
       "impatience": "Impatience",
       "intruding_on_others": "S'immiscer dans les affaires des autres",
-      "acting_without_thinking": "Agir sans réfléchir"
+      "acting_without_thinking": "Agir sans réfléchir",
+      "listening_difficulty": "Difficulté à écouter quand on lui parle"
     }
+  },
+  "tabs": {
+    "checkin": "Point",
+    "assess": "Évaluer",
+    "history": "Historique",
+    "settings": "Réglages"
   }
 }
