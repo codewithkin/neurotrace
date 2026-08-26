@@ -93,4 +93,8 @@
   --color-nt-pri-border: var(--nt-pri-border);
   --color-nt-track: var(--nt-track);
   --color-nt-card: var(--nt-card);
+
+  /* Brand alias: heroui calls it accent; design + app code say primary */
+  --color-primary: var(--accent);
+  --color-primary-foreground: var(--accent-foreground);
 }

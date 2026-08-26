@@ -1,192 +1,200 @@
 {
-  "common": {
-    "continue": "Weiter",
-    "back": "Zurück",
-    "save": "Speichern",
-    "cancel": "Abbrechen",
-    "done": "Fertig",
-    "next": "Weiter",
-    "start": "Starten"
-  },
-  "app_name": "NeuroTrace",
-  "onboarding": {
-    "steps_indicator": "Schritt {{current}} von {{total}}",
-    "language": {
-      "title": "Wähle deine Sprache",
-      "subtitle": "Du kannst sie jederzeit in den Einstellungen ändern."
-    },
-    "intent": {
-      "title": "Warum bist du hier?",
-      "subtitle": "Wir passen deine Erfahrung an.",
-      "option_doctor_visit": "Vorbereitung auf einen Arztbesuch",
-      "option_focus_struggles": "Schwierigkeiten mit Konzentration",
-      "option_organization": "Organisation überfordert mich",
-      "option_curious": "Einfach neugierig auf meine Eigenschaften",
-      "option_support_someone": "Jemanden unterstützen"
-    },
-    "value": {
-      "title": "Sofort ein arzttauglicher Bericht",
-      "subtitle": "Beantworte 18 kurze Fragen und erhalte einen strukturierten PDF-Bericht für deinen Arzt oder Therapeuten — kostenlos.",
-      "pdf_preview_title": "Ärztlicher Zusammenfassungsbericht",
-      "pdf_preview_subtitle": "WHO ASRS v1.1 Selbstbericht",
-      "pdf_preview_row_score": "Teil-A-Wert",
-      "pdf_preview_row_inattention": "Aufmerksamkeits-Subskala",
-      "pdf_preview_row_hyperactivity": "Hyperaktivitäts-Subskala"
-    },
-    "pace": {
-      "title": "Wie möchtest du antworten?",
-      "fast_pace": "Schnelles Tempo",
-      "fast_pace_desc": "Eine Frage nach der anderen, automatisch weiter. Empfohlen.",
-      "full_list": "Komplette Liste",
-      "full_list_desc": "Alle Fragen auf einer Bildschirmseite durchscrollen."
-    },
-    "legal": {
-      "checkbox": "Ich verstehe, dass dies ein pädagogisches Selbsteinschätzungsinstrument basierend auf dem WHO ASRS v1.1 ist und keine klinische medizinische Diagnose.",
-      "cta": "Loslegen"
-    }
-  },
-  "assessment": {
-    "part_a_header": "Kern-Screening",
-    "part_b_header": "Ausprägung & Häufigkeit",
-    "progress": "Frage {{current}} von {{total}}",
-    "part_a_intro": "Wie oft hast du in den letzten 6 Monaten Folgendes erlebt?",
-    "milestone_badge": "Kern-Screening abgeschlossen!",
-    "part_b_transition": "Nur noch 12 schnelle Merkmale — du machst das großartig!",
-    "calculate_cta": "Mein Fokus-Profil berechnen",
-    "calculating": "Antworten werden analysiert…",
-    "answers_saved": "Antworten werden automatisch gespeichert",
-    "resume_cta": "Assessment fortsetzen",
-    "questions": {
-      "q1": "Wie oft hast du Schwierigkeiten, die letzten Details eines Projekts abzuschließen, nachdem die anspruchsvollen Teile erledigt sind?",
-      "q2": "Wie oft fällt es dir schwer, Dinge zu ordnen, wenn eine Aufgabe Organisation erfordert?",
-      "q3": "Wie oft hast du Probleme, dich an Termine oder Verpflichtungen zu erinnern?",
-      "q4": "Wenn eine Aufgabe viel Denken erfordert, wie oft vermeidest du es, anzufangen, oder schiebst es auf?",
-      "q5": "Wie oft fummelst oder zappelt du mit Händen oder Füßen, wenn du lange sitzen musst?",
-      "q6": "Wie oft fühlst du dich übermäßig aktiv und getrieben, als würdest du von einem Motor angetrieben?",
-      "q7": "Wie oft machst du Unachtsamkeitsfehler bei langweiligen oder herausfordernden Arbeiten?",
-      "q8": "Wie oft fällt es dir schwer, bei langweiliger oder sich wiederholender Arbeit bei der Sache zu bleiben?",
-      "q9": "Wie oft hast du Schwierigkeiten, dich auf das zu konzentrieren, was Leute dir sagen, selbst wenn sie direkt mit dir sprechen?",
-      "q10": "Wie oft verlegst du Dinge oder findest sie schwer zu Hause oder bei der Arbeit?",
-      "q11": "Wie oft wirst du von Aktivität oder Lärm um dich herum abgelenkt?",
-      "q12": "Wie oft verlässt du deinen Platz in Besprechungen oder anderen Situationen, in denen Sitzen erwartet wird?",
-      "q13": "Wie oft fühlst du dich unruhig oder zappelig?",
-      "q14": "Wie oft fällt es dir schwer, zur Ruhe zu kommen und zu entspannen, wenn du Zeit für dich hast?",
-      "q15": "Wie oft sprichst du in sozialen Situationen zu viel?",
-      "q16": "Wie oft beendest du in Gesprächen die Sätze deines Gegenübers, bevor er oder sie sie selbst beenden kann?",
-      "q17": "Wie oft fällt es dir schwer zu warten, wenn Reihenfolge dran ist?",
-      "q18": "Wie oft unterbrichst du andere, wenn sie beschäftigt sind?"
-    }
-  },
-  "scale": {
-    "never": "Nie",
-    "rarely": "Selten",
-    "sometimes": "Manchmal",
-    "often": "Oft",
-    "very_often": "Sehr oft"
-  },
-  "results": {
-    "title": "Dein Fokus-Profil",
-    "classification": {
-      "high_consistency": "Erhebliche Merkmalskonsistenz festgestellt",
-      "low_consistency": "Geringe Merkmalskonsistenz festgestellt"
-    },
-    "disclaimer": "Dies ist ein pädagogisches Selbsteinschätzungsergebnis basierend auf dem WHO ASRS v1.1. Es ist keine medizinische Diagnose.",
-    "inattention_label": "Aufmerksamkeits-Subskala",
-    "hyperactivity_label": "Hyperaktivitäts-Subskala",
-    "part_a_label": "Teil-A-Kernwert",
-    "unlock_cta": "30s Werbung ansehen & Arztbericht freischalten",
-    "reveal_cta": "Arztbericht anzeigen",
-    "unlocked_cta": "Deinen Arztbericht ansehen",
-    "retake_cta": "Assessment wiederholen",
-    "trait_breakdown_title": "Merkmalsübersicht"
-  },
-  "report": {
-    "title": "Ärztliche Zusammenfassung",
-    "save_cta": "In Dateien speichern",
-    "share_cta": "Über WhatsApp / E-Mail teilen",
-    "print_cta": "Drucken",
-    "generating": "Bericht wird erstellt…",
-    "reminder_toggle": "30-Tage-Erinnerung aktivieren",
-    "reminder_desc": "Wir senden dir in 30 Tagen eine lokale Benachrichtigung für eine erneute Einschätzung.",
-    "reminder_scheduled": "Erinnerung geplant",
-    "reminder_cancelled": "Erinnerung deaktiviert",
-    "locked_banner": "Schalte mit einer kurzen Werbung deinen PDF-Bericht frei."
-  },
-  "tracker": {
-    "title": "Täglicher Check-in",
-    "streak": "{{count}}-Tage-Fokus-Serie",
-    "focus_level": "Fokuslevel",
-    "brain_fog": "Brain Fog",
-    "executive_friction": "Exekutive Reibung",
-    "mood": "Stimmung",
-    "medication_taken": "Medikament heute genommen",
-    "save_entry": "Eintrag speichern",
-    "entry_saved": "Gespeichert! Bis morgen.",
-    "already_logged": "Heute schon erfasst",
-    "logged_toast": "Täglicher Check-in komplett!"
-  },
-  "history": {
-    "title": "Verlauf & Trends",
-    "assessment_trends": "Wertetrends",
-    "stable": "Stabil",
-    "improving": "Verbessernd",
-    "elevated": "Erhöht",
-    "no_data": "Schließe eine Einschätzung ab, um Trends zu verfolgen.",
-    "monthly_reassessment_cta": "Monatliche Neubewertung starten",
-    "daily_entries": "Tageseinträge",
-    "legend_inattention": "Aufmerksamkeit",
-    "legend_hyperactivity": "Hyperaktivität"
-  },
-  "settings": {
-    "title": "Einstellungen",
-    "language": "Sprache",
-    "retake_assessment": "Assessment wiederholen",
-    "remove_ads": "Werbung entfernen & Entwicklung unterstützen",
-    "remove_ads_desc": "1,99 €/Monat — hält NeuroTrace serverlos.",
-    "privacy": "Datenschutz",
-    "privacy_note": "Alle Daten werden nur lokal auf diesem Gerät gespeichert. Nichts wird hochgeladen.",
-    "about": "Über",
-    "version": "Version",
-    "clear_data": "Alle Daten löschen",
-    "clear_data_confirm": "Alle lokalen Assessments und Tracking-Daten löschen? Dies kann nicht rückgängig gemacht werden."
-  },
-  "cross_promo": {
-    "banner": "Gerade jetzt vom inneren Lärm überwältigt?",
-    "cta": "Brown Noise for Focus öffnen"
-  },
-  "pdf": {
-    "document_title": "Ärztlicher Zusammenfassungsbericht",
-    "generated_by": "Erstellt von NeuroTrace",
-    "patient_alias": "Erstellt für",
-    "date": "Datum",
-    "instrument": "Instrument: WHO Adult ADHD Self-Report Scale (ASRS v1.1)",
-    "part_a_summary": "Teil A Kern-Screening",
-    "part_a_positive": "{{score}} von 6 Items erreichten den Screening-Schwellwert (4+ deutet auf hohe Merkmalskonsistenz hin).",
-    "subscale_summary": "Subskala-Aufschlüsselung",
-    "response_matrix": "Antwortmatrix (0 = Nie … 4 = Sehr oft)",
-    "question": "#",
-    "symptom": "Symptombereich",
-    "response": "Antwort",
-    "footer_citation": "Quelle: World Health Organization Adult ADHD Self-Report Scale (ASRS v1.1) Symptom Checklist. Dieses Dokument ist eine pädagogische Selbstauskunft und stellt keine klinische Diagnose dar.",
-    "symptoms": {
-      "careless_mistakes": "Flüchtigkeitsfehler / mangelnde Detailgenauigkeit",
-      "restless_hands": "Unruhige Hände oder Füße",
-      "difficulty_concentrating": "Konzentrationsschwierigkeiten",
-      "finishing_tasks": "Schwierigkeiten, Aufgaben abzuschließen",
-      "disorganization": "Desorganisation",
-      "avoiding_sustained_effort": "Vermeidung anhaltender geistiger Anstrengung",
-      "losing_things": "Dinge verlieren",
-      "easily_distracted": "Leicht ablenkbar",
-      "forgetfulness": "Vergesslichkeit",
-      "fidgeting": "Zappeln",
-      "leaving_seat": "Aufstehen vom Platz",
-      "feeling_restless": "Innere Unruhe",
-      "difficulty_relaxing": "Schwierigkeiten zu entspannen",
-      "talks_excessively": "Übermäßiges Sprechen",
-      "interrupting": "Andere unterbrechen",
-      "impatience": "Ungeduld",
-      "intruding_on_others": "Sich einmischen",
-      "acting_without_thinking": "Handeln ohne Nachdenken"
-    }
-  }
+    "common":  {
+                   "continue":  "Weiter",
+                   "back":  "ZurÃ¼ck",
+                   "save":  "Speichern",
+                   "cancel":  "Abbrechen",
+                   "done":  "Fertig",
+                   "next":  "Weiter",
+                   "start":  "Starten"
+               },
+    "app_name":  "NeuroTrace",
+    "onboarding":  {
+                       "steps_indicator":  "Schritt {{current}} von {{total}}",
+                       "language":  {
+                                        "title":  "WÃ¤hle deine Sprache",
+                                        "subtitle":  "Fragen übersetzt aus der WHO-Quelle. Später in den Einstellungen änderbar."
+                                    },
+                       "intent":  {
+                                      "title":  "Warum bist du hier?",
+                                      "subtitle":  "Wir passen deine Erfahrung an.",
+                                      "option_doctor_visit":  "Vorbereitung auf einen Arztbesuch",
+                                      "option_focus_struggles":  "Schwierigkeiten mit Konzentration",
+                                      "option_organization":  "Organisation Ã¼berfordert mich",
+                                      "option_curious":  "Einfach neugierig auf meine Eigenschaften",
+                                      "option_support_someone":  "Jemanden unterstÃ¼tzen",
+                                      "option_doctor_visit_desc":  "Bringen Sie den druckbaren Bericht mit",
+                                      "option_focus_struggles_desc":  "Abgleich Ihrer Merkmale mit der ASRS-Skala",
+                                      "option_organization_desc":  "Erfahren Sie, was die tägliche Reibung erzeugt",
+                                      "option_curious_desc":  "Ein kurzer Selbsttest, unverbindlich",
+                                      "option_support_someone_desc":  "Verstehen, was eine nahestehende Person erlebt",
+                                      "tap_to_continue":  "Tippen Sie auf eine Option, um fortzufahren"
+                                  },
+                       "value":  {
+                                     "title":  "Sofort ein arzttauglicher Bericht",
+                                     "subtitle":  "Beantworte 18 kurze Fragen und erhalte einen strukturierten PDF-Bericht fÃ¼r deinen Arzt oder Therapeuten â€” kostenlos.",
+                                     "pdf_preview_title":  "Ã„rztlicher Zusammenfassungsbericht",
+                                     "pdf_preview_subtitle":  "WHO ASRS v1.1 Selbstbericht",
+                                     "pdf_preview_row_score":  "Teil-A-Wert",
+                                     "pdf_preview_row_inattention":  "Aufmerksamkeits-Subskala",
+                                     "pdf_preview_row_hyperactivity":  "HyperaktivitÃ¤ts-Subskala",
+                                     "perk_export":  "Als PDF exportieren oder aus jeder App teilen",
+                                     "perk_privacy":  "Antworten verlassen das Gerät nie"
+                                 },
+                       "pace":  {
+                                    "title":  "Wie mÃ¶chtest du antworten?",
+                                    "fast_pace":  "Schnelles Tempo",
+                                    "fast_pace_desc":  "Eine Frage nach der anderen, automatisch weiter. Empfohlen.",
+                                    "full_list":  "Komplette Liste",
+                                    "full_list_desc":  "Alle Fragen auf einer Bildschirmseite durchscrollen."
+                                },
+                       "legal":  {
+                                     "checkbox":  "Ich verstehe, dass dies ein pÃ¤dagogisches SelbsteinschÃ¤tzungsinstrument basierend auf dem WHO ASRS v1.1 ist und keine klinische medizinische Diagnose.",
+                                     "cta":  "Loslegen"
+                                 }
+                   },
+    "assessment":  {
+                       "part_a_header":  "Kern-Screening",
+                       "part_b_header":  "AusprÃ¤gung \u0026 HÃ¤ufigkeit",
+                       "progress":  "Frage {{current}} von {{total}}",
+                       "part_a_intro":  "Wie oft hast du in den letzten 6 Monaten Folgendes erlebt?",
+                       "milestone_badge":  "Kern-Screening abgeschlossen!",
+                       "part_b_transition":  "Nur noch 12 schnelle Merkmale â€” du machst das groÃŸartig!",
+                       "calculate_cta":  "Mein Fokus-Profil berechnen",
+                       "calculating":  "Antworten werden analysiertâ€¦",
+                       "answers_saved":  "Antworten werden automatisch gespeichert",
+                       "resume_cta":  "Assessment fortsetzen",
+                       "questions":  {
+                                         "q1":  "Wie oft hast du Schwierigkeiten, die letzten Details eines Projekts abzuschlieÃŸen, nachdem die anspruchsvollen Teile erledigt sind?",
+                                         "q2":  "Wie oft fÃ¤llt es dir schwer, Dinge zu ordnen, wenn eine Aufgabe Organisation erfordert?",
+                                         "q3":  "Wie oft hast du Probleme, dich an Termine oder Verpflichtungen zu erinnern?",
+                                         "q4":  "Wenn eine Aufgabe viel Denken erfordert, wie oft vermeidest du es, anzufangen, oder schiebst es auf?",
+                                         "q5":  "Wie oft fummelst oder zappelt du mit HÃ¤nden oder FÃ¼ÃŸen, wenn du lange sitzen musst?",
+                                         "q6":  "Wie oft fÃ¼hlst du dich Ã¼bermÃ¤ÃŸig aktiv und getrieben, als wÃ¼rdest du von einem Motor angetrieben?",
+                                         "q7":  "Wie oft machst du Unachtsamkeitsfehler bei langweiligen oder herausfordernden Arbeiten?",
+                                         "q8":  "Wie oft fÃ¤llt es dir schwer, bei langweiliger oder sich wiederholender Arbeit bei der Sache zu bleiben?",
+                                         "q9":  "Wie oft hast du Schwierigkeiten, dich auf das zu konzentrieren, was Leute dir sagen, selbst wenn sie direkt mit dir sprechen?",
+                                         "q10":  "Wie oft verlegst du Dinge oder findest sie schwer zu Hause oder bei der Arbeit?",
+                                         "q11":  "Wie oft wirst du von AktivitÃ¤t oder LÃ¤rm um dich herum abgelenkt?",
+                                         "q12":  "Wie oft verlÃ¤sst du deinen Platz in Besprechungen oder anderen Situationen, in denen Sitzen erwartet wird?",
+                                         "q13":  "Wie oft fÃ¼hlst du dich unruhig oder zappelig?",
+                                         "q14":  "Wie oft fÃ¤llt es dir schwer, zur Ruhe zu kommen und zu entspannen, wenn du Zeit fÃ¼r dich hast?",
+                                         "q15":  "Wie oft sprichst du in sozialen Situationen zu viel?",
+                                         "q16":  "Wie oft beendest du in GesprÃ¤chen die SÃ¤tze deines GegenÃ¼bers, bevor er oder sie sie selbst beenden kann?",
+                                         "q17":  "Wie oft fÃ¤llt es dir schwer zu warten, wenn Reihenfolge dran ist?",
+                                         "q18":  "Wie oft unterbrichst du andere, wenn sie beschÃ¤ftigt sind?"
+                                     }
+                   },
+    "scale":  {
+                  "never":  "Nie",
+                  "rarely":  "Selten",
+                  "sometimes":  "Manchmal",
+                  "often":  "Oft",
+                  "very_often":  "Sehr oft"
+              },
+    "results":  {
+                    "title":  "Dein Fokus-Profil",
+                    "classification":  {
+                                           "high_consistency":  "Erhebliche Merkmalskonsistenz festgestellt",
+                                           "low_consistency":  "Geringe Merkmalskonsistenz festgestellt"
+                                       },
+                    "disclaimer":  "Dies ist ein pÃ¤dagogisches SelbsteinschÃ¤tzungsergebnis basierend auf dem WHO ASRS v1.1. Es ist keine medizinische Diagnose.",
+                    "inattention_label":  "Aufmerksamkeits-Subskala",
+                    "hyperactivity_label":  "HyperaktivitÃ¤ts-Subskala",
+                    "part_a_label":  "Teil-A-Kernwert",
+                    "unlock_cta":  "30s Werbung ansehen \u0026 Arztbericht freischalten",
+                    "reveal_cta":  "Arztbericht anzeigen",
+                    "unlocked_cta":  "Deinen Arztbericht ansehen",
+                    "retake_cta":  "Assessment wiederholen",
+                    "trait_breakdown_title":  "MerkmalsÃ¼bersicht"
+                },
+    "report":  {
+                   "title":  "Ã„rztliche Zusammenfassung",
+                   "save_cta":  "In Dateien speichern",
+                   "share_cta":  "Ãœber WhatsApp / E-Mail teilen",
+                   "print_cta":  "Drucken",
+                   "generating":  "Bericht wird erstelltâ€¦",
+                   "reminder_toggle":  "30-Tage-Erinnerung aktivieren",
+                   "reminder_desc":  "Wir senden dir in 30 Tagen eine lokale Benachrichtigung fÃ¼r eine erneute EinschÃ¤tzung.",
+                   "reminder_scheduled":  "Erinnerung geplant",
+                   "reminder_cancelled":  "Erinnerung deaktiviert",
+                   "locked_banner":  "Schalte mit einer kurzen Werbung deinen PDF-Bericht frei."
+               },
+    "tracker":  {
+                    "title":  "TÃ¤glicher Check-in",
+                    "streak":  "{{count}}-Tage-Fokus-Serie",
+                    "focus_level":  "Fokuslevel",
+                    "brain_fog":  "Brain Fog",
+                    "executive_friction":  "Exekutive Reibung",
+                    "mood":  "Stimmung",
+                    "medication_taken":  "Medikament heute genommen",
+                    "save_entry":  "Eintrag speichern",
+                    "entry_saved":  "Gespeichert! Bis morgen.",
+                    "already_logged":  "Heute schon erfasst",
+                    "logged_toast":  "TÃ¤glicher Check-in komplett!"
+                },
+    "history":  {
+                    "title":  "Verlauf \u0026 Trends",
+                    "assessment_trends":  "Wertetrends",
+                    "stable":  "Stabil",
+                    "improving":  "Verbessernd",
+                    "elevated":  "ErhÃ¶ht",
+                    "no_data":  "SchlieÃŸe eine EinschÃ¤tzung ab, um Trends zu verfolgen.",
+                    "monthly_reassessment_cta":  "Monatliche Neubewertung starten",
+                    "daily_entries":  "TageseintrÃ¤ge",
+                    "legend_inattention":  "Aufmerksamkeit",
+                    "legend_hyperactivity":  "HyperaktivitÃ¤t"
+                },
+    "settings":  {
+                     "title":  "Einstellungen",
+                     "language":  "Sprache",
+                     "retake_assessment":  "Assessment wiederholen",
+                     "remove_ads":  "Werbung entfernen \u0026 Entwicklung unterstÃ¼tzen",
+                     "remove_ads_desc":  "1,99 â‚¬/Monat â€” hÃ¤lt NeuroTrace serverlos.",
+                     "privacy":  "Datenschutz",
+                     "privacy_note":  "Alle Daten werden nur lokal auf diesem GerÃ¤t gespeichert. Nichts wird hochgeladen.",
+                     "about":  "Ãœber",
+                     "version":  "Version",
+                     "clear_data":  "Alle Daten lÃ¶schen",
+                     "clear_data_confirm":  "Alle lokalen Assessments und Tracking-Daten lÃ¶schen? Dies kann nicht rÃ¼ckgÃ¤ngig gemacht werden."
+                 },
+    "cross_promo":  {
+                        "banner":  "Gerade jetzt vom inneren LÃ¤rm Ã¼berwÃ¤ltigt?",
+                        "cta":  "Brown Noise for Focus Ã¶ffnen"
+                    },
+    "pdf":  {
+                "document_title":  "Ã„rztlicher Zusammenfassungsbericht",
+                "generated_by":  "Erstellt von NeuroTrace",
+                "patient_alias":  "Erstellt fÃ¼r",
+                "date":  "Datum",
+                "instrument":  "Instrument: WHO Adult ADHD Self-Report Scale (ASRS v1.1)",
+                "part_a_summary":  "Teil A Kern-Screening",
+                "part_a_positive":  "{{score}} von 6 Items erreichten den Screening-Schwellwert (4+ deutet auf hohe Merkmalskonsistenz hin).",
+                "subscale_summary":  "Subskala-AufschlÃ¼sselung",
+                "response_matrix":  "Antwortmatrix (0 = Nie â€¦ 4 = Sehr oft)",
+                "question":  "#",
+                "symptom":  "Symptombereich",
+                "response":  "Antwort",
+                "footer_citation":  "Quelle: World Health Organization Adult ADHD Self-Report Scale (ASRS v1.1) Symptom Checklist. Dieses Dokument ist eine pÃ¤dagogische Selbstauskunft und stellt keine klinische Diagnose dar.",
+                "symptoms":  {
+                                 "careless_mistakes":  "FlÃ¼chtigkeitsfehler / mangelnde Detailgenauigkeit",
+                                 "restless_hands":  "Unruhige HÃ¤nde oder FÃ¼ÃŸe",
+                                 "difficulty_concentrating":  "Konzentrationsschwierigkeiten",
+                                 "finishing_tasks":  "Schwierigkeiten, Aufgaben abzuschlieÃŸen",
+                                 "disorganization":  "Desorganisation",
+                                 "avoiding_sustained_effort":  "Vermeidung anhaltender geistiger Anstrengung",
+                                 "losing_things":  "Dinge verlieren",
+                                 "easily_distracted":  "Leicht ablenkbar",
+                                 "forgetfulness":  "Vergesslichkeit",
+                                 "fidgeting":  "Zappeln",
+                                 "leaving_seat":  "Aufstehen vom Platz",
+                                 "feeling_restless":  "Innere Unruhe",
+                                 "difficulty_relaxing":  "Schwierigkeiten zu entspannen",
+                                 "talks_excessively":  "ÃœbermÃ¤ÃŸiges Sprechen",
+                                 "interrupting":  "Andere unterbrechen",
+                                 "impatience":  "Ungeduld",
+                                 "intruding_on_others":  "Sich einmischen",
+                                 "acting_without_thinking":  "Handeln ohne Nachdenken"
+                             }
+            }
 }

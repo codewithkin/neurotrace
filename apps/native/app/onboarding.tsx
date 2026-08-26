@@ -1,14 +1,21 @@
-import * as Haptics from "expo-haptics";
+﻿import * as Haptics from "expo-haptics";
+import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import { Button, Checkbox, Separator, Surface } from "heroui-native";
+import { Checkbox, useThemeColor } from "heroui-native";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Pressable, Text, View } from "react-native";
 
 import { Container } from "@/components/container";
 import {
-  applyLayoutDirection,
-} from "@/lib/i18n/layout-direction";
+  ArrowRightIcon,
+  GhostButton,
+  PrimaryButton,
+  StepDots,
+} from "@/components/ui/buttons";
+import { FadeSlideIn } from "@/components/ui/motion";
+import { PressableScale } from "@/components/ui/pressable-scale";
+import { applyLayoutDirection } from "@/lib/i18n/layout-direction";
 import {
   DEFAULT_LANGUAGE,
   SUPPORTED_LANGUAGES,
@@ -23,62 +30,22 @@ import {
 
 const TOTAL_STEPS = 5;
 
-const INTENT_KEYS = [
-  "onboarding.intent.option_doctor_visit",
-  "onboarding.intent.option_focus_struggles",
-  "onboarding.intent.option_organization",
-  "onboarding.intent.option_curious",
-  "onboarding.intent.option_support_someone",
-] as const;
-
-function StepDots({ current }: { current: number }) {
-  return (
-    <View className="flex-row items-center justify-center gap-1.5 py-4">
-      {Array.from({ length: TOTAL_STEPS }, (_, i) => (
-        <View
-          key={i}
-          className={`h-1.5 rounded-full ${i === current ? "w-6 bg-primary" : i < current ? "w-1.5 bg-primary/60" : "w-1.5 bg-muted"}`}
-        />
-      ))}
-    </View>
-  );
-}
-
-function OptionCard({
-  label,
-  description,
-  selected,
-  onPress,
-}: {
-  label: string;
-  description?: string;
-  selected: boolean;
-  onPress: () => void;
-}) {
-  return (
-    <Pressable onPress={onPress}>
-      <Surface
-        variant={selected ? "tertiary" : "secondary"}
-        className={`rounded-xl border px-4 py-3 ${selected ? "border-primary" : "border-transparent"}`}
-      >
-        <Text
-          className={`text-sm font-medium ${selected ? "text-primary" : "text-foreground"}`}
-        >
-          {label}
-        </Text>
-        {description ? (
-          <Text className="text-muted mt-1 text-xs leading-snug">
-            {description}
-          </Text>
-        ) : null}
-      </Surface>
-    </Pressable>
-  );
-}
+const INTENTS: Array<{
+  key: string;
+  icon: keyof typeof Ionicons.glyphMap;
+}> = [
+  { key: "option_focus_struggles", icon: "bulb-outline" },
+  { key: "option_doctor_visit", icon: "medical-outline" },
+  { key: "option_organization", icon: "stats-chart-outline" },
+  { key: "option_curious", icon: "search-outline" },
+  { key: "option_support_someone", icon: "people-outline" },
+];
 
 export default function Onboarding() {
   const { t, i18n } = useTranslation();
   const router = useRouter();
+  const accent = useThemeColor("accent");
+  const muted = useThemeColor("muted");
 
   const [step, setStep] = useState(0);
   const [language, setLanguage] = useState(getLanguageCode() || DEFAULT_LANGUAGE);
@@ -95,7 +62,7 @@ export default function Onboarding() {
     setTimeout(() => setStep(1), 220);
   }
 
-  function selectIntent(key: (typeof INTENT_KEYS)[number]) {
+  function selectIntent(key: string) {
     setIntent(key);
     Haptics.selectionAsync();
     setTimeout(() => setStep(2), 220);
@@ -109,130 +76,221 @@ export default function Onboarding() {
 
   return (
     <Container className="px-4" isScrollable={false}>
-      <StepDots current={step} />
+      <StepDots total={TOTAL_STEPS} current={step} />
 
       {/* Step 1: Language */}
       {step === 0 && (
         <View className="flex-1">
-          <Text className="text-foreground text-2xl font-semibold tracking-tight">
-            {t("onboarding.language.title")}
-          </Text>
-          <Text className="text-muted mt-1 mb-4 text-sm">
-            {t("onboarding.language.subtitle")}
-          </Text>
-          <View className="flex-row flex-wrap gap-2">
-            {SUPPORTED_LANGUAGES.map((lang) => (
-              <View key={lang.code} className="w-[48%] grow">
-                <OptionCard
-                  label={lang.nativeName}
-                  selected={language === lang.code}
-                  onPress={() => selectLanguage(lang.code)}
-                />
-              </View>
-            ))}
+          <FadeSlideIn>
+            <Text className="text-foreground text-[26px] font-semibold tracking-[-0.03em]">
+              {t("onboarding.language.title")}
+            </Text>
+            <Text className="text-muted mt-1.5 text-sm leading-snug">
+              {t("onboarding.language.subtitle")}
+            </Text>
+          </FadeSlideIn>
+
+          <View className="mt-6 flex-row flex-wrap gap-2">
+            {SUPPORTED_LANGUAGES.map((lang, i) => {
+              const selected = language === lang.code;
+              return (
+                <FadeSlideIn key={lang.code} index={i} className="w-[48.5%] grow">
+                  <PressableScale
+                    accessibilityRole="button"
+                    accessibilityState={{ selected }}
+                    onPress={() => selectLanguage(lang.code)}
+                    className={`h-full rounded-2xl border px-3.5 py-3.5 ${
+                      selected
+                        ? "border-nt-pri-border bg-nt-tint"
+                        : "border-border bg-surface"
+                    }`}
+                  >
+                    <View className="flex-row items-center justify-between gap-1">
+                      <Text className="text-[15px] font-semibold text-foreground">
+                        {lang.nativeName}
+                      </Text>
+                      {selected && (
+                        <Ionicons name="checkmark-circle" size={19} color={accent} />
+                      )}
+                    </View>
+                    <Text className="text-muted mt-0.5 text-xs">{lang.englishName}</Text>
+                  </PressableScale>
+                </FadeSlideIn>
+              );
+            })}
           </View>
-          <Button variant="secondary" className="mt-4" onPress={() => setStep(1)}>
-            {t("common.continue")}
-          </Button>
+
+          <View className="mb-8 mt-auto">
+            <FadeSlideIn index={4}>
+              <PrimaryButton
+                label={t("common.continue")}
+                icon={<ArrowRightIcon />}
+                onPress={() => setStep(1)}
+              />
+            </FadeSlideIn>
+          </View>
         </View>
       )}
 
       {/* Step 2: Intent */}
       {step === 1 && (
         <View className="flex-1">
-          <Text className="text-foreground text-2xl font-semibold tracking-tight">
-            {t("onboarding.intent.title")}
-          </Text>
-          <Text className="text-muted mt-1 mb-4 text-sm">
-            {t("onboarding.intent.subtitle")}
-          </Text>
-          <View className="gap-2">
-            {INTENT_KEYS.map((key) => (
-              <OptionCard
-                key={key}
-                label={t(key)}
-                selected={intent === key}
-                onPress={() => selectIntent(key)}
-              />
-            ))}
+          <FadeSlideIn>
+            <Text className="text-foreground text-[26px] font-semibold tracking-[-0.03em]">
+              {t("onboarding.intent.title")}
+            </Text>
+            <Text className="text-muted mt-1.5 text-sm leading-snug">
+              {t("onboarding.intent.subtitle")}
+            </Text>
+          </FadeSlideIn>
+
+          <View className="mt-6 gap-2.5">
+            {INTENTS.map((item, i) => {
+              const selected = intent === item.key;
+              return (
+                <FadeSlideIn key={item.key} index={i}>
+                  <PressableScale
+                    accessibilityRole="button"
+                    accessibilityState={{ selected }}
+                    onPress={() => selectIntent(item.key)}
+                    className={`flex-row items-center gap-3.5 rounded-[18px] border p-4 ${
+                      selected
+                        ? "border-nt-pri-border bg-nt-tint"
+                        : "border-border bg-surface"
+                    }`}
+                  >
+                    <Ionicons
+                      name={item.icon}
+                      size={24}
+                      color={selected ? accent : muted}
+                    />
+                    <View className="flex-1 gap-0.5">
+                      <Text className="text-base font-semibold text-foreground">
+                        {t(`onboarding.intent.${item.key}`)}
+                      </Text>
+                      <Text className="text-muted text-[13px]">
+                        {t(`onboarding.intent.${item.key}_desc`)}
+                      </Text>
+                    </View>
+                    <Ionicons
+                      name={selected ? "checkmark-circle" : "chevron-forward"}
+                      size={20}
+                      color={selected ? accent : muted}
+                    />
+                  </PressableScale>
+                </FadeSlideIn>
+              );
+            })}
           </View>
-          <Button variant="ghost" className="mt-2 self-start px-2" onPress={() => setStep(0)}>
-            ← {t("common.back")}
-          </Button>
+
+          <Text className="text-muted mb-9 mt-auto self-center text-xs">
+            {t("onboarding.intent.tap_to_continue")}
+          </Text>
+
+          <GhostButton label={`â† ${t("common.back")}`} onPress={() => setStep(0)} />
         </View>
       )}
 
-      {/* Step 3: Value teaser */}
+      {/* Step 3: Value teaser (restyled in the next design pass) */}
       {step === 2 && (
         <View className="flex-1 justify-between">
           <View>
-            <Text className="text-foreground text-2xl font-semibold tracking-tight">
+            <Text className="text-foreground text-[26px] font-semibold tracking-[-0.03em]">
               {t("onboarding.value.title")}
             </Text>
-            <Text className="text-muted mt-1 text-sm leading-relaxed">
+            <Text className="text-muted mt-1.5 text-sm leading-relaxed">
               {t("onboarding.value.subtitle")}
             </Text>
           </View>
 
-          <Surface variant="secondary" className="rounded-2xl p-5">
-            <Text className="text-foreground text-base font-semibold">
-              {t("onboarding.value.pdf_preview_title")}
+          <View className="rounded-[20px] border border-border bg-surface p-5">
+            <Text className="text-foreground text-lg font-semibold tracking-tight">
+              ASRS v1.1 Screening Summary
             </Text>
-            <Text className="text-muted mb-3 mt-0.5 text-xs tracking-wide uppercase">
+            <Text className="text-primary mt-1.5 text-[10px] font-semibold uppercase tracking-[0.16em]" style={{ fontFamily: "Menlo" }}>
               {t("onboarding.value.pdf_preview_subtitle")}
             </Text>
-            <Separator className="mb-3" />
+            <View className="my-4 h-px bg-border" />
             {[
-              t("onboarding.value.pdf_preview_row_score"),
-              t("onboarding.value.pdf_preview_row_inattention"),
-              t("onboarding.value.pdf_preview_row_hyperactivity"),
+              { label: t("onboarding.value.pdf_preview_row_inattention"), pct: 76, op: 1 },
+              { label: t("onboarding.value.pdf_preview_row_hyperactivity"), pct: 48, op: 0.75 },
+              { label: t("onboarding.value.pdf_preview_row_score"), pct: 62, op: 0.55 },
             ].map((row) => (
-              <View key={row} className="mb-2.5 flex-row items-center justify-between">
-                <Text className="text-foreground/80 text-xs">{row}</Text>
-                <View className="h-1.5 w-20 rounded-full bg-primary/50" />
+              <View key={row.label} className="mb-3.5">
+                <Text className="text-muted text-xs font-semibold">{row.label}</Text>
+                <View className="mt-1.5 h-[7px] w-full overflow-hidden rounded-full bg-nt-track">
+                  <View
+                    className="h-full rounded-full bg-primary"
+                    style={{ width: `${row.pct}%`, opacity: row.op }}
+                  />
+                </View>
               </View>
             ))}
-          </Surface>
+          </View>
 
-          <Button onPress={() => setStep(3)}>{t("common.continue")}</Button>
-          <Button variant="ghost" className="mt-2 self-start px-2" onPress={() => setStep(1)}>
-            ← {t("common.back")}
-          </Button>
+          <View className="gap-3 pb-4">
+            {[t("onboarding.value.perk_export"), t("onboarding.value.perk_privacy")].map(
+              (perk) => (
+                <View key={perk} className="flex-row items-center gap-3">
+                  <Ionicons name="shield-checkmark-outline" size={21} color={accent} />
+                  <Text className="text-muted flex-1 text-sm">{perk}</Text>
+                </View>
+              ),
+            )}
+          </View>
+
+          <PrimaryButton
+            label={t("common.continue")}
+            icon={<ArrowRightIcon />}
+            onPress={() => setStep(3)}
+          />
+          <GhostButton label={`â† ${t("common.back")}`} onPress={() => setStep(1)} />
         </View>
       )}
 
-      {/* Step 4: Pace selector */}
+      {/* Step 4: Pace selector (behavior mapping lands in the next pass) */}
       {step === 3 && (
         <View className="flex-1">
-          <Text className="text-foreground text-2xl font-semibold tracking-tight">
+          <Text className="text-foreground text-[26px] font-semibold tracking-[-0.03em]">
             {t("onboarding.pace.title")}
           </Text>
-          <View className="mt-4 gap-3">
-            <OptionCard
-              label={`⚡ ${t("onboarding.pace.fast_pace")}`}
-              description={t("onboarding.pace.fast_pace_desc")}
-              selected={pace === "fast"}
-              onPress={() => {
-                setPaceState("fast");
-                Haptics.selectionAsync();
-              }}
-            />
-            <OptionCard
-              label={`📋 ${t("onboarding.pace.full_list")}`}
-              description={t("onboarding.pace.full_list_desc")}
-              selected={pace === "list"}
-              onPress={() => {
-                setPaceState("list");
-                Haptics.selectionAsync();
-              }}
+          <View className="mt-6 gap-2.5">
+            {(["fast", "list"] as AssessmentPace[]).map((mode) => (
+              <PressableScale
+                key={mode}
+                accessibilityRole="button"
+                accessibilityState={{ selected: pace === mode }}
+                onPress={() => {
+                  setPaceState(mode);
+                  Haptics.selectionAsync();
+                }}
+                className={`rounded-[18px] border p-4 ${
+                  pace === mode
+                    ? "border-nt-pri-border bg-nt-tint"
+                    : "border-border bg-surface"
+                }`}
+              >
+                <Text className="text-base font-semibold text-foreground">
+                  {mode === "fast"
+                    ? t("onboarding.pace.fast_pace")
+                    : t("onboarding.pace.full_list")}
+                </Text>
+                <Text className="text-muted mt-1 text-[13px] leading-snug">
+                  {mode === "fast"
+                    ? t("onboarding.pace.fast_pace_desc")
+                    : t("onboarding.pace.full_list_desc")}
+                </Text>
+              </PressableScale>
+            ))}
+          </View>
+          <View className="mt-auto pb-4">
+            <PrimaryButton
+              label={t("common.continue")}
+              icon={<ArrowRightIcon />}
+              onPress={() => setStep(4)}
             />
           </View>
-          <Button className="mt-6" onPress={() => setStep(4)}>
-            {t("common.continue")}
-          </Button>
-          <Button variant="ghost" className="mt-2 self-start px-2" onPress={() => setStep(2)}>
-            ← {t("common.back")}
-          </Button>
+          <GhostButton label={`â† ${t("common.back")}`} onPress={() => setStep(2)} />
         </View>
       )}
 
@@ -240,7 +298,7 @@ export default function Onboarding() {
       {step === 4 && (
         <View className="flex-1 justify-between">
           <View>
-            <Text className="text-foreground text-2xl font-semibold tracking-tight">
+            <Text className="text-foreground text-[26px] font-semibold tracking-[-0.03em]">
               {t("app_name")}
             </Text>
             <Text className="text-muted mt-6 text-sm leading-relaxed">
@@ -266,15 +324,16 @@ export default function Onboarding() {
               </Text>
             </Pressable>
 
-            <Button isDisabled={!legalAccepted} size="lg" onPress={finish}>
-              {t("onboarding.legal.cta")}
-            </Button>
-            <Button variant="ghost" className="self-start px-2" onPress={() => setStep(3)}>
-              ← {t("common.back")}
-            </Button>
+            <PrimaryButton
+              label={t("onboarding.legal.cta")}
+              disabled={!legalAccepted}
+              onPress={finish}
+            />
+            <GhostButton label={`â† ${t("common.back")}`} onPress={() => setStep(3)} />
           </View>
         </View>
       )}
     </Container>
   );
 }
+

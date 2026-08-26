@@ -1,192 +1,200 @@
 {
-  "common": {
-    "continue": "Continuer",
-    "back": "Retour",
-    "save": "Enregistrer",
-    "cancel": "Annuler",
-    "done": "Terminé",
-    "next": "Suivant",
-    "start": "Commencer"
-  },
-  "app_name": "NeuroTrace",
-  "onboarding": {
-    "steps_indicator": "Étape {{current}} sur {{total}}",
-    "language": {
-      "title": "Choisissez votre langue",
-      "subtitle": "Vous pouvez la modifier à tout moment dans les réglages."
-    },
-    "intent": {
-      "title": "Qu'est-ce qui vous amène ?",
-      "subtitle": "Nous adapterons votre expérience.",
-      "option_doctor_visit": "Préparer une consultation médicale",
-      "option_focus_struggles": "Difficultés de concentration",
-      "option_organization": "L'organisation me submerge",
-      "option_curious": "Simplement curieux de mes traits",
-      "option_support_someone": "Soutenir un proche"
-    },
-    "value": {
-      "title": "Un rapport prêt pour votre médecin, instantanément",
-      "subtitle": "Répondez à 18 questions rapides et obtenez un rapport PDF structuré à remettre à votre médecin ou thérapeute — gratuitement.",
-      "pdf_preview_title": "Rapport de Synthèse Médicale",
-      "pdf_preview_subtitle": "Auto-évaluation WHO ASRS v1.1",
-      "pdf_preview_row_score": "Score Partie A",
-      "pdf_preview_row_inattention": "Sous-échelle Inattention",
-      "pdf_preview_row_hyperactivity": "Sous-échelle Hyperactivité"
-    },
-    "pace": {
-      "title": "Comment préférez-vous répondre ?",
-      "fast_pace": "Rythme rapide",
-      "fast_pace_desc": "Une question à la fois, avancement automatique. Recommandé.",
-      "full_list": "Liste complète",
-      "full_list_desc": "Faites défiler toutes les questions sur un seul écran."
-    },
-    "legal": {
-      "checkbox": "Je comprends qu'il s'agit d'un outil éducatif d'auto-évaluation basé sur le WHO ASRS v1.1 et non d'un diagnostic médical clinique.",
-      "cta": "Commencer"
-    }
-  },
-  "assessment": {
-    "part_a_header": "Dépistage Principal",
-    "part_b_header": "Sévérité et Fréquence",
-    "progress": "Question {{current}} sur {{total}}",
-    "part_a_intro": "Au cours des 6 derniers mois, à quelle fréquence avez-vous vécu ce qui suit ?",
-    "milestone_badge": "Dépistage principal terminé !",
-    "part_b_transition": "Plus que 12 traits rapides — vous vous en sortez très bien !",
-    "calculate_cta": "Calculer Mon Profil de Concentration",
-    "calculating": "Analyse de vos réponses…",
-    "answers_saved": "Réponses enregistrées automatiquement",
-    "resume_cta": "Reprendre l'évaluation",
-    "questions": {
-      "q1": "À quelle fréquence avez-vous du mal à finaliser les derniers détails d'un projet, une fois les parties difficiles terminées ?",
-      "q2": "À quelle fréquence avez-vous du mal à organiser les choses lorsqu'une tâche exige de l'organisation ?",
-      "q3": "À quelle fréquence avez-vous du mal à vous souvenir de rendez-vous ou d'obligations ?",
-      "q4": "Lorsqu'une tâche demande beaucoup de réflexion, à quelle fréquence l'évitez-vous ou la différez-vous ?",
-      "q5": "À quelle fréquence remuez-vous les mains ou les pieds lorsque vous devez rester assis longtemps ?",
-      "q6": "À quelle fréquence vous sentez-vous trop actif, poussé à faire des choses comme si un moteur vous animait ?",
-      "q7": "À quelle fréquence faites-vous des étourderies lors d'un travail ennuyeux ou exigeant ?",
-      "q8": "À quelle fréquence avez-vous du mal à rester attentif lors d'un travail ennuyeux ou répétitif ?",
-      "q9": "À quelle fréquence avez-vous du mal à vous concentrer sur ce qu'on vous dit, même quand on vous parle directement ?",
-      "q10": "À quelle fréquence égarez-vous des objets ou avez du mal à les retrouver chez vous ou au travail ?",
-      "q11": "À quelle fréquence êtes-vous distrait par l'activité ou le bruit autour de vous ?",
-      "q12": "À quelle fréquence quittez-vous votre siège en réunion ou dans d'autres situations où rester assis est attendu ?",
-      "q13": "À quelle fréquence vous sentez-vous agité ou nerveux ?",
-      "q14": "À quelle fréquence avez-vous du mal à décompresser et vous détendre quand vous avez du temps pour vous ?",
-      "q15": "À quelle fréquence vous surprenez-vous à trop parler en situations sociales ?",
-      "q16": "En conversation, à quelle fréquence finissez-vous les phrases de vos interlocuteurs avant eux-mêmes ?",
-      "q17": "À quelle fréquence avez-vous du mal à attendre votre tour quand il faut prendre son tour ?",
-      "q18": "À quelle fréquence interrompez-vous les autres quand ils sont occupés ?"
-    }
-  },
-  "scale": {
-    "never": "Jamais",
-    "rarely": "Rarement",
-    "sometimes": "Parfois",
-    "often": "Souvent",
-    "very_often": "Très souvent"
-  },
-  "results": {
-    "title": "Votre Profil de Concentration",
-    "classification": {
-      "high_consistency": "Cohérence Significative des Traits Détectée",
-      "low_consistency": "Faible Cohérence des Traits Détectée"
-    },
-    "disclaimer": "Ceci est un résultat éducatif d'auto-évaluation basé sur le WHO ASRS v1.1. Ce n'est pas un diagnostic médical.",
-    "inattention_label": "Sous-échelle Inattention",
-    "hyperactivity_label": "Sous-échelle Hyperactivité",
-    "part_a_label": "Score Principal Partie A",
-    "unlock_cta": "Voir une Pub de 30s pour Débloquer le Rapport Médical",
-    "reveal_cta": "Révéler Mon Rapport Médical",
-    "unlocked_cta": "Voir Votre Rapport Médical",
-    "retake_cta": "Refaire l'Évaluation",
-    "trait_breakdown_title": "Détail des Traits"
-  },
-  "report": {
-    "title": "Synthèse Médicale",
-    "save_cta": "Enregistrer dans Fichiers",
-    "share_cta": "Partager via WhatsApp / Email",
-    "print_cta": "Imprimer",
-    "generating": "Génération du rapport…",
-    "reminder_toggle": "Activer le Rappel de Réévaluation à 30 Jours",
-    "reminder_desc": "Nous vous enverrons une notification locale dans 30 jours suggérant une réévaluation.",
-    "reminder_scheduled": "Rappel programmé",
-    "reminder_cancelled": "Rappel désactivé",
-    "locked_banner": "Débloquez avec une courte pub pour générer votre rapport PDF."
-  },
-  "tracker": {
-    "title": "Point Quotidien",
-    "streak": "Série de {{count}} jours",
-    "focus_level": "Niveau de Concentration",
-    "brain_fog": "Brouillard Mental",
-    "executive_friction": "Friction Exécutive",
-    "mood": "Humeur",
-    "medication_taken": "Médicament pris aujourd'hui",
-    "save_entry": "Enregistrer",
-    "entry_saved": "Enregistré ! À demain.",
-    "already_logged": "Déjà enregistré aujourd'hui",
-    "logged_toast": "Point quotidien terminé !"
-  },
-  "history": {
-    "title": "Historique et Tendances",
-    "assessment_trends": "Tendances des Scores",
-    "stable": "Stable",
-    "improving": "En amélioration",
-    "elevated": "Élevé",
-    "no_data": "Terminez une évaluation pour commencer à suivre vos tendances.",
-    "monthly_reassessment_cta": "Commencer la Réévaluation Mensuelle",
-    "daily_entries": "Entrées quotidiennes",
-    "legend_inattention": "Inattention",
-    "legend_hyperactivity": "Hyperactivité"
-  },
-  "settings": {
-    "title": "Réglages",
-    "language": "Langue",
-    "retake_assessment": "Refaire l'Évaluation",
-    "remove_ads": "Supprimer les pubs et soutenir le développement",
-    "remove_ads_desc": "1,99 €/mois — garde NeuroTrace sans serveur.",
-    "privacy": "Confidentialité",
-    "privacy_note": "Toutes les données sont stockées localement sur cet appareil. Rien n'est envoyé en ligne.",
-    "about": "À propos",
-    "version": "Version",
-    "clear_data": "Effacer toutes les données",
-    "clear_data_confirm": "Supprimer toutes les données locales d'évaluation et de suivi ? Cette action est irréversible."
-  },
-  "cross_promo": {
-    "banner": "Submergé par le bruit intérieur en ce moment ?",
-    "cta": "Ouvrir Brown Noise for Focus"
-  },
-  "pdf": {
-    "document_title": "Rapport de Synthèse Médicale",
-    "generated_by": "Généré par NeuroTrace",
-    "patient_alias": "Préparé pour",
-    "date": "Date",
-    "instrument": "Instrument : Échelle d'auto-évaluation WHO ASRS v1.1 pour adultes",
-    "part_a_summary": "Synthèse de la Partie A",
-    "part_a_positive": "{{score}} items sur 6 ont atteint le seuil de dépistage (4+ indique une forte cohérence des traits).",
-    "subscale_summary": "Détail des Sous-échelles",
-    "response_matrix": "Matrice des Réponses (0 = Jamais … 4 = Très souvent)",
-    "question": "#",
-    "symptom": "Zone du Symptôme",
-    "response": "Réponse",
-    "footer_citation": "Source : World Health Organization Adult ADHD Self-Report Scale (ASRS v1.1) Symptom Checklist. Ce document est une synthèse éducative d'auto-évaluation et ne constitue pas un diagnostic clinique.",
-    "symptoms": {
-      "careless_mistakes": "Étourderies / manque d'attention aux détails",
-      "restless_hands": "Mains ou pieds agités",
-      "difficulty_concentrating": "Difficulté à se concentrer",
-      "finishing_tasks": "Difficulté à terminer les tâches",
-      "disorganization": "Désorganisation",
-      "avoiding_sustained_effort": "Évitement de l'effort mental soutenu",
-      "losing_things": "Perdre des objets",
-      "easily_distracted": "Facilement distrait",
-      "forgetfulness": "Oublis",
-      "fidgeting": "Agitation",
-      "leaving_seat": "Se lever de sa place",
-      "feeling_restless": "Sentiment d'agitation",
-      "difficulty_relaxing": "Difficulté à se détendre",
-      "talks_excessively": "Parler excessivement",
-      "interrupting": "Interrompre les autres",
-      "impatience": "Impatience",
-      "intruding_on_others": "S'immiscer dans les affaires des autres",
-      "acting_without_thinking": "Agir sans réfléchir"
-    }
-  }
+    "common":  {
+                   "continue":  "Continuer",
+                   "back":  "Retour",
+                   "save":  "Enregistrer",
+                   "cancel":  "Annuler",
+                   "done":  "TerminÃ©",
+                   "next":  "Suivant",
+                   "start":  "Commencer"
+               },
+    "app_name":  "NeuroTrace",
+    "onboarding":  {
+                       "steps_indicator":  "Ã‰tape {{current}} sur {{total}}",
+                       "language":  {
+                                        "title":  "Choisissez votre langue",
+                                        "subtitle":  "Questions traduites de la source OMS. Modifiable plus tard dans les réglages."
+                                    },
+                       "intent":  {
+                                      "title":  "Qu\u0027est-ce qui vous amÃ¨ne ?",
+                                      "subtitle":  "Nous adapterons votre expÃ©rience.",
+                                      "option_doctor_visit":  "PrÃ©parer une consultation mÃ©dicale",
+                                      "option_focus_struggles":  "DifficultÃ©s de concentration",
+                                      "option_organization":  "L\u0027organisation me submerge",
+                                      "option_curious":  "Simplement curieux de mes traits",
+                                      "option_support_someone":  "Soutenir un proche",
+                                      "option_doctor_visit_desc":  "Apportez le résumé imprimable",
+                                      "option_focus_struggles_desc":  "Comparez vos traits à l\u0027échelle ASRS",
+                                      "option_organization_desc":  "Comprenez ce qui crée la friction quotidienne",
+                                      "option_curious_desc":  "Un auto-test rapide, sans engagement",
+                                      "option_support_someone_desc":  "Comprennez ce que vit un proche",
+                                      "tap_to_continue":  "Touchez une option pour continuer"
+                                  },
+                       "value":  {
+                                     "title":  "Un rapport prÃªt pour votre mÃ©decin, instantanÃ©ment",
+                                     "subtitle":  "RÃ©pondez Ã  18 questions rapides et obtenez un rapport PDF structurÃ© Ã  remettre Ã  votre mÃ©decin ou thÃ©rapeute â€” gratuitement.",
+                                     "pdf_preview_title":  "Rapport de SynthÃ¨se MÃ©dicale",
+                                     "pdf_preview_subtitle":  "Auto-Ã©valuation WHO ASRS v1.1",
+                                     "pdf_preview_row_score":  "Score Partie A",
+                                     "pdf_preview_row_inattention":  "Sous-Ã©chelle Inattention",
+                                     "pdf_preview_row_hyperactivity":  "Sous-Ã©chelle HyperactivitÃ©",
+                                     "perk_export":  "Exportez en PDF ou partagez depuis toute app",
+                                     "perk_privacy":  "Les réponses ne quittent jamais l\u0027appareil"
+                                 },
+                       "pace":  {
+                                    "title":  "Comment prÃ©fÃ©rez-vous rÃ©pondre ?",
+                                    "fast_pace":  "Rythme rapide",
+                                    "fast_pace_desc":  "Une question Ã  la fois, avancement automatique. RecommandÃ©.",
+                                    "full_list":  "Liste complÃ¨te",
+                                    "full_list_desc":  "Faites dÃ©filer toutes les questions sur un seul Ã©cran."
+                                },
+                       "legal":  {
+                                     "checkbox":  "Je comprends qu\u0027il s\u0027agit d\u0027un outil Ã©ducatif d\u0027auto-Ã©valuation basÃ© sur le WHO ASRS v1.1 et non d\u0027un diagnostic mÃ©dical clinique.",
+                                     "cta":  "Commencer"
+                                 }
+                   },
+    "assessment":  {
+                       "part_a_header":  "DÃ©pistage Principal",
+                       "part_b_header":  "SÃ©vÃ©ritÃ© et FrÃ©quence",
+                       "progress":  "Question {{current}} sur {{total}}",
+                       "part_a_intro":  "Au cours des 6 derniers mois, Ã  quelle frÃ©quence avez-vous vÃ©cu ce qui suit ?",
+                       "milestone_badge":  "DÃ©pistage principal terminÃ© !",
+                       "part_b_transition":  "Plus que 12 traits rapides â€” vous vous en sortez trÃ¨s bien !",
+                       "calculate_cta":  "Calculer Mon Profil de Concentration",
+                       "calculating":  "Analyse de vos rÃ©ponsesâ€¦",
+                       "answers_saved":  "RÃ©ponses enregistrÃ©es automatiquement",
+                       "resume_cta":  "Reprendre l\u0027Ã©valuation",
+                       "questions":  {
+                                         "q1":  "Ã€ quelle frÃ©quence avez-vous du mal Ã  finaliser les derniers dÃ©tails d\u0027un projet, une fois les parties difficiles terminÃ©es ?",
+                                         "q2":  "Ã€ quelle frÃ©quence avez-vous du mal Ã  organiser les choses lorsqu\u0027une tÃ¢che exige de l\u0027organisation ?",
+                                         "q3":  "Ã€ quelle frÃ©quence avez-vous du mal Ã  vous souvenir de rendez-vous ou d\u0027obligations ?",
+                                         "q4":  "Lorsqu\u0027une tÃ¢che demande beaucoup de rÃ©flexion, Ã  quelle frÃ©quence l\u0027Ã©vitez-vous ou la diffÃ©rez-vous ?",
+                                         "q5":  "Ã€ quelle frÃ©quence remuez-vous les mains ou les pieds lorsque vous devez rester assis longtemps ?",
+                                         "q6":  "Ã€ quelle frÃ©quence vous sentez-vous trop actif, poussÃ© Ã  faire des choses comme si un moteur vous animait ?",
+                                         "q7":  "Ã€ quelle frÃ©quence faites-vous des Ã©tourderies lors d\u0027un travail ennuyeux ou exigeant ?",
+                                         "q8":  "Ã€ quelle frÃ©quence avez-vous du mal Ã  rester attentif lors d\u0027un travail ennuyeux ou rÃ©pÃ©titif ?",
+                                         "q9":  "Ã€ quelle frÃ©quence avez-vous du mal Ã  vous concentrer sur ce qu\u0027on vous dit, mÃªme quand on vous parle directement ?",
+                                         "q10":  "Ã€ quelle frÃ©quence Ã©garez-vous des objets ou avez du mal Ã  les retrouver chez vous ou au travail ?",
+                                         "q11":  "Ã€ quelle frÃ©quence Ãªtes-vous distrait par l\u0027activitÃ© ou le bruit autour de vous ?",
+                                         "q12":  "Ã€ quelle frÃ©quence quittez-vous votre siÃ¨ge en rÃ©union ou dans d\u0027autres situations oÃ¹ rester assis est attendu ?",
+                                         "q13":  "Ã€ quelle frÃ©quence vous sentez-vous agitÃ© ou nerveux ?",
+                                         "q14":  "Ã€ quelle frÃ©quence avez-vous du mal Ã  dÃ©compresser et vous dÃ©tendre quand vous avez du temps pour vous ?",
+                                         "q15":  "Ã€ quelle frÃ©quence vous surprenez-vous Ã  trop parler en situations sociales ?",
+                                         "q16":  "En conversation, Ã  quelle frÃ©quence finissez-vous les phrases de vos interlocuteurs avant eux-mÃªmes ?",
+                                         "q17":  "Ã€ quelle frÃ©quence avez-vous du mal Ã  attendre votre tour quand il faut prendre son tour ?",
+                                         "q18":  "Ã€ quelle frÃ©quence interrompez-vous les autres quand ils sont occupÃ©s ?"
+                                     }
+                   },
+    "scale":  {
+                  "never":  "Jamais",
+                  "rarely":  "Rarement",
+                  "sometimes":  "Parfois",
+                  "often":  "Souvent",
+                  "very_often":  "TrÃ¨s souvent"
+              },
+    "results":  {
+                    "title":  "Votre Profil de Concentration",
+                    "classification":  {
+                                           "high_consistency":  "CohÃ©rence Significative des Traits DÃ©tectÃ©e",
+                                           "low_consistency":  "Faible CohÃ©rence des Traits DÃ©tectÃ©e"
+                                       },
+                    "disclaimer":  "Ceci est un rÃ©sultat Ã©ducatif d\u0027auto-Ã©valuation basÃ© sur le WHO ASRS v1.1. Ce n\u0027est pas un diagnostic mÃ©dical.",
+                    "inattention_label":  "Sous-Ã©chelle Inattention",
+                    "hyperactivity_label":  "Sous-Ã©chelle HyperactivitÃ©",
+                    "part_a_label":  "Score Principal Partie A",
+                    "unlock_cta":  "Voir une Pub de 30s pour DÃ©bloquer le Rapport MÃ©dical",
+                    "reveal_cta":  "RÃ©vÃ©ler Mon Rapport MÃ©dical",
+                    "unlocked_cta":  "Voir Votre Rapport MÃ©dical",
+                    "retake_cta":  "Refaire l\u0027Ã‰valuation",
+                    "trait_breakdown_title":  "DÃ©tail des Traits"
+                },
+    "report":  {
+                   "title":  "SynthÃ¨se MÃ©dicale",
+                   "save_cta":  "Enregistrer dans Fichiers",
+                   "share_cta":  "Partager via WhatsApp / Email",
+                   "print_cta":  "Imprimer",
+                   "generating":  "GÃ©nÃ©ration du rapportâ€¦",
+                   "reminder_toggle":  "Activer le Rappel de RÃ©Ã©valuation Ã  30 Jours",
+                   "reminder_desc":  "Nous vous enverrons une notification locale dans 30 jours suggÃ©rant une rÃ©Ã©valuation.",
+                   "reminder_scheduled":  "Rappel programmÃ©",
+                   "reminder_cancelled":  "Rappel dÃ©sactivÃ©",
+                   "locked_banner":  "DÃ©bloquez avec une courte pub pour gÃ©nÃ©rer votre rapport PDF."
+               },
+    "tracker":  {
+                    "title":  "Point Quotidien",
+                    "streak":  "SÃ©rie de {{count}} jours",
+                    "focus_level":  "Niveau de Concentration",
+                    "brain_fog":  "Brouillard Mental",
+                    "executive_friction":  "Friction ExÃ©cutive",
+                    "mood":  "Humeur",
+                    "medication_taken":  "MÃ©dicament pris aujourd\u0027hui",
+                    "save_entry":  "Enregistrer",
+                    "entry_saved":  "EnregistrÃ© ! Ã€ demain.",
+                    "already_logged":  "DÃ©jÃ  enregistrÃ© aujourd\u0027hui",
+                    "logged_toast":  "Point quotidien terminÃ© !"
+                },
+    "history":  {
+                    "title":  "Historique et Tendances",
+                    "assessment_trends":  "Tendances des Scores",
+                    "stable":  "Stable",
+                    "improving":  "En amÃ©lioration",
+                    "elevated":  "Ã‰levÃ©",
+                    "no_data":  "Terminez une Ã©valuation pour commencer Ã  suivre vos tendances.",
+                    "monthly_reassessment_cta":  "Commencer la RÃ©Ã©valuation Mensuelle",
+                    "daily_entries":  "EntrÃ©es quotidiennes",
+                    "legend_inattention":  "Inattention",
+                    "legend_hyperactivity":  "HyperactivitÃ©"
+                },
+    "settings":  {
+                     "title":  "RÃ©glages",
+                     "language":  "Langue",
+                     "retake_assessment":  "Refaire l\u0027Ã‰valuation",
+                     "remove_ads":  "Supprimer les pubs et soutenir le dÃ©veloppement",
+                     "remove_ads_desc":  "1,99 â‚¬/mois â€” garde NeuroTrace sans serveur.",
+                     "privacy":  "ConfidentialitÃ©",
+                     "privacy_note":  "Toutes les donnÃ©es sont stockÃ©es localement sur cet appareil. Rien n\u0027est envoyÃ© en ligne.",
+                     "about":  "Ã€ propos",
+                     "version":  "Version",
+                     "clear_data":  "Effacer toutes les donnÃ©es",
+                     "clear_data_confirm":  "Supprimer toutes les donnÃ©es locales d\u0027Ã©valuation et de suivi ? Cette action est irrÃ©versible."
+                 },
+    "cross_promo":  {
+                        "banner":  "SubmergÃ© par le bruit intÃ©rieur en ce moment ?",
+                        "cta":  "Ouvrir Brown Noise for Focus"
+                    },
+    "pdf":  {
+                "document_title":  "Rapport de SynthÃ¨se MÃ©dicale",
+                "generated_by":  "GÃ©nÃ©rÃ© par NeuroTrace",
+                "patient_alias":  "PrÃ©parÃ© pour",
+                "date":  "Date",
+                "instrument":  "Instrument : Ã‰chelle d\u0027auto-Ã©valuation WHO ASRS v1.1 pour adultes",
+                "part_a_summary":  "SynthÃ¨se de la Partie A",
+                "part_a_positive":  "{{score}} items sur 6 ont atteint le seuil de dÃ©pistage (4+ indique une forte cohÃ©rence des traits).",
+                "subscale_summary":  "DÃ©tail des Sous-Ã©chelles",
+                "response_matrix":  "Matrice des RÃ©ponses (0 = Jamais â€¦ 4 = TrÃ¨s souvent)",
+                "question":  "#",
+                "symptom":  "Zone du SymptÃ´me",
+                "response":  "RÃ©ponse",
+                "footer_citation":  "Source : World Health Organization Adult ADHD Self-Report Scale (ASRS v1.1) Symptom Checklist. Ce document est une synthÃ¨se Ã©ducative d\u0027auto-Ã©valuation et ne constitue pas un diagnostic clinique.",
+                "symptoms":  {
+                                 "careless_mistakes":  "Ã‰tourderies / manque d\u0027attention aux dÃ©tails",
+                                 "restless_hands":  "Mains ou pieds agitÃ©s",
+                                 "difficulty_concentrating":  "DifficultÃ© Ã  se concentrer",
+                                 "finishing_tasks":  "DifficultÃ© Ã  terminer les tÃ¢ches",
+                                 "disorganization":  "DÃ©sorganisation",
+                                 "avoiding_sustained_effort":  "Ã‰vitement de l\u0027effort mental soutenu",
+                                 "losing_things":  "Perdre des objets",
+                                 "easily_distracted":  "Facilement distrait",
+                                 "forgetfulness":  "Oublis",
+                                 "fidgeting":  "Agitation",
+                                 "leaving_seat":  "Se lever de sa place",
+                                 "feeling_restless":  "Sentiment d\u0027agitation",
+                                 "difficulty_relaxing":  "DifficultÃ© Ã  se dÃ©tendre",
+                                 "talks_excessively":  "Parler excessivement",
+                                 "interrupting":  "Interrompre les autres",
+                                 "impatience":  "Impatience",
+                                 "intruding_on_others":  "S\u0027immiscer dans les affaires des autres",
+                                 "acting_without_thinking":  "Agir sans rÃ©flÃ©chir"
+                             }
+            }
 }

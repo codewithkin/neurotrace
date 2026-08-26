@@ -1,192 +1,200 @@
 {
-  "common": {
-    "continue": "Doorgaan",
-    "back": "Terug",
-    "save": "Opslaan",
-    "cancel": "Annuleren",
-    "done": "Klaar",
-    "next": "Volgende",
-    "start": "Beginnen"
-  },
-  "app_name": "NeuroTrace",
-  "onboarding": {
-    "steps_indicator": "Stap {{current}} van {{total}}",
-    "language": {
-      "title": "Kies je taal",
-      "subtitle": "Je kunt dit op elk moment wijzigen in de instellingen."
-    },
-    "intent": {
-      "title": "Wat brengt je hier?",
-      "subtitle": "We passen je ervaring aan.",
-      "option_doctor_visit": "Voorbereiding op een doktersbezoek",
-      "option_focus_struggles": "Moeite met concentreren",
-      "option_organization": "Organiseren overweldigd me",
-      "option_curious": "Gewoon nieuwsgierig naar mijn kenmerken",
-      "option_support_someone": "Iemand anders ondersteunen"
-    },
-    "value": {
-      "title": "Direct een doktersklaar rapport",
-      "subtitle": "Beantwoord 18 korte vragen en ontvang een gestructureerd PDF-rapport voor je huisarts of therapeut — gratis.",
-      "pdf_preview_title": "Medisch Samenvattingsrapport",
-      "pdf_preview_subtitle": "WHO ASRS v1.1 Zelfrapportage",
-      "pdf_preview_row_score": "Deel A-score",
-      "pdf_preview_row_inattention": "Onoplettendheid-subskala",
-      "pdf_preview_row_hyperactivity": "Hyperactiviteit-subskala"
-    },
-    "pace": {
-      "title": "Hoe wil je antwoorden?",
-      "fast_pace": "Snel tempo",
-      "fast_pace_desc": "Eén vraag per keer, automatisch door. Aanbevolen.",
-      "full_list": "Volledige lijst",
-      "full_list_desc": "Scroll door alle vragen op één scherm."
-    },
-    "legal": {
-      "checkbox": "Ik begrijp dat dit een educatief zelfrapportage-instrument is gebaseerd op WHO ASRS v1.1 en geen klinische medische diagnose.",
-      "cta": "Aan de slag"
-    }
-  },
-  "assessment": {
-    "part_a_header": "Kernscreening",
-    "part_b_header": "Ernst en Frequentie",
-    "progress": "Vraag {{current}} van {{total}}",
-    "part_a_intro": "Hoe vaak heb je het volgende meegemaakt in de afgelopen 6 maanden?",
-    "milestone_badge": "Kernscreening voltooid!",
-    "part_b_transition": "Nog maar 12 snelle kenmerken — je doet het geweldig!",
-    "calculate_cta": "Bereken Mijn Focusprofiel",
-    "calculating": "Antwoorden worden geanalyseerd…",
-    "answers_saved": "Antwoorden automatisch opgeslagen",
-    "resume_cta": "Hervat Beoordeling",
-    "questions": {
-      "q1": "Hoe vaak heb je moeite met de laatste details van een project afronden, nadat de uitdagende delen klaar zijn?",
-      "q2": "Hoe vaak vind je het moeilijk om dingen te ordenen als je een taak hebt die organisatie vereist?",
-      "q3": "Hoe vaak heb je problemen met het onthouden van afspraken of verplichtingen?",
-      "q4": "Als een taak veel nadenken vergt, hoe often vermijd je dan om te beginnen of stel je het uit?",
-      "q5": "Hoe often beweeg of friemel je met handen of voeten als je lang moet zitten?",
-      "q6": "Hoe often voel je je overmatig actief en gedreven om dingen te doen, alsof een motor je aandrijft?",
-      "q7": "Hoe often maak je slordigheidsfouten bij saai of uitdagend werk?",
-      "q8": "Hoe often valt het je moeilijk je aandacht vast te houden bij saai of repetitief werk?",
-      "q9": "Hoe often is het moeilijk je te concentreren op wat mensen zeggen, zelfs als ze direct tegen je praten?",
-      "q10": "Hoe often verlies je spullen of vind ze moeilijk thuis of op werk?",
-      "q11": "Hoe often word je afgeleid door activiteit of geluid om je heen?",
-      "q12": "Hoe often verlaat je je plek in vergaderingen of situaties waar zitten wordt verwacht?",
-      "q13": "Hoe often voel je je rusteloos of zenuwachtig?",
-      "q14": "Hoe often is het moeilijk tot rust komen en ontspannen als je tijd voor jezelf hebt?",
-      "q15": "Hoe often ervaar je dat je te veel praat in sociale situaties?",
-      "q16": "Hoe often maak je in gesprekken de zinnen van anderen af voordat zij er zelf aan toe komen?",
-      "q17": "Hoe often is het moeilijk wachten op je beurt wanneer beurten nodig zijn?",
-      "q18": "Hoe often onderbreek je anderen als ze bezig zijn?"
-    }
-  },
-  "scale": {
-    "never": "Nooit",
-    "rarely": "Zelden",
-    "sometimes": "Soms",
-    "often": "Vaak",
-    "very_often": "Heel vaak"
-  },
-  "results": {
-    "title": "Jouw Focusprofiel",
-    "classification": {
-      "high_consistency": "Significante Kenmerkconsistentie Gevonden",
-      "low_consistency": "Lage Kenmerkconsistentie Gevonden"
-    },
-    "disclaimer": "Dit is een educatieve zelfbeoordeling op basis van WHO ASRS v1.1. Het is geen medische diagnose.",
-    "inattention_label": "Onoplettendheid-subskala",
-    "hyperactivity_label": "Hyperactiviteit-subskala",
-    "part_a_label": "Deel A-kernscore",
-    "unlock_cta": "Bekijk 30s Reclame om Doktersrapport te Ontgrendelen",
-    "reveal_cta": "Toon Je Doktersrapport",
-    "unlocked_cta": "Bekijk Je Doktersrapport",
-    "retake_cta": "Beoordeling Opnieuw",
-    "trait_breakdown_title": "Kenmerkenoverzicht"
-  },
-  "report": {
-    "title": "Medische Samenvatting",
-    "save_cta": "Opslaan in Bestanden",
-    "share_cta": "Delen via WhatsApp / E-mail",
-    "print_cta": "Afdrukken",
-    "generating": "Rapport genereren…",
-    "reminder_toggle": "30-daagse Herinnering Inschakelen",
-    "reminder_desc": "We sturen over 30 dagen een lokale melding voor een nieuwe beoordeling.",
-    "reminder_scheduled": "Herinnering ingepland",
-    "reminder_cancelled": "Herinnering uitgeschakeld",
-    "locked_banner": "Ontgrendel met korte reclame om je PDF te maken."
-  },
-  "tracker": {
-    "title": "Dagelijkse Check-in",
-    "streak": "{{count}}-daagse focusreeks",
-    "focus_level": "Focusniveau",
-    "brain_fog": "Breinmist",
-    "executive_friction": "Executieve Wrijving",
-    "mood": "Stemming",
-    "medication_taken": "Medicatie vandaag ingenomen",
-    "save_entry": "Invoer Opslaan",
-    "entry_saved": "Opgeslagen! Tot morgen.",
-    "already_logged": "Al ingevuld vandaag",
-    "logged_toast": "Check-in van vandaag compleet!"
-  },
-  "history": {
-    "title": "Geschiedenis & Trends",
-    "assessment_trends": "Scoretrends",
-    "stable": "Stabiel",
-    "improving": "Verbeterend",
-    "elevated": "Verhoogd",
-    "no_data": "Voltooi een beoordeling om trends te volgen.",
-    "monthly_reassessment_cta": "Maandelijkse Herbeoordeling Starten",
-    "daily_entries": "Dagelijkse invoeren",
-    "legend_inattention": "Onoplettendheid",
-    "legend_hyperactivity": "Hyperactiviteit"
-  },
-  "settings": {
-    "title": "Instellingen",
-    "language": "Taal",
-    "retake_assessment": "Beoordeling Opnieuw",
-    "remove_ads": "Reclame verwijderen & ontwikkeling steunen",
-    "remove_ads_desc": "$1,99/maand — houdt NeuroTrace serverloos.",
-    "privacy": "Privacy",
-    "privacy_note": "Alle gegevens worden alleen lokaal op dit apparaat opgeslagen. Niets wordt geüpload.",
-    "about": "Over",
-    "version": "Versie",
-    "clear_data": "Alle gegevens wissen",
-    "clear_data_confirm": "Alle lokale beoordelings- en trackinggegevens verwijderen? Dit kan niet ongedaan worden gemaakt."
-  },
-  "cross_promo": {
-    "banner": "Nu overweldigd door innerlijke ruis?",
-    "cta": "Open Brown Noise for Focus"
-  },
-  "pdf": {
-    "document_title": "Medisch Samenvattingsrapport",
-    "generated_by": "Gegenereerd door NeuroTrace",
-    "patient_alias": "Opgesteld voor",
-    "date": "Datum",
-    "instrument": "Instrument: WHO Adult ADHD Self-Report Scale (ASRS v1.1)",
-    "part_a_summary": "Deel A Kernscreening",
-    "part_a_positive": "{{score}} van 6 items haalden de screeningsdrempel (4+ duidt op hoge kenmerkconsistentie).",
-    "subscale_summary": "Subskala-overzicht",
-    "response_matrix": "Responsmatrix (0 = Nooit … 4 = Heel vaak)",
-    "question": "#",
-    "symptom": "Symptoomgebied",
-    "response": "Reactie",
-    "footer_citation": "Bron: World Health Organization Adult ADHD Self-Report Scale (ASRS v1.1) Symptom Checklist. Dit document is een educatieve zelfrapportage en vormt geen klinische diagnose.",
-    "symptoms": {
-      "careless_mistakes": "Slordigheidsfouten / weinig oog voor detail",
-      "restless_hands": "Rusteloze handen of voeten",
-      "difficulty_concentrating": "Moeite met concentreren",
-      "finishing_tasks": "Moeite met afmaken van taken",
-      "disorganization": "Desorganisatie",
-      "avoiding_sustained_effort": "Vermijden van langdurige mentale inspanning",
-      "losing_things": "Spullen verliezen",
-      "easily_distracted": "Snel afgeleid",
-      "forgetfulness": "Vergeetachtigheid",
-      "fidgeting": "Friemelen",
-      "leaving_seat": "Van stoel opstaan",
-      "feeling_restless": "Gevoel van onrust",
-      "difficulty_relaxing": "Moeite met ontspannen",
-      "talks_excessively": "Te veel praten",
-      "interrupting": "Anderen onderbreken",
-      "impatience": "Ongeduld",
-      "intruding_on_others": "Zich mengen in andermans zaken",
-      "acting_without_thinking": "Handelen zonder nadenken"
-    }
-  }
+    "common":  {
+                   "continue":  "Doorgaan",
+                   "back":  "Terug",
+                   "save":  "Opslaan",
+                   "cancel":  "Annuleren",
+                   "done":  "Klaar",
+                   "next":  "Volgende",
+                   "start":  "Beginnen"
+               },
+    "app_name":  "NeuroTrace",
+    "onboarding":  {
+                       "steps_indicator":  "Stap {{current}} van {{total}}",
+                       "language":  {
+                                        "title":  "Kies je taal",
+                                        "subtitle":  "Vragen vertaald uit de WHO-bron. Later wijzigbaar in Instellingen."
+                                    },
+                       "intent":  {
+                                      "title":  "Wat brengt je hier?",
+                                      "subtitle":  "We passen je ervaring aan.",
+                                      "option_doctor_visit":  "Voorbereiding op een doktersbezoek",
+                                      "option_focus_struggles":  "Moeite met concentreren",
+                                      "option_organization":  "Organiseren overweldigd me",
+                                      "option_curious":  "Gewoon nieuwsgierig naar mijn kenmerken",
+                                      "option_support_someone":  "Iemand anders ondersteunen",
+                                      "option_doctor_visit_desc":  "Neem het printbare rapport mee",
+                                      "option_focus_struggles_desc":  "Vergelijk uw kenmerken met de ASRS-schaal",
+                                      "option_organization_desc":  "Begrijp waar de dagelijkse wrijving vandaan komt",
+                                      "option_curious_desc":  "Een korte zelftest, zonder verplichtingen",
+                                      "option_support_someone_desc":  "Begrijp wat een dierbare meemaakt",
+                                      "tap_to_continue":  "Tik op een optie om door te gaan"
+                                  },
+                       "value":  {
+                                     "title":  "Direct een doktersklaar rapport",
+                                     "subtitle":  "Beantwoord 18 korte vragen en ontvang een gestructureerd PDF-rapport voor je huisarts of therapeut â€” gratis.",
+                                     "pdf_preview_title":  "Medisch Samenvattingsrapport",
+                                     "pdf_preview_subtitle":  "WHO ASRS v1.1 Zelfrapportage",
+                                     "pdf_preview_row_score":  "Deel A-score",
+                                     "pdf_preview_row_inattention":  "Onoplettendheid-subskala",
+                                     "pdf_preview_row_hyperactivity":  "Hyperactiviteit-subskala",
+                                     "perk_export":  "Exporteer als PDF of deel vanuit elke app",
+                                     "perk_privacy":  "Antwoorden verlaten nooit het apparaat"
+                                 },
+                       "pace":  {
+                                    "title":  "Hoe wil je antwoorden?",
+                                    "fast_pace":  "Snel tempo",
+                                    "fast_pace_desc":  "EÃ©n vraag per keer, automatisch door. Aanbevolen.",
+                                    "full_list":  "Volledige lijst",
+                                    "full_list_desc":  "Scroll door alle vragen op Ã©Ã©n scherm."
+                                },
+                       "legal":  {
+                                     "checkbox":  "Ik begrijp dat dit een educatief zelfrapportage-instrument is gebaseerd op WHO ASRS v1.1 en geen klinische medische diagnose.",
+                                     "cta":  "Aan de slag"
+                                 }
+                   },
+    "assessment":  {
+                       "part_a_header":  "Kernscreening",
+                       "part_b_header":  "Ernst en Frequentie",
+                       "progress":  "Vraag {{current}} van {{total}}",
+                       "part_a_intro":  "Hoe vaak heb je het volgende meegemaakt in de afgelopen 6 maanden?",
+                       "milestone_badge":  "Kernscreening voltooid!",
+                       "part_b_transition":  "Nog maar 12 snelle kenmerken â€” je doet het geweldig!",
+                       "calculate_cta":  "Bereken Mijn Focusprofiel",
+                       "calculating":  "Antwoorden worden geanalyseerdâ€¦",
+                       "answers_saved":  "Antwoorden automatisch opgeslagen",
+                       "resume_cta":  "Hervat Beoordeling",
+                       "questions":  {
+                                         "q1":  "Hoe vaak heb je moeite met de laatste details van een project afronden, nadat de uitdagende delen klaar zijn?",
+                                         "q2":  "Hoe vaak vind je het moeilijk om dingen te ordenen als je een taak hebt die organisatie vereist?",
+                                         "q3":  "Hoe vaak heb je problemen met het onthouden van afspraken of verplichtingen?",
+                                         "q4":  "Als een taak veel nadenken vergt, hoe often vermijd je dan om te beginnen of stel je het uit?",
+                                         "q5":  "Hoe often beweeg of friemel je met handen of voeten als je lang moet zitten?",
+                                         "q6":  "Hoe often voel je je overmatig actief en gedreven om dingen te doen, alsof een motor je aandrijft?",
+                                         "q7":  "Hoe often maak je slordigheidsfouten bij saai of uitdagend werk?",
+                                         "q8":  "Hoe often valt het je moeilijk je aandacht vast te houden bij saai of repetitief werk?",
+                                         "q9":  "Hoe often is het moeilijk je te concentreren op wat mensen zeggen, zelfs als ze direct tegen je praten?",
+                                         "q10":  "Hoe often verlies je spullen of vind ze moeilijk thuis of op werk?",
+                                         "q11":  "Hoe often word je afgeleid door activiteit of geluid om je heen?",
+                                         "q12":  "Hoe often verlaat je je plek in vergaderingen of situaties waar zitten wordt verwacht?",
+                                         "q13":  "Hoe often voel je je rusteloos of zenuwachtig?",
+                                         "q14":  "Hoe often is het moeilijk tot rust komen en ontspannen als je tijd voor jezelf hebt?",
+                                         "q15":  "Hoe often ervaar je dat je te veel praat in sociale situaties?",
+                                         "q16":  "Hoe often maak je in gesprekken de zinnen van anderen af voordat zij er zelf aan toe komen?",
+                                         "q17":  "Hoe often is het moeilijk wachten op je beurt wanneer beurten nodig zijn?",
+                                         "q18":  "Hoe often onderbreek je anderen als ze bezig zijn?"
+                                     }
+                   },
+    "scale":  {
+                  "never":  "Nooit",
+                  "rarely":  "Zelden",
+                  "sometimes":  "Soms",
+                  "often":  "Vaak",
+                  "very_often":  "Heel vaak"
+              },
+    "results":  {
+                    "title":  "Jouw Focusprofiel",
+                    "classification":  {
+                                           "high_consistency":  "Significante Kenmerkconsistentie Gevonden",
+                                           "low_consistency":  "Lage Kenmerkconsistentie Gevonden"
+                                       },
+                    "disclaimer":  "Dit is een educatieve zelfbeoordeling op basis van WHO ASRS v1.1. Het is geen medische diagnose.",
+                    "inattention_label":  "Onoplettendheid-subskala",
+                    "hyperactivity_label":  "Hyperactiviteit-subskala",
+                    "part_a_label":  "Deel A-kernscore",
+                    "unlock_cta":  "Bekijk 30s Reclame om Doktersrapport te Ontgrendelen",
+                    "reveal_cta":  "Toon Je Doktersrapport",
+                    "unlocked_cta":  "Bekijk Je Doktersrapport",
+                    "retake_cta":  "Beoordeling Opnieuw",
+                    "trait_breakdown_title":  "Kenmerkenoverzicht"
+                },
+    "report":  {
+                   "title":  "Medische Samenvatting",
+                   "save_cta":  "Opslaan in Bestanden",
+                   "share_cta":  "Delen via WhatsApp / E-mail",
+                   "print_cta":  "Afdrukken",
+                   "generating":  "Rapport genererenâ€¦",
+                   "reminder_toggle":  "30-daagse Herinnering Inschakelen",
+                   "reminder_desc":  "We sturen over 30 dagen een lokale melding voor een nieuwe beoordeling.",
+                   "reminder_scheduled":  "Herinnering ingepland",
+                   "reminder_cancelled":  "Herinnering uitgeschakeld",
+                   "locked_banner":  "Ontgrendel met korte reclame om je PDF te maken."
+               },
+    "tracker":  {
+                    "title":  "Dagelijkse Check-in",
+                    "streak":  "{{count}}-daagse focusreeks",
+                    "focus_level":  "Focusniveau",
+                    "brain_fog":  "Breinmist",
+                    "executive_friction":  "Executieve Wrijving",
+                    "mood":  "Stemming",
+                    "medication_taken":  "Medicatie vandaag ingenomen",
+                    "save_entry":  "Invoer Opslaan",
+                    "entry_saved":  "Opgeslagen! Tot morgen.",
+                    "already_logged":  "Al ingevuld vandaag",
+                    "logged_toast":  "Check-in van vandaag compleet!"
+                },
+    "history":  {
+                    "title":  "Geschiedenis \u0026 Trends",
+                    "assessment_trends":  "Scoretrends",
+                    "stable":  "Stabiel",
+                    "improving":  "Verbeterend",
+                    "elevated":  "Verhoogd",
+                    "no_data":  "Voltooi een beoordeling om trends te volgen.",
+                    "monthly_reassessment_cta":  "Maandelijkse Herbeoordeling Starten",
+                    "daily_entries":  "Dagelijkse invoeren",
+                    "legend_inattention":  "Onoplettendheid",
+                    "legend_hyperactivity":  "Hyperactiviteit"
+                },
+    "settings":  {
+                     "title":  "Instellingen",
+                     "language":  "Taal",
+                     "retake_assessment":  "Beoordeling Opnieuw",
+                     "remove_ads":  "Reclame verwijderen \u0026 ontwikkeling steunen",
+                     "remove_ads_desc":  "$1,99/maand â€” houdt NeuroTrace serverloos.",
+                     "privacy":  "Privacy",
+                     "privacy_note":  "Alle gegevens worden alleen lokaal op dit apparaat opgeslagen. Niets wordt geÃ¼pload.",
+                     "about":  "Over",
+                     "version":  "Versie",
+                     "clear_data":  "Alle gegevens wissen",
+                     "clear_data_confirm":  "Alle lokale beoordelings- en trackinggegevens verwijderen? Dit kan niet ongedaan worden gemaakt."
+                 },
+    "cross_promo":  {
+                        "banner":  "Nu overweldigd door innerlijke ruis?",
+                        "cta":  "Open Brown Noise for Focus"
+                    },
+    "pdf":  {
+                "document_title":  "Medisch Samenvattingsrapport",
+                "generated_by":  "Gegenereerd door NeuroTrace",
+                "patient_alias":  "Opgesteld voor",
+                "date":  "Datum",
+                "instrument":  "Instrument: WHO Adult ADHD Self-Report Scale (ASRS v1.1)",
+                "part_a_summary":  "Deel A Kernscreening",
+                "part_a_positive":  "{{score}} van 6 items haalden de screeningsdrempel (4+ duidt op hoge kenmerkconsistentie).",
+                "subscale_summary":  "Subskala-overzicht",
+                "response_matrix":  "Responsmatrix (0 = Nooit â€¦ 4 = Heel vaak)",
+                "question":  "#",
+                "symptom":  "Symptoomgebied",
+                "response":  "Reactie",
+                "footer_citation":  "Bron: World Health Organization Adult ADHD Self-Report Scale (ASRS v1.1) Symptom Checklist. Dit document is een educatieve zelfrapportage en vormt geen klinische diagnose.",
+                "symptoms":  {
+                                 "careless_mistakes":  "Slordigheidsfouten / weinig oog voor detail",
+                                 "restless_hands":  "Rusteloze handen of voeten",
+                                 "difficulty_concentrating":  "Moeite met concentreren",
+                                 "finishing_tasks":  "Moeite met afmaken van taken",
+                                 "disorganization":  "Desorganisatie",
+                                 "avoiding_sustained_effort":  "Vermijden van langdurige mentale inspanning",
+                                 "losing_things":  "Spullen verliezen",
+                                 "easily_distracted":  "Snel afgeleid",
+                                 "forgetfulness":  "Vergeetachtigheid",
+                                 "fidgeting":  "Friemelen",
+                                 "leaving_seat":  "Van stoel opstaan",
+                                 "feeling_restless":  "Gevoel van onrust",
+                                 "difficulty_relaxing":  "Moeite met ontspannen",
+                                 "talks_excessively":  "Te veel praten",
+                                 "interrupting":  "Anderen onderbreken",
+                                 "impatience":  "Ongeduld",
+                                 "intruding_on_others":  "Zich mengen in andermans zaken",
+                                 "acting_without_thinking":  "Handelen zonder nadenken"
+                             }
+            }
 }
