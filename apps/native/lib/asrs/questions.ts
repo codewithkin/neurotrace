@@ -37,24 +37,34 @@ export const ASRS_QUESTIONS: ASRSQuestion[] = [
 export const PART_A_QUESTIONS = ASRS_QUESTIONS.filter((q) => q.part === "A");
 export const PART_B_QUESTIONS = ASRS_QUESTIONS.filter((q) => q.part === "B");
 
-/** Short symptom labels for the PDF matrix (i18n keys under `pdf.symptoms`). */
+/**
+ * Short symptom labels for the doctor's report and the PDF matrix
+ * (i18n keys under `pdf.symptoms`).
+ *
+ * Note (session 4): this map was misaligned with the question bank — item 1
+ * ("trouble wrapping up the final details of a project") was labelled
+ * "careless mistakes", item 4 ("avoid or delay a task that requires a lot
+ * of thought") was labelled "difficulty finishing tasks", and so on down
+ * the list. Every label on a clinician-facing page was describing the
+ * wrong item. Realigned against the ASRS v1.1 item texts above.
+ */
 export const ASRS_SYMPTOM_KEYS: Record<number, string> = {
-  1: "careless_mistakes",
-  2: "restless_hands",
-  3: "difficulty_concentrating",
-  4: "finishing_tasks",
-  5: "disorganization",
-  6: "avoiding_sustained_effort",
-  7: "losing_things",
-  8: "easily_distracted",
-  9: "forgetfulness",
-  10: "fidgeting",
-  11: "leaving_seat",
-  12: "feeling_restless",
-  13: "difficulty_relaxing",
-  14: "talks_excessively",
-  15: "interrupting",
-  16: "impatience",
-  17: "intruding_on_others",
-  18: "acting_without_thinking",
+  1: "finishing_tasks",
+  2: "disorganization",
+  3: "forgetfulness",
+  4: "avoiding_sustained_effort",
+  5: "fidgeting",
+  6: "feeling_restless",
+  7: "careless_mistakes",
+  8: "difficulty_concentrating",
+  9: "listening_difficulty",
+  10: "losing_things",
+  11: "easily_distracted",
+  12: "leaving_seat",
+  13: "restless_hands",
+  14: "difficulty_relaxing",
+  15: "talks_excessively",
+  16: "interrupting",
+  17: "impatience",
+  18: "intruding_on_others",
 };
