@@ -29,11 +29,12 @@ function withKotlinPin(config) {
         MARKER +
         "\n// Must precede everything: libraries' buildscript blocks read" +
         " rootProject.ext.kotlinVersion.\n" +
-        'def neurotraceKotlinVersion = "' + KOTLIN_VERSION + '"\n' +
-        "ext.kotlinVersion = neurotraceKotlinVersion\n\n" +
+        'ext.kotlinVersion = "' + KOTLIN_VERSION + '"\n\n' +
         contents.replace(
           /classpath\('org\.jetbrains\.kotlin:kotlin-gradle-plugin'\)/,
-          'classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$neurotraceKotlinVersion")'
+          'classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:' +
+            KOTLIN_VERSION +
+            '")'
         );
     }
     config.modResults.contents = contents;
