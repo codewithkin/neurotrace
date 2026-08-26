@@ -63,7 +63,6 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@expo/config-plugins": "~57.0.9",
     "@neurotrace/config": "workspace:*",
     "@types/node": "catalog:",
     "@types/react": "~19.2.18",

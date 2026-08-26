@@ -26,6 +26,7 @@
     },
     "plugins": [
       "expo-router",
+      "./plugins/with-kotlin-version",
       [
         "expo-splash-screen",
         {
