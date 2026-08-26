@@ -7,28 +7,39 @@ import { Text, View } from "react-native";
 /**
  * Full-width violet CTA from the design language: 16px radius, centered
  * bold label, trailing icon, subtle press scale.
+ *
+ * Sizes come straight from the design file: onboarding steps 01/03/04 use
+ * 16px padding + 16px label ("md"); the legal gate's "Start screening"
+ * uses 17px padding + 17px label ("lg").
  */
 export function PrimaryButton({
   label,
   onPress,
   disabled,
   icon,
+  size = "md",
 }: {
   label: string;
   onPress?: () => void;
   disabled?: boolean;
   icon?: ReactNode;
+  size?: "md" | "lg";
 }) {
   const accentForeground = useThemeColor("accent-foreground");
+  const large = size === "lg";
 
   return (
     <PressableScale
       accessibilityRole="button"
       accessibilityState={{ disabled }}
-      className={`flex-row items-center justify-center gap-2 rounded-2xl bg-accent px-4 py-4 ${disabled ? "opacity-50" : ""}`}
+      className={`flex-row items-center justify-center gap-2 rounded-2xl bg-accent px-4 ${disabled ? "opacity-50" : ""}`}
+      contentStyle={{ paddingVertical: large ? 17 : 16 }}
       onPress={disabled ? undefined : onPress}
     >
-      <Text className="text-base font-semibold" style={{ color: accentForeground }}>
+      <Text
+        className="font-semibold"
+        style={{ color: accentForeground, fontSize: large ? 17 : 16 }}
+      >
         {label}
       </Text>
       {icon}
@@ -36,7 +47,7 @@ export function PrimaryButton({
   );
 }
 
-/** Ghost text button (e.g. "Retake assessment", "Back"). */
+/** Ghost text button (e.g. "Retake assessment"). */
 export function GhostButton({
   label,
   onPress,
@@ -55,7 +66,7 @@ export function GhostButton({
   );
 }
 
-/** Secondary outlined button (Save to Files, Print, Start fresh…). */
+/** Secondary outlined button (Save to Files, Print, Start fresh...). */
 export function OutlineButton({
   label,
   onPress,
@@ -83,6 +94,8 @@ export function OutlineButton({
 /**
  * Onboarding step indicator: wide violet pill for the active step,
  * smaller filled dot for completed, track-colored dot for upcoming.
+ * Geometry from the design file: 6px dots, 24px active pill, 5px gap,
+ * 18px vertical padding.
  */
 export function StepDots({
   total,
@@ -92,17 +105,21 @@ export function StepDots({
   current: number;
 }) {
   return (
-    <View className="flex-row items-center justify-center gap-1.5 py-4">
+    <View
+      className="flex-row items-center justify-center"
+      style={{ gap: 5, paddingVertical: 18 }}
+    >
       {Array.from({ length: total }, (_, i) => (
         <View
           key={i}
-          className={`h-1.5 rounded-full ${
+          style={{ height: 6, width: i === current ? 24 : 6, borderRadius: 3 }}
+          className={
             i === current
-              ? "w-6 bg-primary"
+              ? "bg-primary"
               : i < current
-                ? "w-1.5 bg-primary opacity-60"
-                : "w-1.5 bg-nt-track"
-          }`}
+                ? "bg-primary opacity-60"
+                : "bg-nt-track"
+          }
         />
       ))}
     </View>
@@ -111,5 +128,5 @@ export function StepDots({
 
 export function ArrowRightIcon() {
   const accentForeground = useThemeColor("accent-foreground");
-  return <Ionicons name="arrow-forward" size={19} color={accentForeground} />;
+  return <Ionicons name="arrow-forward" size={20} color={accentForeground} />;
 }

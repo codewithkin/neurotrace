@@ -1,4 +1,4 @@
-import { Pressable, type PressableProps } from "react-native";
+import { Pressable, type PressableProps, type StyleProp, type ViewStyle } from "react-native";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -9,12 +9,19 @@ import { type PropsWithChildren } from "react";
 /**
  * Subtle press feedback: scales down to 0.97 and back, per the design
  * language's tactile pill/card interactions.
+ *
+ * `contentStyle` lands on the inner animated view. Use it for values the
+ * class layer cannot express exactly (1.5px selected borders, 17px CTA
+ * padding) rather than inventing arbitrary classes, which fail silently.
  */
 export function PressableScale({
   children,
   className,
+  contentStyle,
   ...props
-}: PropsWithChildren<PressableProps & { className?: string }>) {
+}: PropsWithChildren<
+  PressableProps & { className?: string; contentStyle?: StyleProp<ViewStyle> }
+>) {
   const scale = useSharedValue(1);
 
   const animatedStyle = useAnimatedStyle(() => ({
@@ -33,7 +40,7 @@ export function PressableScale({
       }}
       {...props}
     >
-      <Animated.View style={[animatedStyle]} className={className}>
+      <Animated.View style={[animatedStyle, contentStyle]} className={className}>
         {children}
       </Animated.View>
     </Pressable>

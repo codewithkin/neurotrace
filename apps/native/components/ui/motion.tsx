@@ -29,17 +29,21 @@ export function FadeSlideIn({ index = 0, style, ...props }: FadeSlideInProps) {
 
 /**
  * Horizontal bar that grows from its previous width to `pct` (0-100).
+ * `radius` matches the design file per surface: the report teaser's 7px
+ * bars are drawn at radius 4, everything else is fully rounded.
  */
 export function AnimatedBar({
   pct,
   color,
   opacity = 1,
   height = 10,
+  radius = 999,
 }: {
   pct: number;
   color: string;
   opacity?: number;
   height?: number;
+  radius?: number;
 }) {
   const width = useSharedValue(0);
 
@@ -54,11 +58,11 @@ export function AnimatedBar({
 
   return (
     <View
-      className="w-full overflow-hidden rounded-full bg-nt-track"
-      style={{ height }}
+      className="w-full overflow-hidden bg-nt-track"
+      style={{ height, borderRadius: radius }}
     >
       <Animated.View
-        style={[animatedStyle, { backgroundColor: color, height: "100%", borderRadius: 999 }]}
+        style={[animatedStyle, { backgroundColor: color, height: "100%", borderRadius: radius }]}
       />
     </View>
   );
