@@ -60,16 +60,16 @@
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/498bc086-2e4b-4c24-915a-79d61b427d34",
+      "url": "https://u.expo.dev/a882f8be-6bfe-48e2-b954-f237b98ed5c4",
       "checkAutomatically": "ON_LOAD",
       "fallbackToCacheTimeout": 0
     },
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "498bc086-2e4b-4c24-915a-79d61b427d34"
+        "projectId": "a882f8be-6bfe-48e2-b954-f237b98ed5c4"
       }
     },
-    "owner": "codewithkin"
+    "owner": "johnprime"
   }
 }
