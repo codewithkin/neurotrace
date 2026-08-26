@@ -42,15 +42,30 @@
                                      "perk_privacy":  "Le risposte non lasciano mai il dispositivo"
                                  },
                        "pace":  {
-                                    "title":  "Come preferisci rispondere?",
+                                    "title":  "Scegli il tuo ritmo",
                                     "fast_pace":  "Ritmo veloce",
                                     "fast_pace_desc":  "Una domanda alla volta, avanzamento automatico. Consigliato.",
                                     "full_list":  "Elenco completo",
-                                    "full_list_desc":  "Scorri tutte le domande su un\u0027unica schermata."
+                                    "full_list_desc":  "Scorri tutte le domande su un\u0027unica schermata.",
+                                    "subtitle":  "Diciotto domande in totale. Fermati e riprendi quando vuoi.",
+                                    "sitting_title":  "Tutto d\u0027un fiato",
+                                    "sitting_desc":  "Circa quattro minuti, singola sessione",
+                                    "split_title":  "Due brevi sessioni",
+                                    "split_desc":  "Parte A ora, tratti più tardi",
+                                    "daily_title":  "Poche al giorno",
+                                    "daily_desc":  "Sei domande a sera, senza pressione"
                                 },
                        "legal":  {
                                      "checkbox":  "Comprendo che questo Ã¨ uno strumento educativo di autovalutazione basato sul WHO ASRS v1.1 e non una diagnosi clinica.",
-                                     "cta":  "Inizia"
+                                     "cta":  "Inizia",
+                                     "title":  "Leggi prima questo",
+                                     "subtitle":  "NeuroTrace somministra la scala di autovalutazione OMS. È un questionario di screening, non una valutazione clinica.",
+                                     "bullet1_title":  "Nessuna diagnosi viene prodotta.",
+                                     "bullet1_body":  "Uno screening positivo significa che il pattern merita una discussione con un medico.",
+                                     "bullet2_title":  "Salvato su questo dispositivo.",
+                                     "bullet2_body":  "Nulla viene caricato online e non serve alcun account.",
+                                     "bullet3_title":  "In crisi, chiedi subito aiuto.",
+                                     "bullet3_body":  "Questa app non può rispondere a situazioni urgenti."
                                  }
                    },
     "assessment":  {

@@ -42,15 +42,30 @@
                                      "perk_privacy":  "Answers never leave the device"
                                  },
                        "pace":  {
-                                    "title":  "How do you like to answer?",
+                                    "title":  "Pick your pace",
                                     "fast_pace":  "Fast Pace",
                                     "fast_pace_desc":  "One question at a time, auto-advance. Recommended for focus.",
                                     "full_list":  "Full List",
-                                    "full_list_desc":  "Scroll through all questions on one screen."
+                                    "full_list_desc":  "Scroll through all questions on one screen.",
+                                    "subtitle":  "Eighteen questions total. Stop and resume whenever.",
+                                    "sitting_title":  "All in one sitting",
+                                    "sitting_desc":  "Around four minutes, single session",
+                                    "split_title":  "Two short sessions",
+                                    "split_desc":  "Part A now, trait questions later today",
+                                    "daily_title":  "A few a day",
+                                    "daily_desc":  "Six questions per evening, no pressure"
                                 },
                        "legal":  {
                                      "checkbox":  "I understand this is an educational self-report tool based on WHO ASRS v1.1 and not a clinical medical diagnosis.",
-                                     "cta":  "Get Started"
+                                     "cta":  "Get Started",
+                                     "title":  "Read this first",
+                                     "subtitle":  "NeuroTrace administers the WHO Adult ADHD Self-Report Scale. It is a screening questionnaire, not an assessment by a clinician.",
+                                     "bullet1_title":  "No diagnosis is produced.",
+                                     "bullet1_body":  "A positive screen means the pattern is worth discussing with a doctor.",
+                                     "bullet2_title":  "Stored on this device.",
+                                     "bullet2_body":  "Nothing is uploaded and there is no account.",
+                                     "bullet3_title":  "In crisis, seek help now.",
+                                     "bullet3_body":  "This app cannot respond to urgent situations."
                                  }
                    },
     "assessment":  {

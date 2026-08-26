@@ -42,15 +42,30 @@
                                      "perk_privacy":  "Odpowiedzi nigdy nie opuszczają urządzenia"
                                  },
                        "pace":  {
-                                    "title":  "Jak wolisz odpowiadaÄ‡?",
+                                    "title":  "Wybierz tempo",
                                     "fast_pace":  "Szybkie tempo",
                                     "fast_pace_desc":  "Jedno pytanie naraz, automatyczne przejÅ›cie. Zalecane.",
                                     "full_list":  "PeÅ‚na lista",
-                                    "full_list_desc":  "Przewijaj wszystkie pytania na jednym ekranie."
+                                    "full_list_desc":  "Przewijaj wszystkie pytania na jednym ekranie.",
+                                    "subtitle":  "Łącznie osiemnaście pytań. Zatrzymaj się i wróć kiedy chcesz.",
+                                    "sitting_title":  "W jednym posiedzeniu",
+                                    "sitting_desc":  "Około czterech minut, jedna sesja",
+                                    "split_title":  "Dwie krótkie sesje",
+                                    "split_desc":  "Część A teraz, cechy później dziś",
+                                    "daily_title":  "Kilka dziennie",
+                                    "daily_desc":  "Sześć pytań wieczorem, bez presji"
                                 },
                        "legal":  {
                                      "checkbox":  "Rozumiem, Å¼e to edukacyjne narzÄ™dzie samoopisu oparte na WHO ASRS v1.1, a nie kliniczna diagnoza medyczna.",
-                                     "cta":  "Zaczynamy"
+                                     "cta":  "Zaczynamy",
+                                     "title":  "Najpierw to przeczytaj",
+                                     "subtitle":  "NeuroTrace stosuje skalę samooceny WHO. To kwestionariusz przesiewowy, nie ocena kliniczna.",
+                                     "bullet1_title":  "Nie stawia się diagnozy.",
+                                     "bullet1_body":  "Dodatni wynik oznacza, że warto omówić ten wzorzec z lekarzem.",
+                                     "bullet2_title":  "Zapisane na tym urządzeniu.",
+                                     "bullet2_body":  "Nic nie jest wysyłane i nie ma konta.",
+                                     "bullet3_title":  "W kryzysie szukaj pomocy natychmiast.",
+                                     "bullet3_body":  "Ta aplikacja nie reaguje na sytuacje nagłe."
                                  }
                    },
     "assessment":  {

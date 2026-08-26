@@ -42,15 +42,30 @@
                                      "perk_privacy":  "As respostas nunca saem do dispositivo"
                                  },
                        "pace":  {
-                                    "title":  "Como vocÃª prefere responder?",
+                                    "title":  "Escolha seu ritmo",
                                     "fast_pace":  "Ritmo rÃ¡pido",
                                     "fast_pace_desc":  "Uma pergunta por vez, avanÃ§o automÃ¡tico. Recomendado.",
                                     "full_list":  "Lista completa",
-                                    "full_list_desc":  "Role por todas as perguntas em uma Ãºnica tela."
+                                    "full_list_desc":  "Role por todas as perguntas em uma Ãºnica tela.",
+                                    "subtitle":  "Dezoito perguntas no total. Pare e retome quando quiser.",
+                                    "sitting_title":  "Tudo de uma vez",
+                                    "sitting_desc":  "Cerca de quatro minutos, sessão única",
+                                    "split_title":  "Duas sessões curtas",
+                                    "split_desc":  "Parte A agora, traços depois hoje",
+                                    "daily_title":  "Algumas por dia",
+                                    "daily_desc":  "Seis perguntas por noite, sem pressão"
                                 },
                        "legal":  {
                                      "checkbox":  "Entendo que esta Ã© uma ferramenta educativa de autorrelato baseada no WHO ASRS v1.1 e nÃ£o um diagnÃ³stico mÃ©dico clÃ­nico.",
-                                     "cta":  "ComeÃ§ar"
+                                     "cta":  "ComeÃ§ar",
+                                     "title":  "Leia isto primeiro",
+                                     "subtitle":  "O NeuroTrace aplica a escala de autorrelato da OMS. É um questionário de triagem, não uma avaliação clínica.",
+                                     "bullet1_title":  "Nenhum diagnóstico é produzido.",
+                                     "bullet1_body":  "Uma triagem positiva significa que vale discutir o padrão com um médico.",
+                                     "bullet2_title":  "Salvo neste dispositivo.",
+                                     "bullet2_body":  "Nada é enviado à internet e não há conta.",
+                                     "bullet3_title":  "Em crise, busque ajuda agora.",
+                                     "bullet3_body":  "Este app não pode responder a situações urgentes."
                                  }
                    },
     "assessment":  {

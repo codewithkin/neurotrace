@@ -42,15 +42,30 @@
                                      "perk_privacy":  "Les réponses ne quittent jamais l\u0027appareil"
                                  },
                        "pace":  {
-                                    "title":  "Comment prÃ©fÃ©rez-vous rÃ©pondre ?",
+                                    "title":  "Choisissez votre rythme",
                                     "fast_pace":  "Rythme rapide",
                                     "fast_pace_desc":  "Une question Ã  la fois, avancement automatique. RecommandÃ©.",
                                     "full_list":  "Liste complÃ¨te",
-                                    "full_list_desc":  "Faites dÃ©filer toutes les questions sur un seul Ã©cran."
+                                    "full_list_desc":  "Faites dÃ©filer toutes les questions sur un seul Ã©cran.",
+                                    "subtitle":  "Dix-huit questions au total. Arrêtez et reprenez à tout moment.",
+                                    "sitting_title":  "D\u0027une traite",
+                                    "sitting_desc":  "Environ quatre minutes, une seule session",
+                                    "split_title":  "Deux courtes sessions",
+                                    "split_desc":  "Partie A maintenant, traits plus tard",
+                                    "daily_title":  "Quelques-unes par jour",
+                                    "daily_desc":  "Six questions par soir, sans pression"
                                 },
                        "legal":  {
                                      "checkbox":  "Je comprends qu\u0027il s\u0027agit d\u0027un outil Ã©ducatif d\u0027auto-Ã©valuation basÃ© sur le WHO ASRS v1.1 et non d\u0027un diagnostic mÃ©dical clinique.",
-                                     "cta":  "Commencer"
+                                     "cta":  "Commencer",
+                                     "title":  "Lisez ceci d\u0027abord",
+                                     "subtitle":  "NeuroTrace administre l\u0027auto-évaluation OMS. C\u0027est un questionnaire de dépistage, pas une évaluation par un clinicien.",
+                                     "bullet1_title":  "Aucun diagnostic n\u0027est produit.",
+                                     "bullet1_body":  "Un dépistage positif signifie que ce mérite d\u0027être discuté avec un médecin.",
+                                     "bullet2_title":  "Stocké sur cet appareil.",
+                                     "bullet2_body":  "Rien n\u0027est envoyé en ligne et il n\u0027y a pas de compte.",
+                                     "bullet3_title":  "En cas de crise, demandez de l\u0027aide maintenant.",
+                                     "bullet3_body":  "Cette app ne peut pas répondre aux situations urgentes."
                                  }
                    },
     "assessment":  {

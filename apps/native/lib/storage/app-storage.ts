@@ -3,7 +3,12 @@ import { getDeviceLanguage } from "@/lib/i18n/device-locale";
 
 import { mmkv } from "./mmkv";
 
-export type AssessmentPace = "fast" | "list";
+/**
+ * - fast:          single-question auto-advance through all 18 items
+ * - two_sessions:  Part A now, Part B resumed later (also covers "a few a day")
+ * - list:          legacy full-list choice, treated like `fast`
+ */
+export type AssessmentPace = "fast" | "two_sessions" | "list";
 
 export interface StoredAssessmentResult extends ASRSScore {
   id: string;
@@ -74,7 +79,9 @@ export function setLanguageCode(code: string) {
 }
 
 export function getPace(): AssessmentPace {
-  return (getString(KEYS.pace) as AssessmentPace) ?? "fast";
+  const stored = getString(KEYS.pace) as AssessmentPace | undefined;
+  if (stored === "two_sessions") return "two_sessions";
+  return "fast"; // "fast" and legacy "list" both use the auto-advance flow
 }
 
 export function setPace(pace: AssessmentPace) {

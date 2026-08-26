@@ -42,15 +42,30 @@
                                      "perk_privacy":  "Antworten verlassen das Gerät nie"
                                  },
                        "pace":  {
-                                    "title":  "Wie mÃ¶chtest du antworten?",
+                                    "title":  "Wählen Sie Ihr Tempo",
                                     "fast_pace":  "Schnelles Tempo",
                                     "fast_pace_desc":  "Eine Frage nach der anderen, automatisch weiter. Empfohlen.",
                                     "full_list":  "Komplette Liste",
-                                    "full_list_desc":  "Alle Fragen auf einer Bildschirmseite durchscrollen."
+                                    "full_list_desc":  "Alle Fragen auf einer Bildschirmseite durchscrollen.",
+                                    "subtitle":  "Insgesamt achtzehn Fragen. Pausieren und fortsetzen jederzeit.",
+                                    "sitting_title":  "Am Stück",
+                                    "sitting_desc":  "Etwa vier Minuten, eine Sitzung",
+                                    "split_title":  "Zwei kurze Sitzungen",
+                                    "split_desc":  "Teil A jetzt, Merkmale später heute",
+                                    "daily_title":  "Ein paar pro Tag",
+                                    "daily_desc":  "Sechs Fragen pro Abend, ohne Druck"
                                 },
                        "legal":  {
                                      "checkbox":  "Ich verstehe, dass dies ein pÃ¤dagogisches SelbsteinschÃ¤tzungsinstrument basierend auf dem WHO ASRS v1.1 ist und keine klinische medizinische Diagnose.",
-                                     "cta":  "Loslegen"
+                                     "cta":  "Loslegen",
+                                     "title":  "Lesen Sie dies zuerst",
+                                     "subtitle":  "NeuroTrace setzt die WHO-Selbsteinschätzungsskala ein. Es ist ein Screening-Fragebogen, keine Bewertung durch Kliniker.",
+                                     "bullet1_title":  "Keine Diagnose.",
+                                     "bullet1_body":  "Ein positiver Screen bedeutet: Besprechen Sie das Muster mit einem Arzt.",
+                                     "bullet2_title":  "Auf diesem Gerät gespeichert.",
+                                     "bullet2_body":  "Nichts wird hochgeladen, kein Konto nötig.",
+                                     "bullet3_title":  "Suchen Sie in Krisen sofort Hilfe.",
+                                     "bullet3_body":  "Diese App kann nicht auf Notfälle reagieren."
                                  }
                    },
     "assessment":  {

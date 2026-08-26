@@ -42,15 +42,30 @@
                                      "perk_privacy":  "Las respuestas nunca salen del dispositivo"
                                  },
                        "pace":  {
-                                    "title":  "Â¿CÃ³mo prefieres responder?",
+                                    "title":  "Elige tu ritmo",
                                     "fast_pace":  "Ritmo rÃ¡pido",
                                     "fast_pace_desc":  "Una pregunta a la vez, avance automÃ¡tico. Recomendado.",
                                     "full_list":  "Lista completa",
-                                    "full_list_desc":  "DesplÃ¡zate por todas las preguntas en una pantalla."
+                                    "full_list_desc":  "DesplÃ¡zate por todas las preguntas en una pantalla.",
+                                    "subtitle":  "Dieciocho preguntas en total. Detente y reanuda cuando quieras.",
+                                    "sitting_title":  "Todo de una vez",
+                                    "sitting_desc":  "Unos cuatro minutos, sesión única",
+                                    "split_title":  "Dos sesiones cortas",
+                                    "split_desc":  "Parte A ahora, rasgos más tarde",
+                                    "daily_title":  "Algunas al día",
+                                    "daily_desc":  "Seis preguntas por noche, sin presión"
                                 },
                        "legal":  {
                                      "checkbox":  "Entiendo que esta es una herramienta educativa de autoinforme basada en el WHO ASRS v1.1 y no un diagnÃ³stico mÃ©dico clÃ­nico.",
-                                     "cta":  "Empezar"
+                                     "cta":  "Empezar",
+                                     "title":  "Lee esto primero",
+                                     "subtitle":  "NeuroTrace aplica la escala de autoinforme de la OMS. Es un cuestionario de cribado, no una evaluación clínica.",
+                                     "bullet1_title":  "No se produce ningún diagnóstico.",
+                                     "bullet1_body":  "Una pantalla positiva significa que el patrón merece comentarse con un médico.",
+                                     "bullet2_title":  "Guardado en este dispositivo.",
+                                     "bullet2_body":  "Nada se sube a internet y no hay cuenta.",
+                                     "bullet3_title":  "En crisis, busca ayuda ahora.",
+                                     "bullet3_body":  "Esta app no puede responder a situaciones urgentes."
                                  }
                    },
     "assessment":  {

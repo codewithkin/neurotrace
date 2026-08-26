@@ -42,15 +42,30 @@
                                      "perk_privacy":  "Antwoorden verlaten nooit het apparaat"
                                  },
                        "pace":  {
-                                    "title":  "Hoe wil je antwoorden?",
+                                    "title":  "Kies je tempo",
                                     "fast_pace":  "Snel tempo",
                                     "fast_pace_desc":  "EÃ©n vraag per keer, automatisch door. Aanbevolen.",
                                     "full_list":  "Volledige lijst",
-                                    "full_list_desc":  "Scroll door alle vragen op Ã©Ã©n scherm."
+                                    "full_list_desc":  "Scroll door alle vragen op Ã©Ã©n scherm.",
+                                    "subtitle":  "In totaal achttien vragen. Stop en hervat wanneer je wilt.",
+                                    "sitting_title":  "In één keer",
+                                    "sitting_desc":  "Ongeveer vier minuten, één sessie",
+                                    "split_title":  "Twee korte sessies",
+                                    "split_desc":  "Deel A nu, kenmerken vandaag later",
+                                    "daily_title":  "Een paar per dag",
+                                    "daily_desc":  "Zes vragen per avond, geen druk"
                                 },
                        "legal":  {
                                      "checkbox":  "Ik begrijp dat dit een educatief zelfrapportage-instrument is gebaseerd op WHO ASRS v1.1 en geen klinische medische diagnose.",
-                                     "cta":  "Aan de slag"
+                                     "cta":  "Aan de slag",
+                                     "title":  "Lees dit eerst",
+                                     "subtitle":  "NeuroTrace gebruikt de WHO-zelfrapportageschaal. Het is een screeningsvragenlijst, geen beoordeling door een clinicus.",
+                                     "bullet1_title":  "Er wordt geen diagnose gesteld.",
+                                     "bullet1_body":  "Een positieve screen betekent: bespreek het patroon met een arts.",
+                                     "bullet2_title":  "Opgeslagen op dit apparaat.",
+                                     "bullet2_body":  "Niets wordt geüpload en er is geen account nodig.",
+                                     "bullet3_title":  "Zoek bij crisis nu hulp.",
+                                     "bullet3_body":  "Deze app kan niet reageren op noodsituaties."
                                  }
                    },
     "assessment":  {
