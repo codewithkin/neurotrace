@@ -4,6 +4,10 @@ import { Platform } from "react-native";
 import { ensureNotificationPermission } from "./permissions";
 
 export const REASSESSMENT_NOTIFICATION_ID = "reassessment-30d";
+export const DAILY_CHECKIN_NOTIFICATION_ID = "daily-checkin";
+
+/** Local hour the daily check-in nudge fires at (D-005). */
+export const DAILY_CHECKIN_HOUR = 20;
 
 const ANDROID_CHANNEL_ID = "reminders";
 
@@ -56,5 +60,45 @@ export async function scheduleReassessmentReminder(
 export async function cancelReassessmentReminder(): Promise<void> {
   await Notifications.cancelScheduledNotificationAsync(
     REASSESSMENT_NOTIFICATION_ID,
+  ).catch(() => {});
+}
+
+/**
+ * Schedules the repeating daily check-in nudge at 20:00 local time (D-005).
+ * Returns false when permission was denied or scheduling failed.
+ */
+export async function scheduleDailyCheckInReminder(
+  title: string,
+  body: string,
+): Promise<boolean> {
+  const permitted = await ensureNotificationPermission();
+  if (!permitted) return false;
+
+  try {
+    await ensureAndroidChannel();
+    await Notifications.cancelScheduledNotificationAsync(
+      DAILY_CHECKIN_NOTIFICATION_ID,
+    ).catch(() => {});
+
+    await Notifications.scheduleNotificationAsync({
+      identifier: DAILY_CHECKIN_NOTIFICATION_ID,
+      content: { title, body, sound: false },
+      trigger: {
+        type: Notifications.SchedulableTriggerInputTypes.DAILY,
+        hour: DAILY_CHECKIN_HOUR,
+        minute: 0,
+        channelId: Platform.OS === "android" ? ANDROID_CHANNEL_ID : undefined,
+      },
+    });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/** Removes the repeating daily check-in reminder, if any. */
+export async function cancelDailyCheckInReminder(): Promise<void> {
+  await Notifications.cancelScheduledNotificationAsync(
+    DAILY_CHECKIN_NOTIFICATION_ID,
   ).catch(() => {});
 }

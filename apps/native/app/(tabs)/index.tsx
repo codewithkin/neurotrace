@@ -1,30 +1,40 @@
+import { Ionicons } from "@expo/vector-icons";
 import * as Haptics from "expo-haptics";
-import { Button, Chip, Slider, Switch, Surface } from "heroui-native";
+import { Switch } from "heroui-native";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Text, View } from "react-native";
 
 import { Container } from "@/components/container";
+import { MetricSlider } from "@/components/tracker/metric-slider";
+import { BadgeChip, MonoValue } from "@/components/ui/atoms";
+import { PrimaryButton } from "@/components/ui/buttons";
+import { FadeSlideIn } from "@/components/ui/motion";
+import { useNTColors } from "@/lib/theme";
 import {
   calculateStreak,
   getTodayEntry,
   saveTodayEntry,
 } from "@/lib/tracker/entries";
 
-interface SliderConfig {
-  key: "focusLevel" | "brainFog" | "executiveFriction" | "mood";
-  emoji: string;
-}
-
-const SLIDERS: SliderConfig[] = [
-  { key: "focusLevel", emoji: "🎯" },
-  { key: "brainFog", emoji: "🌫️" },
-  { key: "executiveFriction", emoji: "⚙️" },
-  { key: "mood", emoji: "🌤️" },
-];
+/*
+ * Daily check-in, from designs "Light/Dark 12 Daily check-in".
+ *
+ * The four metrics stay ours — focusLevel / brainFog / executiveFriction /
+ * mood — rather than the designer's Focus / Restlessness / Sleep quality /
+ * Task follow-through, because the stored data and ten locales already use
+ * them (D-002). The styling is the design's.
+ */
+const METRICS = [
+  { key: "focusLevel", labelKey: "tracker.focus_level", icon: "locate-outline" },
+  { key: "brainFog", labelKey: "tracker.brain_fog", icon: "cloudy-outline" },
+  { key: "executiveFriction", labelKey: "tracker.executive_friction", icon: "cog-outline" },
+  { key: "mood", labelKey: "tracker.mood", icon: "sunny-outline" },
+] as const;
 
 export default function TrackerTab() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const nt = useNTColors();
 
   const todayEntry = getTodayEntry();
   const [streak] = useState(calculateStreak);
@@ -44,6 +54,12 @@ export default function TrackerTab() {
   );
   const [saved, setSaved] = useState(Boolean(todayEntry));
 
+  const today = new Intl.DateTimeFormat(i18n.language, {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  }).format(new Date());
+
   function handleSave() {
     saveTodayEntry({
       focusLevel: values.focusLevel,
@@ -57,75 +73,78 @@ export default function TrackerTab() {
   }
 
   return (
-    <Container
-      className="px-4"
-      scrollViewProps={{ showsVerticalScrollIndicator: false }}
-    >
-      {/* Streak header */}
-      <View className="items-center py-6">
-        <Chip variant="secondary" color="warning" size="lg">
-          <Chip.Label>🔥 {t("tracker.streak", { count: streak })}</Chip.Label>
-        </Chip>
-        <Text className="text-foreground mt-3 text-2xl font-semibold tracking-tight">
-          {t("tracker.title")}
-        </Text>
-      </View>
-
-      <Surface variant="secondary" className="gap-7 rounded-2xl p-5">
-        {SLIDERS.map(({ key, emoji }) => (
-          <View key={key} className="gap-3">
-            <View className="flex-row items-center justify-between">
-              <Text className="text-foreground text-sm font-medium">
-                {emoji} {t(`tracker.${key}`)}
-              </Text>
-              <Text className="text-muted text-sm font-semibold tabular-nums">
-                {values[key]}
-              </Text>
-            </View>
-            <Slider
-              value={values[key]}
-              minValue={0}
-              maxValue={10}
-              step={1}
-              onChange={(v) =>
-                setValues((prev) => ({
-                  ...prev,
-                  [key]: Array.isArray(v) ? v[0] : v,
-                }))
-              }
-              onChangeEnd={() => Haptics.selectionAsync()}
-            >
-              <Slider.Track>
-                <Slider.Fill />
-                <Slider.Thumb />
-              </Slider.Track>
-            </Slider>
-          </View>
-        ))}
-
-        {/* Medication toggle */}
-        <View className="flex-row items-center justify-between pt-1">
-          <Text className="text-foreground flex-1 text-sm font-medium">
-            💊 {t("tracker.medication_taken")}
-          </Text>
-          <Switch
-            isSelected={medicationTaken}
-            onSelectedChange={(v) => {
-              setMedicationTaken(v);
-              Haptics.selectionAsync();
-            }}
+    <Container className="px-4 pt-[22px]" isScrollable={false}>
+      <FadeSlideIn>
+        <View className="items-center">
+          <BadgeChip
+            size="lg"
+            tone="amber"
+            icon="flame"
+            label={t("tracker.streak", { count: streak })}
           />
+          <Text className="text-foreground mt-4 text-[26px] font-semibold tracking-[-0.03em]">
+            {t("tracker.title")}
+          </Text>
+          <Text className="text-muted mt-[5px] text-[13px]">
+            {t("tracker.subtitle", { date: today })}
+          </Text>
         </View>
-      </Surface>
+      </FadeSlideIn>
 
-      <Button size="lg" className="mt-6" isDisabled={saved} onPress={handleSave}>
-        {saved ? t("tracker.already_logged") : t("tracker.save_entry")}
-      </Button>
-      {saved ? (
-        <Text className="text-success mt-3 text-center text-xs font-medium">
-          ✓ {t("tracker.entry_saved")}
-        </Text>
-      ) : null}
+      <FadeSlideIn index={1}>
+        <View className="mt-5 rounded-[20px] border border-border bg-surface p-5">
+          <View className="gap-[22px]">
+            {METRICS.map((metric) => (
+              <View key={metric.key}>
+                <View className="flex-row items-center justify-between">
+                  <View className="flex-row items-center gap-[9px]">
+                    <Ionicons name={metric.icon} size={19} color={nt.pri} />
+                    <Text className="text-foreground text-sm font-semibold">
+                      {t(metric.labelKey)}
+                    </Text>
+                  </View>
+                  <MonoValue className="text-[15px]">{values[metric.key]}</MonoValue>
+                </View>
+                <MetricSlider
+                  value={values[metric.key]}
+                  onChange={(v) =>
+                    setValues((prev) => ({ ...prev, [metric.key]: v }))
+                  }
+                  onCommit={() => Haptics.selectionAsync()}
+                />
+              </View>
+            ))}
+          </View>
+
+          {/* Full-bleed hairline: the design bleeds it past the 20px padding. */}
+          <View
+            className="bg-border"
+            style={{ height: 1, marginTop: 20, marginHorizontal: -20 }}
+          />
+
+          <View className="flex-row items-center gap-3 pt-4">
+            <Ionicons name="medical-outline" size={20} color={nt.pri} />
+            <Text className="text-foreground flex-1 text-sm font-semibold">
+              {t("tracker.medication_taken")}
+            </Text>
+            <Switch
+              isSelected={medicationTaken}
+              onSelectedChange={(v) => {
+                setMedicationTaken(v);
+                Haptics.selectionAsync();
+              }}
+            />
+          </View>
+        </View>
+      </FadeSlideIn>
+
+      <View className="mb-4 mt-auto">
+        <PrimaryButton
+          label={saved ? t("tracker.already_logged") : t("tracker.save_entry")}
+          disabled={saved}
+          onPress={handleSave}
+        />
+      </View>
     </Container>
   );
 }

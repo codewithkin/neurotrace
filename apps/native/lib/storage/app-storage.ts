@@ -36,6 +36,7 @@ const KEYS = {
   reportUnlockedFor: "report.unlockedFor",
   dailyEntries: "tracker.entries",
   reminderEnabled: "settings.reminderEnabled",
+  dailyReminderEnabled: "settings.dailyReminderEnabled",
   adsRemoved: "settings.adsRemoved",
   userAlias: "profile.userAlias",
 } as const;
@@ -152,6 +153,15 @@ export function getReminderEnabled(): boolean {
 
 export function setReminderEnabled(value: boolean) {
   mmkv.set(KEYS.reminderEnabled, value);
+}
+
+/** Daily check-in reminder opt-in (D-005). */
+export function getDailyReminderEnabled(): boolean {
+  return mmkv.getBoolean(KEYS.dailyReminderEnabled) ?? false;
+}
+
+export function setDailyReminderEnabled(value: boolean) {
+  mmkv.set(KEYS.dailyReminderEnabled, value);
 }
 
 export function getAdsRemoved(): boolean {
