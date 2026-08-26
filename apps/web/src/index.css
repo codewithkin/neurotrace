@@ -99,3 +99,16 @@
     transform: none;
   }
 }
+
+/*
+ * Print: the result page is dark on screen and a plain white document on
+ * paper (D-009). The dark screen block is `print:hidden`; this resets the
+ * page ground so nothing carries the dark theme into the printout.
+ */
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+    color: #15121d !important;
+  }
+}

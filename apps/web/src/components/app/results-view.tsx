@@ -1,40 +1,41 @@
 "use client";
 
-import { Button } from "@neurotrace/ui/components/button";
-import { useState } from "react";
+import { AlertCircle, CheckCircle2, Printer, Smartphone } from "lucide-react";
 
+import { Wordmark } from "@/components/header";
 import type { ASRSScore } from "@/lib/asrs";
 
-function ScoreBar({
-  label,
-  value,
-  max,
-}: {
-  label: string;
-  value: number;
-  max: number;
-}) {
-  const pct = max > 0 ? Math.round((value / max) * 100) : 0;
-  return (
-    <div className="space-y-2">
-      <div className="flex items-center justify-between">
-        <span className="text-foreground text-sm font-medium">{label}</span>
-        <span className="text-muted-foreground text-xs tabular-nums">
-          {value} / {max}
-        </span>
-      </div>
-      <div className="bg-muted h-3 w-full overflow-hidden rounded-full">
-        <div
-          className="h-full rounded-full"
-          style={{
-            width: `${pct}%`,
-            backgroundColor: `rgba(124, 58, 237, ${0.35 + (pct / 100) * 0.65})`,
-          }}
-        />
-      </div>
-    </div>
-  );
-}
+/*
+ * Result page, from "Web 3 Result".
+ *
+ * Permanently dark regardless of site theme (D-009), so the colours are
+ * the design's literal dark values rather than the light site's tokens.
+ * Printing renders the plain white summary below instead.
+ */
+const DARK = {
+  ground: "#0b0a0f",
+  ink: "#f4f2fa",
+  muted: "#9a95ac",
+  border: "#282534",
+  card: "#17151f",
+  track: "#252231",
+  accent: "#8b5cf6",
+  amberBg: "#3a2c0a",
+  amberFg: "#fbbf24",
+  greenBg: "#0e2a18",
+  greenFg: "#4ade80",
+};
+
+/** Deep link first, store listing if nothing handles the scheme. */
+const APP_SCHEME = "neurotrace://";
+const STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.anonymous.neurotrace";
+
+const BARS = [
+  { key: "inattention", gradient: "linear-gradient(90deg,#6d42e8,#a855f7)" },
+  { key: "hyperactivity", gradient: "linear-gradient(90deg,#6d42e8,#8b5cf6)" },
+  { key: "partA", gradient: "linear-gradient(90deg,#4f46e5,#7c3aed)" },
+] as const;
 
 export function ResultsView({
   score,
@@ -43,103 +44,160 @@ export function ResultsView({
   score: ASRSScore;
   onRestart: () => void;
 }) {
-  const [revealed, setRevealed] = useState(false);
+  const inattentionPct = Math.round(
+    (score.inattentionRaw / Math.max(1, score.inattentionMax)) * 100,
+  );
+  const hyperactivityPct = Math.round(
+    (score.hyperactivityRaw / Math.max(1, score.hyperactivityMax)) * 100,
+  );
+  const partAPct = Math.round((score.partAScore / 6) * 100);
+
+  const rows = [
+    { label: "Inattention", value: `${inattentionPct}%`, pct: inattentionPct, ...BARS[0] },
+    { label: "Hyperactivity", value: `${hyperactivityPct}%`, pct: hyperactivityPct, ...BARS[1] },
+    { label: "Part A screen", value: `${score.partAScore} / 6`, pct: partAPct, ...BARS[2] },
+  ];
 
   const classification = score.isPartAPositive
-    ? "Significant trait consistency detected"
-    : "Low trait consistency detected";
+    ? "Symptoms consistent with ADHD"
+    : "Symptoms below the screening threshold";
   const dateLabel = new Intl.DateTimeFormat("en", {
     year: "numeric",
     month: "long",
     day: "numeric",
   }).format(new Date());
 
+  function continueInApp() {
+    const fallback = window.setTimeout(() => {
+      window.location.href = STORE_URL;
+    }, 900);
+    window.addEventListener(
+      "pagehide",
+      () => window.clearTimeout(fallback),
+      { once: true },
+    );
+    window.location.href = APP_SCHEME;
+  }
+
   return (
     <>
-      {/* Screen-only interactive view */}
-      <div className="print:hidden">
-        {!revealed ? (
-          <div className="flex flex-col items-center py-16 text-center">
-            <div className="bg-card w-full max-w-md rounded-2xl border p-10">
-              <span className="text-5xl">🧠</span>
-              <h2 className="text-foreground mt-4 text-xl font-semibold">
-                Your Focus Profile is ready
-              </h2>
-              <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
-                18 of 18 questions answered. Everything below is computed on
-                this device and never uploaded.
-              </p>
-              <Button
-                size="lg"
-                className="mt-6 w-full cursor-pointer"
-                onClick={() => setRevealed(true)}
+      <div
+        className="flex flex-1 flex-col print:hidden"
+        style={{ backgroundColor: DARK.ground, color: DARK.ink }}
+      >
+        <header
+          className="flex items-center justify-between px-6 py-[22px] sm:px-14"
+          style={{ borderBottom: `1px solid ${DARK.border}` }}
+        >
+          <Wordmark className="!text-lg" style={{ color: DARK.ink }} accentColor={DARK.accent} />
+          <span
+            className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em]"
+            style={{ color: DARK.muted }}
+          >
+            18 of 18 answered
+          </span>
+        </header>
+
+        <div className="flex flex-1 flex-col items-center justify-center px-6 py-12 sm:px-14">
+          <div className="w-full max-w-[760px] text-center">
+            <span
+              className="inline-flex items-center gap-[9px] rounded-full px-5 py-[11px] text-base font-semibold"
+              style={{
+                backgroundColor: score.isPartAPositive ? DARK.amberBg : DARK.greenBg,
+                color: score.isPartAPositive ? DARK.amberFg : DARK.greenFg,
+              }}
+            >
+              {score.isPartAPositive ? (
+                <AlertCircle size={20} aria-hidden />
+              ) : (
+                <CheckCircle2 size={20} aria-hidden />
+              )}
+              {classification}
+            </span>
+            <p className="mt-3.5 text-[13px]" style={{ color: DARK.muted }}>
+              A positive screen is not a diagnosis. Bring this summary to a clinician.
+            </p>
+
+            <div
+              className="mt-[34px] rounded-[24px] px-9 py-[34px] text-left"
+              style={{ backgroundColor: DARK.card, border: `1px solid ${DARK.border}` }}
+            >
+              <div
+                className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em]"
+                style={{ color: DARK.muted }}
               >
-                Give me my score
-              </Button>
-            </div>
-          </div>
-        ) : (
-          <div className="space-y-6">
-            <div className="bg-card rounded-2xl border p-6">
-              <span
-                className={`inline-block rounded-full px-4 py-1.5 text-xs font-semibold ${
-                  score.isPartAPositive
-                    ? "bg-amber-100 text-amber-800"
-                    : "bg-emerald-100 text-emerald-800"
-                }`}
-              >
-                {classification}
-              </span>
-              <div className="mt-6 space-y-5">
-                <ScoreBar
-                  label="Inattention Subscale"
-                  value={score.inattentionRaw}
-                  max={score.inattentionMax}
-                />
-                <ScoreBar
-                  label="Hyperactivity Subscale"
-                  value={score.hyperactivityRaw}
-                  max={score.hyperactivityMax}
-                />
-                <ScoreBar label="Part A Core Score" value={score.partAScore} max={6} />
+                Trait breakdown
+              </div>
+              <div className="mt-[26px] grid gap-6">
+                {rows.map((row) => (
+                  <div key={row.key}>
+                    <div className="flex items-baseline justify-between">
+                      <span className="text-base font-semibold">{row.label}</span>
+                      <span className="font-mono text-[17px] font-semibold">{row.value}</span>
+                    </div>
+                    <div
+                      className="mt-[11px] h-3 overflow-hidden rounded-[6px]"
+                      style={{ backgroundColor: DARK.track }}
+                    >
+                      <div
+                        className="h-full rounded-[6px]"
+                        style={{ width: `${row.pct}%`, background: row.gradient }}
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <Button
-                variant="outline"
-                className="flex-1 cursor-pointer"
+            <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+              <button
+                type="button"
                 onClick={() => window.print()}
+                className="nt-lift flex items-center justify-center gap-[9px] rounded-[14px] px-[26px] py-4 text-base font-semibold"
+                style={{ backgroundColor: DARK.accent, color: DARK.ground }}
               >
-                Print / Save as PDF
-              </Button>
-              <Button
-                variant="ghost"
-                className="flex-1 cursor-pointer"
-                onClick={onRestart}
+                <Printer size={20} aria-hidden />
+                Print my summary
+              </button>
+              <button
+                type="button"
+                onClick={continueInApp}
+                className="nt-lift flex items-center justify-center gap-[9px] rounded-[14px] px-[26px] py-4 text-base font-semibold"
+                style={{ border: `1px solid ${DARK.border}`, color: DARK.ink }}
               >
-                Retake Assessment
-              </Button>
+                <Smartphone size={20} style={{ color: DARK.accent }} aria-hidden />
+                Continue in the app
+              </button>
             </div>
 
-            <p className="text-muted-foreground text-xs leading-relaxed">
-              This is an educational self-screening result based on the WHO ASRS
-              v1.1. It is not a medical diagnosis.
-            </p>
+            <button
+              type="button"
+              onClick={onRestart}
+              className="mt-4 px-4 py-3 text-sm font-semibold"
+              style={{ color: DARK.muted }}
+            >
+              Start over
+            </button>
           </div>
-        )}
+        </div>
+
+        <div
+          className="px-6 py-[22px] text-xs sm:px-14"
+          style={{ borderTop: `1px solid ${DARK.border}`, color: DARK.muted }}
+        >
+          Instrument: WHO Adult ADHD Self-Report Scale (ASRS-v1.1). Print output renders as a
+          plain white document regardless of theme.
+        </div>
       </div>
 
-      {/* Print-only doctor summary */}
+      {/* Print-only doctor summary: white paper, ink type, no chrome. */}
       <div className="hidden print:block">
         <header className="border-b-2 border-violet-600 pb-4">
-          <p className="font-mono text-[10px] uppercase tracking-widest">
-            NeuroTrace
-          </p>
-          <h1 className="text-xl font-bold">Doctor&apos;s Summary Report</h1>
+          <p className="font-mono text-[10px] uppercase tracking-widest">NeuroTrace</p>
+          <h1 className="text-xl font-bold">ASRS v1.1 Screening Summary</h1>
           <p className="text-xs">
-            Date: {dateLabel} · Instrument: WHO Adult ADHD Self-Report Scale
-            (ASRS v1.1)
+            {dateLabel} · self-administered · Instrument: WHO Adult ADHD Self-Report Scale
+            (ASRS-v1.1)
           </p>
         </header>
         <section className="mt-6">
@@ -148,33 +206,31 @@ export function ResultsView({
           <table className="mt-3 w-full border-collapse text-xs">
             <tbody>
               <tr className="border-b">
-                <td className="py-1.5 font-medium">Part A Core Score</td>
+                <td className="py-1.5 font-medium">Part A screen</td>
                 <td className="py-1.5 text-right">{score.partAScore} / 6</td>
               </tr>
               <tr className="border-b">
-                <td className="py-1.5 font-medium">Inattention Subscale</td>
+                <td className="py-1.5 font-medium">Inattention</td>
                 <td className="py-1.5 text-right">
-                  {score.inattentionRaw} / {score.inattentionMax}
+                  {score.inattentionRaw} / {score.inattentionMax} ({inattentionPct}%)
                 </td>
               </tr>
               <tr className="border-b">
-                <td className="py-1.5 font-medium">Hyperactivity Subscale</td>
+                <td className="py-1.5 font-medium">Hyperactivity</td>
                 <td className="py-1.5 text-right">
-                  {score.hyperactivityRaw} / {score.hyperactivityMax}
+                  {score.hyperactivityRaw} / {score.hyperactivityMax} ({hyperactivityPct}%)
                 </td>
               </tr>
             </tbody>
           </table>
           <p className="mt-2 text-xs">
-            Part A threshold rule: {score.partAScore} of 6 items met the
-            screening threshold (4+ indicates high trait consistency).
+            Part A threshold rule: {score.partAScore} of 6 items met the screening threshold
+            (4+ indicates a positive screen).
           </p>
         </section>
         <footer className="mt-8 border-t pt-3 text-[10px] leading-relaxed">
-          Source: World Health Organization Adult ADHD Self-Report Scale (ASRS
-          v1.1) Symptom Checklist (Kessler et al., 2005). This document is an
-          educational self-report summary generated client-side by NeuroTrace
-          and does not constitute a clinical diagnosis.
+          Source: World Health Organization Adult ADHD Self-Report Scale (ASRS-v1.1) Symptom
+          Checklist. Kessler RC et al., 2005. Screening instrument; not a diagnostic tool.
         </footer>
       </div>
     </>
