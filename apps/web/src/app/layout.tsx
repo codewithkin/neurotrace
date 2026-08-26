@@ -1,19 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 
 import "../index.css";
 import Header from "@/components/header";
 import Providers from "@/components/providers";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "NeuroTrace — Private ADHD Self-Screener & Symptom Log",
@@ -21,6 +10,11 @@ export const metadata: Metadata = {
     "Private ADHD self-screener & daily focus log. Generate doctor-ready PDF reports. 100% local, no account.",
 };
 
+/*
+ * The design's type is the platform system stack (-apple-system / SF Pro
+ * Text / system-ui), set on --font-sans in index.css, so no web font is
+ * downloaded here.
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,11 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className="antialiased">
         <Providers>
           <div className="flex min-h-svh flex-col">
             <Header />
-            <div className="flex-1">{children}</div>
+            <main className="flex flex-1 flex-col">{children}</main>
           </div>
         </Providers>
       </body>

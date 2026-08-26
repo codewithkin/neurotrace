@@ -1,53 +1,48 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
-import { ModeToggle } from "./mode-toggle";
+/*
+ * Site header, from designs/NeuroTrace Screens.dc.html "Web 1 Landing":
+ * 26px/56px padding over a 1px #eae7f2 rule, 20px/700/-0.02em wordmark
+ * with "Trace" in violet, 34px-gapped 14px/500 links and a violet CTA
+ * pill (11px/20px, radius 12).
+ */
 
 const LINKS = [
-  { to: "/", label: "Home" },
-  { to: "/app", label: "Screener" },
-  { to: "/health", label: "Health" },
+  { to: "/#how-it-works", label: "How it works" },
+  { to: "/health", label: "The science" },
   { to: "/privacy", label: "Privacy" },
-  { to: "/terms", label: "Terms" },
 ] as const;
 
-function Wordmark() {
+export function Wordmark({ className = "" }: { className?: string }) {
   return (
-    <Link href="/" className="group flex items-baseline gap-0.5">
-      <span className="text-lg font-semibold tracking-tight text-foreground">
-        Neuro
-      </span>
-      <span className="bg-gradient-to-r from-violet-500 to-purple-700 bg-clip-text text-lg font-semibold tracking-tight text-transparent">
-        Trace
-      </span>
+    <Link
+      href="/"
+      className={`text-xl font-bold tracking-[-0.02em] text-foreground ${className}`}
+    >
+      Neuro<span className="text-primary">Trace</span>
     </Link>
   );
 }
 
 export default function Header() {
-  const pathname = usePathname();
-
   return (
-    <header className="bg-background/80 sticky top-0 z-40 border-b backdrop-blur">
-      <div className="mx-auto flex h-14 w-full max-w-3xl items-center justify-between px-6">
+    <header className="border-b border-border bg-background">
+      <div className="flex items-center justify-between px-6 py-[26px] sm:px-14">
         <Wordmark />
-        <nav className="flex items-center gap-5">
-          {LINKS.map(({ to, label }) => (
-            <Link
-              key={to}
-              href={to}
-              className={`text-sm transition-colors hover:text-foreground ${
-                pathname === to
-                  ? "text-foreground font-medium"
-                  : "text-muted-foreground"
-              }`}
-            >
-              {label}
-            </Link>
-          ))}
-          <ModeToggle />
+        <nav className="flex items-center gap-5 sm:gap-[34px]">
+          <span className="hidden items-center gap-[34px] text-sm font-medium text-muted-foreground md:flex">
+            {LINKS.map(({ to, label }) => (
+              <Link key={to} href={to} className="transition-colors hover:text-foreground">
+                {label}
+              </Link>
+            ))}
+          </span>
+          <Link
+            href="/app"
+            className="nt-lift rounded-[12px] bg-primary px-5 py-[11px] text-sm font-semibold text-primary-foreground"
+          >
+            Start the screener
+          </Link>
         </nav>
       </div>
     </header>
