@@ -13,8 +13,9 @@
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#FFFFFF",
-        "foregroundImage": "./assets/images/adaptive-icon.png"
+        "backgroundColor": "#6D42E8",
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "monochromeImage": "./assets/images/adaptive-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
       "package": "com.codewithkin.neurotrace"
