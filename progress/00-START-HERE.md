@@ -8,7 +8,27 @@ check-in and trends. Expo monorepo: `apps/native` (Expo 57 + heroui-native
 > Read `AGENT-WORKFLOW.md` first — that is *how* work is done here.
 > This file is *what* to build next.
 
-Last updated: end of session 4 (26 Aug 2026).
+Last updated: session 5 (28 Aug 2026).
+
+## Current thread — AdMob monetization (blocked on verification)
+
+Launch blockers cleared in session 5: Play signing key restored (fresh EAS
+keystore under #johnprime was rejected; original from #codewithkin re-imported
+and set as default) and the Metadata-policy rejection fixed (stray
+"Notes on the other fields in your console:…" paragraph removed; corrected
+copy for all 11 locales consolidated in `store-listings/ALL-LOCALES.md`).
+
+`app-ads.txt` is live and crawler-verified at
+`https://neurotrace.gamesforstrangers.lol/app-ads.txt`.
+
+**Next, once the owner confirms AdMob has verified the app:**
+install the ad dependency using the **version Word Hug uses**
+(`C:\Users\kinzi\Desktop\projects\word-hug`):
+**`react-native-google-mobile-ads@^16.3.4`** → add the plugin + app IDs to
+`apps/native/app.json` (keep `ADS_ENABLED=false` for V1) → ask the owner for
+the ad units to create and collect their **unit IDs** → write
+`plans/06-ads.md` and implement. Full detail in `plans/00-roadmap.md` and
+`progress/04-changelog.md` (Session 5).
 
 ## The state of things
 

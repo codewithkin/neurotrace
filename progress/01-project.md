@@ -26,7 +26,9 @@ trend tracking.
 
 - `apps/native` — Expo SDK 57, expo-router tabs + stack, heroui-native +
   uniwind (tailwind v4), react-native-reanimated, MMKV, AdMob (ADS_ENABLED
-  false for V1), expo-print/sharing/notifications/updates.
+  false for V1 → dependency `react-native-google-mobile-ads@^16.3.4`, same
+  version as the Word Hug reference project; wiring pending AdMob
+  verification), expo-print/sharing/notifications/updates.
 - `apps/web` — Next.js (App Router) marketing + browser screener
   (`/`, `/app`, `/app/result`, legal pages), tailwind, theme-provider.
 - `packages/*` — config/env/ui scaffolding from Better T Stack.

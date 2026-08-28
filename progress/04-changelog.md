@@ -1,5 +1,62 @@
 # Changelog
 
+## Session 5 (28 Aug 2026) — Play launch fixes + AdMob groundwork
+
+**Got past the two hard walls at launch time, then staged the ad
+monetization for when AdMob finishes verifying the app.**
+
+### Play production blockers cleared
+
+1. **Signing-key mismatch.** After the EAS owner switched to #johnprime, a
+   fresh EAS cloud keystore was generated automatically; Google Play
+   rejected every upload against the original cert. Fix: downloaded the
+   original keystore from the old #codewithkin project (`eas credentials`
+   → export), deleted the auto-generated one, uploaded the original into
+   the #johnprime project, set as default, rebuilt → accepted. Fingerprint
+   now matches Play: `8F:E3:01:87:B9:1F:4B:4C:B5:59:CE:22:2A:03:C1:DA:56:C0:40:71`.
+2. **Metadata-policy rejection** on the store listing ("lacks clarity").
+   Root cause: a stray internal paragraph beginning *"Notes on the other
+   fields in your console:…"* had been pasted into the default Full
+   description. Removed; default + all locale copies rebuilt clean. The
+   consolidated, corrected copy for all 11 locales lives in
+   `store-listings/ALL-LOCALES.md`. English full description now opens
+   feature-first ("NeuroTrace is a free, private ADHD self-screener…").
+
+### AdMob groundwork
+
+- Puzzle-piece eyeball found the domain: `neurotrace.gamesforstrangers.lol`.
+- `apps/web/public/app-ads.txt` added:
+  `google.com, pub-6071419245494198, DIRECT, f08c47fec0942fa0`
+  (Verification: 200 OK, `text/plain; charset=UTF-8`, exact line.)
+  Committed `cd53144`, deployed, confirmed crawlable.
+- AdMob asked to verify the app. Once it reports **verified**, install the
+  ad dependency using the version the Word Hug project uses
+  (`C:\Users\kinzi\Desktop\projects\word-hug`):
+  **`react-native-google-mobile-ads@^16.3.4`**, then wire it up.
+
+### Pending (blocked on AdMob) — see `plans/00-roadmap.md` + START-HERE
+
+1. `npx expo install react-native-google-mobile-ads` (pin `^16.3.4` per
+   Word Hug reference; `npx expo install` will resolve the SDK-57 build).
+2. Add the plugin to `apps/native/app.json` with `androidAppId` /
+   `iosAppId` (from AdMob's app entry for com.codewithkin.neurotrace).
+3. V1 ships with ads **disabled via ADS_ENABLED=false** (short-circuit
+   gates already in place per Session 1). This session only rebases the
+   dependency + config so flipping the flag later is a one-line change.
+4. Ask owner for the **ad units to create in AdMob** and their IDs
+   (rewarded, interstitial, etc. — see Word Hug `systems/ads.md` for the
+   shape we replicate).
+
+### Notes
+
+- ad units are **per-app** in AdMob: unit IDs from the Word Hug app are
+  tied to app id `ca-app-pub-6071419245494198...` but each live unit ID is
+  app-scoped — new units must be created for the NeuroTrace app, do not
+  copy Word Hug's `/…` unit suffixes wholesale.
+- Same publisher id `6071419245494198` across both apps (same AdMob
+  account).
+
+
 ## Session 4 (26 Aug 2026) — every remaining screen, both platforms
 
 **Plans 02, 03 and 04 built end to end: the whole assessment flow, all
